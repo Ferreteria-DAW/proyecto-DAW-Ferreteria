@@ -8,7 +8,7 @@
 2. ***Pablo González***
 3. ***David Menéndez***
 4. ***Daniel Cadenas***
-5. ***Adrian Rodríguez***
+5. ***Adrián Fernández***
 
 * Estructura del proyecto
     + assets
