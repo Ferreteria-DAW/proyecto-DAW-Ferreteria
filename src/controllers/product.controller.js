@@ -27,3 +27,14 @@ export const createProduct = async (req, res) => {
         res.status(500).json({message: err.message});
     }
 };
+
+export const deleteProduct = async (req, res) => {
+    try {
+        const deletedProduct = await Product.findByIdAndDelete(req.params.id);
+        if(!deletedProduct) return res.status(404).json({message: "Producto no encontrado"});
+
+        return res.sendStatus(204);
+    } catch(err) {
+        return res.status(500).json({message: err.message});
+    }
+};
