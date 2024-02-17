@@ -77,4 +77,23 @@ export const login = async (req, res) => {
       res.status(500).json({ message: err.message });
     }
   };
+
+  export const verifyToken = async (req, res) => {
+  const { token } = req.cookies;
+  if (!token) return res.send(false);
+
+  jwt.verify(token, SECRET_TOKEN, async (err, user) => {
+    if (err) return res.sendStatus(401);
+
+    const userFound = await User.findById(user.id);
+    if (!userFound) return res.sendStatus(401);
+
+    return res.json({
+      id: userFound._id,
+      username: userFound.username,
+      email: userFound.email,
+    });
+  });
+};
+
   
