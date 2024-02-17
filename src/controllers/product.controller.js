@@ -38,3 +38,18 @@ export const deleteProduct = async (req, res) => {
         return res.status(500).json({message: err.message});
     }
 };
+
+export const updateProduct = async (req, res) => {
+    try {
+        const { productName, productDescription, productPrice } = req.body;
+        const productImage = req.file.path;
+        const updatedProduct = await Product.findByIdAndUpdate(
+            {_id: req.params.id},
+            {productName, productDescription, productPrice, productImage},
+            {new: true} 
+            );
+            return res.json(updatedProduct);
+    }catch(err) {
+        return res.status(500).json({message: err.message});
+    }
+};
