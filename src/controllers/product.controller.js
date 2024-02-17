@@ -53,3 +53,13 @@ export const updateProduct = async (req, res) => {
         return res.status(500).json({message: err.message});
     }
 };
+
+export const getProduct = async (req, res) => {
+    try {
+        const product = await Product.findById(req.params.id);
+        if(!product) return res.status(404).json({message: 'Producto no encontrado'});
+        return res.json(product);
+    }catch(err) {
+        return res.status(500).json({message: err.message});
+    }
+};
