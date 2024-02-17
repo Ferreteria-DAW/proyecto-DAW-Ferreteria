@@ -44,3 +44,37 @@ export const register = async (req, res) => {
     res.status(500).json({ message: err.message });
   }
 };
+
+export const login = async (req, res) => {
+    try {
+      const { email, password } = req.body;
+      const userFound = await User.findOne({ email });
+  
+      if (!userFound)
+        return res.status(400).json({ message: ["El email no existe"] });
+  
+      const matchPassword = await bcrypt.compare(password, userFound.password);
+  
+      if (!matchPassword)
+        return res
+          .status(400)
+          .json({ message: ["La contraseña no es correcta"] });
+  
+      const token = await createAccessToken({
+        id: userFound._id
+      });
+  
+      res.cookie("token", token);
+  
+      res.json({
+        id: userFound._id,
+        username: userFound.username,
+        email: userFound.email,
+        createdAt: userFound.createdAt,
+        updatedAt: userFound.updatedAt,
+      });
+    } catch (err) {
+      res.status(500).json({ message: err.message });
+    }
+  };
+  
