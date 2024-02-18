@@ -19,10 +19,29 @@ export const useProduct = () => {
 
 export const ProductProvider = ({children}) => {
 
+    const [products, setProducts] = useState([]);
+
+    const getProducts = async () => {
+        try {
+            const res = await getProductsRequest();
+            setProducts(res.data);
+        } catch(error) {
+            console.log(error);
+        }
+    };
+
+    const getSingleProduct = async (id) => {
+        const res = await getSingleProductRequest(id);
+        console.log(res);
+        return res.data;
+    }
+
     return(
         <ProductContext.Provider
         value={{
-            
+            getProducts,
+            getSingleProduct,
+
         }}>
             {children}
         </ProductContext.Provider>
