@@ -11,7 +11,6 @@ export const Navbar = () => {
     <nav>
       <h1>
         <Link to={isAuthenticated ? "/products" : "/"}>
-          {" "}
           Ferretería VegaGrande
         </Link>
       </h1>
