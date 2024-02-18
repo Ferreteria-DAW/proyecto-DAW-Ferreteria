@@ -1,16 +1,23 @@
 import { useForm } from "react-hook-form";
 import { useAuth } from "../context/AuthContext";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 const LoginPage = () => {
 
   const {register, handleSubmit, formState: {errors} } = useForm();
 
-  const {signin, errors: signinErrors} = useAuth();
+  const {signin, errors: signinErrors, isAuthenticated} = useAuth();
+
+  const navigate = useNavigate();
 
   const onSubmit = handleSubmit((data) => {
     signin(data);
   });
+
+  useEffect(() => {
+    if (isAuthenticated) navigate('/products');
+  }, [isAuthenticated]);
 
   return (
     <div className="flex h-[calc(100vh-100px)] items-center justify-center">
@@ -23,7 +30,7 @@ const LoginPage = () => {
         })
       }
 
-      <h1 className=" text-2xl font-bold mb-3">Login</h1>
+      <h1 className=" text-2xl font-bold mb-3 text-white">Login</h1>
       
       <form onSubmit={onSubmit}>
        
@@ -43,10 +50,10 @@ const LoginPage = () => {
         {errors.password && (
           <p className="text-red-500">Password is required</p>
         )}
-        <button type="submit" className=" text-white border-cyan-50 border py-3 px-5 bg-blue-400 rounded-md hover:bg-blue-600">Login</button>
+        <button type="submit" className=" text-white py-3 px-5 bg-indigo-500 rounded-md hover:bg-indigo-600">Login</button>
       </form>
       <p className="flex gap-x-2 justify-between text-white">
-        Don&apos;t have an account? <Link className=" text-sky-500" to="/register">Register</Link>
+        Don&apos;t have an account? <Link className=" text-sky-500 underline" to="/register">Register</Link>
       </p>
       </div>
     </div>
