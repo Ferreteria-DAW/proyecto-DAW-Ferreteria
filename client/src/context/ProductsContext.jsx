@@ -31,17 +31,52 @@ export const ProductProvider = ({children}) => {
     };
 
     const getSingleProduct = async (id) => {
+       try {
         const res = await getSingleProductRequest(id);
         console.log(res);
         return res.data;
+       } catch(error) {
+        console.log(error);
+       }
+    }
+
+    const createProduct = async (product) => {
+        try {
+            const res = await createProductRequest(product);
+            console.log(res);
+        }catch(error) {
+            console.log(error);
+        }
+    }
+
+    const updateProduct = async (id, product) => {
+        try {
+            const res = await updateProductRequest(id, product);
+            console.log(res);
+        }catch(error) {
+            console.log(error);
+        }
+    }
+
+    const deleteProduct = async (id) => {
+        try {
+            const res = await deleteProductRequest(id);
+            if(res.status === 204) setProducts(products.filter((product) => product._id !== id));
+            console.log(res);
+        } catch(error) {
+            console.log(error);
+        }
     }
 
     return(
         <ProductContext.Provider
         value={{
+            products,
             getProducts,
             getSingleProduct,
-
+            createProduct,
+            updateProduct,
+            deleteProduct
         }}>
             {children}
         </ProductContext.Provider>
