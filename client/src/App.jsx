@@ -3,19 +3,24 @@ import { AuthProvider } from "./context/AuthContext";
 
 import RegisterPage from "./pages/RegisterPage";
 import LoginPage from "./pages/LoginPage";
+import HomePage from './pages/HomePage';
+import ProductsFormPage from './pages/ProductsFormPage';
+import ProductsPage from './pages/ProductsPage';
+import {Navbar} from './components/ui/Navbar';
 
 function App() {
   return (
     <AuthProvider>
       <BrowserRouter>
+          <Navbar />
         <Routes>
-          <Route path="/" element={<h1>Home Page</h1>} />
+          <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
-          <Route path="/tasks" element={<h1>Tasks Page</h1>} />
-          <Route path="/add-task" element={<h1>new Task</h1>} />
-          <Route path="/tasks/:id" element={<h1>update Task</h1>} />
-          <Route path="/profile" element={<h1>Profile</h1>} />
+          <Route path="/products" element={<ProductsPage />} />
+          <Route path="/add-product" element={<ProductsFormPage />} />
+          <Route path="/products/:id" element={<ProductsFormPage />} />
+          {/* <Route path="/profile" element={<h1>Profile</h1>} /> */}
         </Routes>
       </BrowserRouter>
     </AuthProvider>

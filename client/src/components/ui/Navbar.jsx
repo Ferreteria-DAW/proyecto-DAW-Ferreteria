@@ -8,13 +8,13 @@ export const Navbar = () => {
   console.log(isAuthenticated, user);
 
   return (
-    <nav>
-      <h1>
+    <nav className="bg-zinc-700 my-3 flex justify-between py-5 px-10 rounded-lg">
+      <h1 className="text-2xl font-bold">
         <Link to={isAuthenticated ? "/products" : "/"}>
           Ferretería VegaGrande
         </Link>
       </h1>
-      <ul>
+      <ul className="flex gap-x-2">
         {isAuthenticated ? (
           <>
             <li>{user.username}</li>
