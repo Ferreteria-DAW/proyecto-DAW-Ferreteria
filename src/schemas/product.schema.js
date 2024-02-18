@@ -9,6 +9,8 @@ export const createProductSchema = z.object({
     }),
     productImage: z.string({
         required_error: 'La imagen del producto es requerida',
+    }).refine(value => /\.(jpg|jpeg|png|gif)$/i.test(value), {
+        message: 'El nombre de la imagen no tiene una extensión de archivo válida',
     }),
     productDescription: z.string({
         required_error: 'La descripción del producto es requerida',

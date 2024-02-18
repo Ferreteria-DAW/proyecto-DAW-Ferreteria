@@ -9,7 +9,7 @@ export const ProductCard = ({ product }) => {
       <header className="flex justify-between">
         <h2>{product.productName}</h2>
       </header>
-      <img src={product.productImage} alt={product.productName} />
+      <img src={`http://localhost:3000/${product.productImage}`} alt={product.productName} />
       <p className=" text-slate-300">{product.productDescription}</p>
       <p className=" text-slate-300">{product.productPrice}</p>
       <div className="flex gap-x-2 items-center">

@@ -17,6 +17,9 @@ export const Navbar = () => {
       <ul className="flex gap-x-2">
         {isAuthenticated ? (
           <>
+            <li>
+              <Link className=" text-white py-3 px-5 bg-indigo-500 rounded-md hover:bg-indigo-600" to="/add-product">Add Product</Link>
+            </li>
             <li>{user.username}</li>
             <li>
               <Link to={"/"} onClick={() => logout()}>
