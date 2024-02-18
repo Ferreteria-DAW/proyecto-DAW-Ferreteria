@@ -5,7 +5,7 @@ import cookieParser from "cookie-parser";
 import multer from "multer";
 
 import authRoutes from "./routes/auth.routes.js";
-import productsRoutes from "./routes/products.routes.js";
+import productsRoutes from "./routes/product.routes.js";
 import { FRONTEND_URL } from "./config.js";
 
 const app = express();
