@@ -80,13 +80,14 @@ export const login = async (req, res) => {
 
   export const verifyToken = async (req, res) => {
   const { token } = req.cookies;
-  if (!token) return res.send(false);
+  if (!token) return res.sendStatus(401).json({message: 'No autorizado'});
 
   jwt.verify(token, SECRET_TOKEN, async (err, user) => {
-    if (err) return res.sendStatus(401);
+    if (err) return res.sendStatus(401).json({message: 'No autorizado'});
 
     const userFound = await User.findById(user.id);
-    if (!userFound) return res.sendStatus(401);
+
+    if (!userFound) return res.sendStatus(401).json({message: 'No autorizado'});
 
     return res.json({
       id: userFound._id,
