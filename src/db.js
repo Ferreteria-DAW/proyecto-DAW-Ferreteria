@@ -1,6 +1,8 @@
 import mongoose from "mongoose";
 
-import {MONGODB_URI} from './config.js';
+// import {MONGODB_URI} from './config.js';
+
+const MONGODB_URI = process.env.MONGODB_URI;
 
 export const connectDB = async () => {
     try {

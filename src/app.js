@@ -3,18 +3,23 @@ import cors from "cors";
 import morgan from "morgan";
 import cookieParser from "cookie-parser";
 import multer from "multer";
-import path from "path";
-import { fileURLToPath } from 'url';
-import { dirname } from 'path';
+import {dirname, join} from "path";
+import { fileURLToPath } from "url";
 
-
+import fs from "fs";
 
 import authRoutes from "./routes/auth.routes.js";
 import productsRoutes from "./routes/product.routes.js";
-import { FRONTEND_URL } from "./config.js";
+// import { FRONTEND_URL } from "./config.js";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+import dotenv from "dotenv";
+
+dotenv.config();
+
+
+const FRONTEND_URL = process.env.FRONTEND_URL;
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const app = express();
 
@@ -25,27 +30,45 @@ app.use(
   })
 );
 
-const upload = multer({dest: 'uploads'});
+const storagePath = join(__dirname, "storage/uploads");
 
-const fileStorage = multer.diskStorage({
+// // Verificar si la carpeta de destino existe, si no, crearla
+if (!fs.existsSync(storagePath)) {
+  fs.mkdirSync(storagePath, { recursive: true });
+}
+
+
+// const multerUpload = multer({
+//   dest: join(__dirname, "storage/uploads"),
+//   limits: {
+//     fieldSize: 10000000
+//   }
+// });
+
+// app.post('/upload', multerUpload.single('productImage'), (req, res) => {
+//   console.log(req.file);
+//   res.sendStatus(200);
+// })
+
+const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, 'uploads');
+    cb(null, join(__dirname, "storage/uploads"));
   },
   filename: (req, file, cb) => {
     cb(
       null,
-      new Date().toISOString().replace(/:/g, '-') + '-' + file.originalname
+      new Date().toISOString().replace(/:/g, "-") + "-" + file.originalname
     );
   },
 });
 
 const fileFilter = (req, file, cb) => {
   if (
-    file.mimetype === 'image/png' ||
-    file.mimetype === 'image/jpg' ||
-    file.mimetype === 'image/jpeg'||
-    file.mimetype === 'image/webp'||
-    file.mimetype === 'image/avif'
+    file.mimetype === "image/png" ||
+    file.mimetype === "image/jpg" ||
+    file.mimetype === "image/jpeg" ||
+    file.mimetype === "image/webp" ||
+    file.mimetype === "image/avif"
   ) {
     cb(null, true);
   } else {
@@ -53,18 +76,23 @@ const fileFilter = (req, file, cb) => {
   }
 };
 
-app.use(multer({ storage: fileStorage, fileFilter: fileFilter}).single('productImage'));
-// Middleware para servir archivos estáticos desde la carpeta 'upoloads'
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+app.use(
+  multer({ storage: storage, fileFilter: fileFilter }).single("productImage")
+);
+
+// app.use("/public", express.static(`${__dirname}/storage/uploads`));
+
+// console.log('storagePath', storagePath);
+// console.log('__dirname', __dirname);
 
 
-// });
 
-app.use(morgan('dev'));
+app.use(morgan("dev"));
 app.use(express.json());
 app.use(cookieParser());
 
-app.use('/api', authRoutes);
-app.use('/api', productsRoutes);
+app.use("/api", authRoutes);
+app.use("/api", productsRoutes);
+
 
 export default app;

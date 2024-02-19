@@ -1,4 +1,7 @@
 import mongoose from "mongoose";
+import {config}  from '../config.js';
+
+const appConfig = config.appConfig;
 
 const productSchema = new mongoose.Schema(
   {
@@ -29,5 +32,11 @@ const productSchema = new mongoose.Schema(
     timestamps: true,
   }
 );
+
+productSchema.methods.setImgUrl = function setImgUrl(filename) {
+  const host = appConfig.host || process.env.APP_HOST;
+  const port = appConfig.port || process.env.APP_PORT;
+  this.productImage = `${host}:${port}/public/${filename}`;
+};
 
 export default mongoose.model('Product', productSchema);

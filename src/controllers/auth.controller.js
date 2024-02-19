@@ -4,6 +4,7 @@ import bcrypt from "bcryptjs";
 import { SECRET_TOKEN } from "../config.js";
 import { createAccessToken } from "../libs/jwt.js";
 
+
 export const register = async (req, res) => {
   try {
     const { username, email, password } = req.body;

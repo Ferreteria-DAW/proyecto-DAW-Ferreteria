@@ -12,7 +12,13 @@ export const getProducts = async (req, res) => {
 export const createProduct = async (req, res) => {
     try {
         const { productName, productDescription, productPrice } = req.body;
+
+
+        if (!req.file) {
+            return res.status(400).json({ message: "Se requiere una imagen para el producto." });
+        }
         const productImage = req.file.path;
+
         const newProduct = new Product({
             productName,
             productDescription,
@@ -20,6 +26,9 @@ export const createProduct = async (req, res) => {
             productImage,
             user: req.user.id,
         });
+
+        newProduct.setImgUrl(req.file.filename);
+
 
         await newProduct.save();
         res.json(newProduct);

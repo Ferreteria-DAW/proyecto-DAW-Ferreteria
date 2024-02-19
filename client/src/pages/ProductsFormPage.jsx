@@ -44,7 +44,7 @@ const ProductsFormPage = () => {
   return (
     <section>
       <div>
-        <form onSubmit={onSubmit}>
+        <form onSubmit={onSubmit} encType="multipart/form-data">
           <label htmlFor="productName">Producto:</label>
           <input
             type="text"
