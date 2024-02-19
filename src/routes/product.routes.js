@@ -16,7 +16,7 @@ router.get('/products', getProducts);
 
 router.get('/products/:id', getProduct);
 
-router.post('/products', authRequired, createProduct);
+router.post('/products', authRequired,  createProduct);
 
 router.put('/products/:id', authRequired, validateSchema(createProductSchema), updateProduct);
 

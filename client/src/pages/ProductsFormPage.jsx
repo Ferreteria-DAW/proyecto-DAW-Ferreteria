@@ -4,14 +4,47 @@ import { useProduct } from "../context/ProductsContext";
 import { useEffect } from "react";
 
 const ProductsFormPage = () => {
-  const { register, handleSubmit, setValue } = useForm();
+  const { register, handleSubmit, setValue, formState: { errors } } = useForm();
   const { products, getSingleProduct, createProduct, updateProduct } =
     useProduct();
   const navigate = useNavigate();
   const params = useParams();
 
+ 
+
+  console.log(products);
+
+  const onSubmit = handleSubmit(async (data) => {
+    try {
+      let imageData = null;
+  
+      if (data.productImage[0]) {
+        // imageData = await convertImageToBase64(data.productImage[0]);
+      }
+  
+      if (params.id) {
+        await updateProduct(params.id, {
+          ...data,
+          productPrice: parseFloat(data.productPrice),
+          // productImage: imageData,
+        });
+      } else {
+        await createProduct({
+          ...data,
+          productPrice: parseFloat(data.productPrice),
+          // productImage: imageData,
+        });
+      }
+  
+      navigate("/products");
+    } catch (error) {
+      console.error(error);
+    }
+  });
+  
+
   useEffect(() => {
-    async function loadProduct() {
+    const loadProduct = async () => {
       console.log(params);
 
       if (params.id) {
@@ -25,21 +58,18 @@ const ProductsFormPage = () => {
     loadProduct();
   }, []);
 
-  console.log(products);
-
-  const onSubmit = handleSubmit(async (data) => {
-    const formData = new FormData();
-    formData.append("productName", data.productName);
-    formData.append("productDescription", data.productDescription);
-    formData.append("productPrice", data.productPrice);
-    formData.append("productImage", data.productImage[0]);
-    if (params.id) {
-      await updateProduct(params.id, formData);
-    } else {
-      await createProduct(formData);
-    }
-    navigate("/products");
-  });
+//   const convertImageToBase64 = (imageFile) => {
+//   return new Promise((resolve, reject) => {
+//     const reader = new FileReader();
+//     reader.readAsDataURL(imageFile);
+//     reader.onload = () => {
+//       resolve(reader.result);
+//     };
+//     reader.onerror = (error) => {
+//       reject(error);
+//     };
+//   });
+// };
 
   return (
     <section>

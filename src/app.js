@@ -21,6 +21,8 @@ const FRONTEND_URL = process.env.FRONTEND_URL;
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
+
+
 const app = express();
 
 app.use(
@@ -60,6 +62,9 @@ const storage = multer.diskStorage({
       new Date().toISOString().replace(/:/g, "-") + "-" + file.originalname
     );
   },
+  limits: {
+    fieldSize: 10000000
+  }
 });
 
 const fileFilter = (req, file, cb) => {
@@ -80,10 +85,7 @@ app.use(
   multer({ storage: storage, fileFilter: fileFilter }).single("productImage")
 );
 
-// app.use("/public", express.static(`${__dirname}/storage/uploads`));
-
-// console.log('storagePath', storagePath);
-// console.log('__dirname', __dirname);
+app.use('/uploads', express.static(join(__dirname, 'storage/uploads'))); 
 
 
 

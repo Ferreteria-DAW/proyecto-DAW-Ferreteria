@@ -42,16 +42,19 @@ export const ProductProvider = ({children}) => {
 
     const createProduct = async (product) => {
         try {
+            console.log('Producto a crear:', product);
             const res = await createProductRequest(product);
-            console.log(res);
+            console.log('Respuesta del servidor:', res);
+            return res; // Retornar el resultado si es necesario
         }catch(error) {
-            console.log(error);
+            console.error('Error al crear el producto:', error.response.data.message);
+            throw new Error('Error al crear el producto: ' + error.response.data.message);
         }
     }
 
     const updateProduct = async (id, product) => {
         try {
-            const res = await updateProductRequest(id, product);
+            await updateProductRequest(id, product);
             console.log(res);
         }catch(error) {
             console.log(error);

@@ -1,3 +1,4 @@
+import { parse } from 'dotenv';
 import Product from '../models/product.model.js';
 
 export const getProducts = async (req, res) => {
@@ -13,16 +14,20 @@ export const createProduct = async (req, res) => {
     try {
         const { productName, productDescription, productPrice } = req.body;
 
+        const productImage = req.file;
 
-        if (!req.file) {
+        console.log(req.file)
+
+        if (!productImage) {
             return res.status(400).json({ message: "Se requiere una imagen para el producto." });
         }
-        const productImage = req.file.path;
+
+        console.log(productPrice.typeof)
 
         const newProduct = new Product({
             productName,
             productDescription,
-            productPrice,
+            productPrice: parseFloat(productPrice),
             productImage,
             user: req.user.id,
         });
@@ -33,7 +38,10 @@ export const createProduct = async (req, res) => {
         await newProduct.save();
         res.json(newProduct);
     }catch(err) {
-        res.status(500).json({message: err.message});
+        console.error('Error al crear el producto:', err);
+
+        // Envía una respuesta de error con más detalles sobre el error
+        res.status(500).json({ message: 'Error al crear el producto', error: err.message });
     }
 };
 
@@ -44,14 +52,14 @@ export const deleteProduct = async (req, res) => {
 
         return res.sendStatus(204);
     } catch(err) {
-        return res.status(500).json({message: err.message});
+        return res.status(500).json({message: err.response.data.message, data: req.body});
     }
 };
 
 export const updateProduct = async (req, res) => {
     try {
         const { productName, productDescription, productPrice } = req.body;
-        const productImage = req.file.path;
+        const productImage = req.file;
         const updatedProduct = await Product.findByIdAndUpdate(
             {_id: req.params.id},
             {productName, productDescription, productPrice, productImage},
