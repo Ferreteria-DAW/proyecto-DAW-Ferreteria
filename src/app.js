@@ -6,6 +6,8 @@ import multer from "multer";
 import {dirname, join} from "path";
 import { fileURLToPath } from "url";
 
+import { upload } from "./config/multer.js";
+
 import fs from "fs";
 
 import authRoutes from "./routes/auth.routes.js";
@@ -95,6 +97,20 @@ app.use(cookieParser());
 
 app.use("/api", authRoutes);
 app.use("/api", productsRoutes);
+
+app.post('/create-user', upload.fields([{name: 'image', maxCount: 1}]), (req, res) => {
+  const body = req.body;
+  const image = req.files.image[0];
+
+  if(image && image.length > 0) {
+
+  }
+  return res.json({message: "User created"});
+})
+
+app.get('/users', (req, res) => {
+  return res.json({message: "Users"});
+})
 
 
 export default app;
