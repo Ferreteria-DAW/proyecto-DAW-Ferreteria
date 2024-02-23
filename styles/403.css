@@ -4,10 +4,9 @@
 }
 
 body {
-    height: 100vh;
     font-family: Montserrat;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(700px, 1fr));
     align-items: center;
     background-color: #f0f0f0;
 }
@@ -26,6 +25,7 @@ body {
     grid-column-start: 1;
     grid-column-end: 3;
     margin: 0 auto;
+    color: rgb(13, 48, 130);
 }
 .bloqueado{
     position: relative;
@@ -35,47 +35,68 @@ body {
     grid-column-end: 4;
     grid-row-start: 2;
     grid-row-end: 3;
+    color: rgb(13, 48, 130);
 }
 
 .tools {
     grid-row-start: 2;
     grid-row-end: 3;
     width: 150px;
+    margin: 0 auto;
 }
 
-.indice {
-    width: 200px;
-
-    animation: handMove 1s alternate-reverse ease-in-out 4, fadeOut 1.5s ease 4s forwards, point 2s alternate-reverse ease-in-out 5s infinite;
+h1::first-letter{
+    font-size: 150px;
+    color: rgb(242, 148, 0);
 }
-
-
 
 .line-acceso {
     position: absolute;
     z-index: 1;
-    width: 318px;
-    height: 17px;
+    width: 315px;
+    height: 17.5px;
     background-color: rgb(242, 148, 0);
-    top: 8rem;
-    left: 3rem;
+    top: 11rem;
+    left: 6rem;
+
+    animation: tachar 5s 1;
 }
 
 .line-bloqueado {
     position: absolute;
     z-index: 1;
-    width: 490px;
-    height: 17px;
+    width: 510px;
+    height: 17.5px;
     background-color: rgb(242, 148, 0);
-    top: 8.2rem;
-    left: 4rem;
+    top: 11rem;
+    left: 6rem;
+
+    animation: tachar2 5s 1;
+}
+
+
+.rigth-side{
+    position: relative;
+    display: flex;
+    flex-direction: col;
+    height: 100%;
+}
+
+.indice {
+    width: 150px;
+    height: 150px;
+
+    animation: handMove 1s alternate-reverse ease-in-out 4, handRotate 1.5s ease 4s forwards, point 2s alternate-reverse ease-in-out 5s infinite;
 }
 
 .logo {
-    width: 500px;
-    opacity: 0;
+    margin-top: 7rem;
+    
+     animation: fadeIn 2s ease 5s 1 normal forwards;
 
-    animation: fadeIn 2s ease 5s 1 normal forwards;
+     img {
+        width: 100%;
+     }
 }
 
 @keyframes tachar {
@@ -84,7 +105,7 @@ body {
     }
 
     to {
-        width: 5ch;
+        width: 315px;
     }
 }
 
@@ -94,54 +115,6 @@ body {
     }
 
     to {
-        width: 7.8ch;
-    }
-}
-
-@keyframes fadeOut {
-    from {
-        transform: rotate(0deg);
-
-    }
-
-    to {
-        transform: rotate(-120deg);
-
-    }
-}
-
-@keyframes handMove {
-    0% {
-        transform: rotate(20deg);
-        transform-origin: bottom;
-    }
-
-    100% {
-        transform: rotate(-30deg);
-        transform-origin: bottom;
-    }
-}
-
-@keyframes point {
-
-    0%,
-    100% {
-        transform: rotate(-120deg) translateY(0);
-    }
-
-    50% {
-        transform: rotate(-120deg) translateY(30px);
-    }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: scale(0.6);
-    }
-
-    to {
-        opacity: 1;
-        transform: scale(1);
+        width: 510px;
     }
 }
