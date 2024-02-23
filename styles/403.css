@@ -6,158 +6,142 @@
 body {
     height: 100vh;
     font-family: Montserrat;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
     align-items: center;
     background-color: #f0f0f0;
 }
 
-div {
-    margin-left: 5rem;
-    display: flex;
+.left-side {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     justify-content: center;
+    align-items: center;
+}
 
+.acceso{
+    position: relative;
+    font-size: 50px;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    margin: 0 auto;
+}
+.bloqueado{
+    position: relative;
+    margin: 0 auto;
+    font-size: 50px;
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
 }
 
 .tools {
-    position: absolute;
-    width: 200px;
-    margin-top: 20rem;
-    margin-left: 6.5rem;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    width: 150px;
 }
 
 .indice {
-    position: absolute;
     width: 200px;
-    margin-bottom: 10rem;
-    margin-left:90rem;
 
     animation: handMove 1s alternate-reverse ease-in-out 4, fadeOut 1.5s ease 4s forwards, point 2s alternate-reverse ease-in-out 5s infinite;
 }
 
-h1 {
-    margin: 10px;
-    font-size: 180px;
-    color: rgb(13, 48, 130);
 
-    animation: tachar 5s ease-in-out;
-}
 
-h1::first-letter{
-    font-size: 300px;
-    color: rgb(242, 148, 0);
-}
-
-.container {
-    flex-direction: column;
-}
-
-.title {
+.line-acceso {
     position: absolute;
-    margin-bottom: 10rem;
-    
-}
-
-.title2 {
-    position: absolute;
-    margin-top: 20rem;
-    margin-left: 15rem;
-}
-
-.line1{
     z-index: 1;
-    position: absolute;
-    font-size: 180px;
-    width: 5ch;
+    width: 318px;
     height: 17px;
     background-color: rgb(242, 148, 0);
-    margin-bottom: 2rem;
-    margin-left: 11rem;
-
-    animation: tachar 2s 1;;
+    top: 8rem;
+    left: 3rem;
 }
 
-.line2{
-    z-index: 1;
+.line-bloqueado {
     position: absolute;
-    font-size: 180px;
-    width: 7.8ch;
+    z-index: 1;
+    width: 490px;
     height: 17px;
     background-color: rgb(242, 148, 0);
-    margin-top: 26.8rem;
-    margin-left: 26rem;
-    animation: tachar2 2s  1;
+    top: 8.2rem;
+    left: 4rem;
 }
 
-.logo{
-    position: absolute;
-    width:500px;
-    margin-top: -4rem;
-    margin-left: 55rem;
+.logo {
+    width: 500px;
     opacity: 0;
 
     animation: fadeIn 2s ease 5s 1 normal forwards;
 }
 
 @keyframes tachar {
-    from{
+    from {
         width: 0ch;
     }
-    to{
+
+    to {
         width: 5ch;
     }
 }
 
 @keyframes tachar2 {
-    from{
+    from {
         width: 0ch;
     }
-    to{
+
+    to {
         width: 7.8ch;
     }
 }
 
 @keyframes fadeOut {
-    from{
-      transform: rotate(0deg);
+    from {
+        transform: rotate(0deg);
 
     }
-  
+
     to {
-      transform: rotate(-120deg);
+        transform: rotate(-120deg);
 
     }
-  }
-  
-  @keyframes handMove {
-    0% {
-      transform: rotate(20deg);
-      transform-origin: bottom;
-    }
-  
-    100% {
-      transform: rotate(-30deg);
-      transform-origin: bottom;
-    }
-  }
-
-  @keyframes point {
-    0%, 100% {
-      transform: rotate(-120deg) translateY(0);
-    }
-    50% {
-      transform: rotate(-120deg) translateY(30px);
-    }
-  }
-
-  @keyframes fadeIn {
-	from {
-		opacity: 0;
-		transform: scale(0.6);
-	}
-
-	to {
-		opacity: 1;
-		transform: scale(1);
-	}
 }
-  
+
+@keyframes handMove {
+    0% {
+        transform: rotate(20deg);
+        transform-origin: bottom;
+    }
+
+    100% {
+        transform: rotate(-30deg);
+        transform-origin: bottom;
+    }
+}
+
+@keyframes point {
+
+    0%,
+    100% {
+        transform: rotate(-120deg) translateY(0);
+    }
+
+    50% {
+        transform: rotate(-120deg) translateY(30px);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.6);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
