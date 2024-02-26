@@ -59,7 +59,7 @@ h1::first-letter{
     top: 11rem;
     left: 6rem;
 
-    animation: tachar 5s 1;
+    animation: tachar 1.5s 1;
 }
 
 .line-bloqueado {
@@ -71,32 +71,26 @@ h1::first-letter{
     top: 11rem;
     left: 6rem;
 
-    animation: tachar2 5s 1;
+    animation: tachar2 1.5s 1;
 }
 
 
 .rigth-side{
     position: relative;
     display: flex;
-    flex-direction: col;
+    justify-content: center;
     height: 100%;
 }
 
-.indice {
-    width: 150px;
-    height: 150px;
-
-    animation: handMove 1s alternate-reverse ease-in-out 4, handRotate 1.5s ease 4s forwards, point 2s alternate-reverse ease-in-out 5s infinite;
-}
-
 .logo {
-    margin-top: 7rem;
+    margin-top: 5rem;
     
-     animation: fadeIn 2s ease 5s 1 normal forwards;
 
      img {
         width: 100%;
      }
+
+     animation: pulse 10s cubic-bezier(0, 0.55, 0.45, 1) 0s infinite normal forwards;
 }
 
 @keyframes tachar {
@@ -116,5 +110,33 @@ h1::first-letter{
 
     to {
         width: 510px;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        animation-timing-function: ease-out;
+        transform: scale(1);
+        transform-origin: center center;
+    }
+
+    10% {
+        animation-timing-function: ease-in;
+        transform: scale(0.91);
+    }
+
+    17% {
+        animation-timing-function: ease-out;
+        transform: scale(0.98);
+    }
+
+    33% {
+        animation-timing-function: ease-in;
+        transform: scale(0.87);
+    }
+
+    45% {
+        animation-timing-function: ease-out;
+        transform: scale(1);
     }
 }

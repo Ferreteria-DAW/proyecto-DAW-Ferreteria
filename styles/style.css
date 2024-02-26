@@ -2,47 +2,59 @@
 @import './cards.css';
 
 @font-face {
+    font-family: MUlish;
+    src: url(/assets/fonts/Mulish/Mulish-Regular.ttf);
+}
+
+@font-face {
     font-family: Montserrat-Regular;
     src: url('../assets/fonts/Montserrat/Montserrat-Regular.ttf');
 }
+
 @font-face {
     font-family: Montserrat-Bold;
     src: url('../assets/fonts/Montserrat/Montserrat-Bold.ttf');
 }
+
 @font-face {
     font-family: Montserrat-thin;
     src: url('../assets/fonts/Montserrat/Montserrat-Thin.ttf');
 }
+
 @font-face {
     font-family: Montserrat-italic;
     src: url('../assets/fonts/Montserrat/Montserrat-Italic.ttf');
 }
+
 @font-face {
     font-family: Hedvig-18;
     src: url('../assets/fonts/Hedvig/HedvigLettersSerif_18pt-Regular.ttf');
 }
+
 @font-face {
     font-family: Hedvig-14;
     src: url('../assets/fonts/Hedvig/HedvigLettersSerif_14pt-Regular.ttf');
 }
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-size: 62.5%;
 }
 
-*::before, *::after{
+*::before,
+*::after {
     box-sizing: inherit;
 }
 
-:root{
+:root {
     --white: #ececec;
-    --orange: rgba(242,148,0,255);
-    --brown: rgba(75,47,27,255);
-    --black: rgba(0,0,0,255);
-    --blue: rgb(12,51,132);
-    --shadow: 0 0 10px rgba(0,0,0,0.5);
+    --orange: rgba(242, 148, 0, 255);
+    --brown: rgba(75, 47, 27, 255);
+    --black: rgba(0, 0, 0, 255);
+    --blue: rgb(12, 51, 132);
+    --shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 
     --color-secondary-light: #ffb900;
     --color-secondary-dark: #ff7730;
@@ -51,9 +63,9 @@
     --color-tertiary-dark: #5643fa;
 }
 
-body{
-    font-family: Montserrat-Regular;
-    background-color: rgba(244,243,242,255);
+body {
+    font-family: Mulish;
+    background-color: rgba(244, 243, 242, 255);
     color: var(--black);
     font-size: 5rem;
     line-height: 1.5;
@@ -61,12 +73,12 @@ body{
 }
 
 
-header img{
+.logo {
     margin: 5rem;
     width: 100px;
 }
 
-.main-contact-section{
+.main-contact-section {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -77,77 +89,93 @@ header img{
 
 
 .main-contact-section a,
-.quality-section > div a{
+.quality-section>div a {
     font-size: 1.5rem;
-    text-decoration: none; 
-    color: black;  
-}
-.navigation__link span{
-    font-size: 2rem;
-}
-.main-contact-section a:hover{
-    font-size: 1.5rem;
-    text-decoration: underline; 
-    color: var(--orange);  
+    text-decoration: none;
+    color: black;
 }
 
-.main-contact-section:visited{
+.navigation__link span {
+    font-size: 2rem;
+}
+
+.main-contact-section a:hover {
+    font-size: 1.5rem;
+    text-decoration: underline;
+    color: var(--orange);
+}
+
+.main-contact-section:visited {
     color: var(--blue);
 }
 
-.section-tours-title{
+.section-tours {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    margin: 2rem;
+}
+
+.col-1-of-3 {
+margin: 0 auto;
+}
+
+.section-tours-title {
     margin-left: 8rem;
 }
 
 .section-tours-title h3,
 .professionalism-section h3,
-.quality-section h3{
+.quality-section h3 {
     font-size: 2rem;
     color: var(--orange);
 }
+
 .section-tours-title h1,
-.professionalism-section h2{
+.professionalism-section h2 {
     font-size: 5.5rem;
     color: var(--brown);
 }
+
 .section-tours-title p,
-.professionalism-section p{
+.professionalism-section p {
     font-size: 2rem;
 }
 
-.section-tours-title strong{
+.section-tours-title strong {
     font-size: 2.2rem;
 }
 
-.professionalism-section{
-    width: 80%;
-    margin-left: 15rem;
+.professionalism-section {
+    display: grid;
+    width: 100%;
+    padding: 5rem;
     text-align: justify;
 }
 
-.professionalism-container{
+.professionalism-container {
     display: flex;
     gap: 5rem;
 }
 
-.professionalism-container .container-tools{
-   display: grid;
-   grid-template-columns: repeat(
-         3, 1fr
-   );
-   position: relative;
- 
-   height: 100%;
-   
+.professionalism-container .container-tools {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    position: relative;
+
+    height: 100%;
+
 }
 
-.container-tools img{
+.container-tools img {
     width: 30rem;
     border-radius: 2rem;
 }
 
-.img1, 
-.img2{
+.img1,
+.img2 {
     margin-left: 2rem;
 }
 
@@ -155,41 +183,43 @@ header img{
     position: absolute;
     right: 0;
     bottom: -3rem;
-    width: 400px; /* Cambia este valor al ancho deseado */
-    height: auto; /* Asegura que la altura se ajuste proporcionalmente */
+    width: 400px;
+    /* Cambia este valor al ancho deseado */
+    height: auto;
+    /* Asegura que la altura se ajuste proporcionalmente */
 }
 
 
-.clientes{
+.clientes {
     height: 300px;
 }
 
 /*Slide Comentarios Clientes*/
 
- #slider-container {
+#slider-container {
     max-width: 600px;
     margin: auto;
     overflow: hidden;
     background-color: var(--brown);
 }
-   
+
 #slider {
     display: flex;
     transition: transform 0.5s ease-in-out;
 }
-   
+
 .slide {
     min-width: 100%;
     box-sizing: border-box;
 }
 
-.SlideLogo{
+.SlideLogo {
     height: 50vh;
     display: flex;
     margin-left: -25rem;
 }
 
-.heading{
+.heading {
     font-size: 2rem;
     color: var(--brown);
     position: relative;
@@ -197,7 +227,7 @@ header img{
     margin-top: 3rem;
     font-size: 5rem;
 }
-   
+
 .buttonSlide {
     cursor: pointer;
     border: none;
@@ -206,7 +236,7 @@ header img{
     padding: 10px;
 }
 
-.flecha{
+.flecha {
     width: 40px;
     height: 40px;
 }
@@ -220,11 +250,11 @@ header img{
 
 .logos {
     display: flex;
-    animation: scroll 15s linear alternate infinite; 
+    animation: scroll 15s linear alternate infinite;
 }
 
 .logo {
-    flex: 0 0 auto; 
+    flex: 0 0 auto;
     box-sizing: border-box;
     margin-right: 80px;
 }
@@ -239,12 +269,13 @@ header img{
     0% {
         transform: translateX(0);
     }
+
     100% {
-        transform: translateX(calc(-170px * 10)); 
+        transform: translateX(calc(-170px * 10));
     }
 }
 
-.quality-section{
+.quality-section {
     background-color: var(--brown);
     padding: 8rem;
     font-size: 5.5rem;
@@ -252,75 +283,76 @@ header img{
 }
 
 
-.quality-section h3{
+.quality-section h3 {
     font-size: 4rem;
     margin-bottom: 3rem;
 }
 
 .quality-section h2,
-.quality-section p{
+.quality-section p {
     color: var(--white);
 }
 
-.quality-section h2{
+.quality-section h2 {
     font-size: 2rem;
 }
 
-.quality-section > article{
+.quality-section>article {
     width: 100%;
 }
 
-.quality-section > article > div{
+.quality-section>article>div {
     display: flex;
     gap: 5rem;
     font-size: 3rem;
     line-height: 1.75;
 }
 
-.quality-section > article > div img{
+.quality-section>article>div img {
     width: 100rem;
     border-radius: 50%;
 }
 
-.quality-section > article > div p strong{
+.quality-section>article>div p strong {
     font-size: 2.2rem;
 }
 
-.quality-section > div a{
+.quality-section>div a {
     color: white;
 }
 
-.check-container{
+.check-container {
     display: grid;
     width: 40%;
     grid-template-columns: repeat(2, 1fr);
     margin: 3rem 0;
 }
 
-.check-container img{
+.check-container img {
     position: relative;
     top: 1.5rem;
 }
 
 
-.check-container > div > p .icon{
+.check-container>div>p .icon {
     width: 50px;
     height: 50px;
     margin-right: 2rem;
     margin-top: 4rem;
 }
-.check-container > div > p{
+
+.check-container>div>p {
     font-size: 2rem;
     line-height: 1.75;
     font-weight: bold;
 }
 
-.icon{
+.icon {
     width: 50px;
     height: 50px;
 }
 
-.meet-us{
+.meet-us {
     background-color: var(--orange);
     position: relative;
     padding: 8rem;
@@ -328,25 +360,25 @@ header img{
     margin-bottom: 15rem;
 }
 
-.meet-us h2{
+.meet-us h2 {
     color: var(--white);
     font-size: 4rem;
     font-weight: bold;
 }
 
-.meet-us h3{
+.meet-us h3 {
     color: var(--brown);
     font-size: 2.5rem;
     margin-left: 15rem;
 }
 
-.right-container{
+.right-container {
     display: flex;
     justify-content: space-between;
     margin-left: 15rem;
 }
 
-.meet-us a{
+.meet-us a {
     background-color: var(--brown);
     color: var(--white);
     text-decoration: none;
@@ -356,12 +388,12 @@ header img{
     margin-right: 10rem;
     transition: all .2s;
 
-    &:hover{
+    &:hover {
         transform: scale(1.1);
     }
 }
 
-.meet-us__img-container{
+.meet-us__img-container {
     margin-top: 5rem;
     position: absolute;
     display: flex;
@@ -369,35 +401,36 @@ header img{
     align-items: center;
     gap: 3.7rem;
 }
-.meet-us__img-container img{
-    border-radius: 2rem; 
+
+.meet-us__img-container img {
+    border-radius: 2rem;
 }
 
-.customers-reviews-section{
+.customers-reviews-section {
     background-color: var(--brown);
     height: 50vh;
     padding: 5rem;
 }
 
-.customers-reviews-section h2{
+.customers-reviews-section h2 {
     font-size: 4rem;
     color: #ffffff;
     margin-top: 8rem;
 }
 
-.paragraph{
+.paragraph {
     color: white;
     text-align: center;
     font-size: 1.5rem;
     margin-top: 4rem;
 }
 
-.last-section{
+.last-section {
     height: 50vh;
     background-color: var(--white);
 }
 
-footer{
+footer {
     background-color: var(--brown);
     padding: 10rem;
     padding-left: 20rem;
@@ -406,68 +439,68 @@ footer{
     gap: 4rem;
 }
 
-footer > div h2{
+footer>div h2 {
     font-size: 2.2rem;
     color: white;
     margin-bottom: 4rem;
 }
 
-.col1{
+.col1 {
     width: 40rem;
     line-height: 2;
 }
 
-.col2{
+.col2 {
     display: flex;
     flex-direction: column;
     gap: 1rem;
     margin-left: 7rem;
 }
 
-.col3{
+.col3 {
     line-height: 2;
 }
 
-footer > div a{
+footer>div a {
     font-size: 1.8rem;
     color: white;
     text-decoration: none;
 
-    &:hover{
+    &:hover {
         color: var(--color-secondary-dark);
         text-decoration: underline;
     }
 }
 
-footer > div p{
+footer>div p {
     font-size: 1.8rem;
     color: white;
 }
 
-.copy{
+.copy {
     height: 10vh;
     background-color: #3f2714;
 }
 
-.copy p{
+.copy p {
     color: white;
     margin-left: 30rem;
     padding: 2rem;
     font-size: 2rem;
 }
 
-.copy a{
+.copy a {
     color: var(--color-secondary-dark);
     font-size: 2rem;
     text-decoration: none;
 
-    &:hover{
+    &:hover {
         text-decoration: underline;
         color: #ff9b66;
     }
 }
 
-.about-us{
+.about-us {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 3rem;
@@ -475,7 +508,7 @@ footer > div p{
     font-size: 2.5rem;
     gap: 5rem;
 
-    & img{
+    & img {
         width: 70rem;
         height: auto;
         grid-row: 1 / 2;
@@ -483,25 +516,25 @@ footer > div p{
         align-self: center;
     }
 
-    & .col-about-1 h1{
+    & .col-about-1 h1 {
         font-size: 4rem;
         margin-top: 3rem;
         color: #ff7730;
     }
 
-    & .col-about-1 h3{
+    & .col-about-1 h3 {
         font-size: 2rem;
         color: #3f2714;
     }
 
-    & .col-about-1 p{
+    & .col-about-1 p {
         font-size: 2rem;
         line-height: 1.75;
         text-align: justify;
         margin-top: 3rem;
     }
 
-    & a{
+    & a {
         margin-top: 5rem;
         border: 1px solid;
         width: 15rem;
@@ -513,11 +546,11 @@ footer > div p{
         font-weight: bold;
         border-radius: 10px;
         transition: all .5s;
-        
+
         display: flex;
         justify-content: center;
         align-items: center;
-    
+
         &:hover {
             transform: scale(1.1);
             background-color: #3f2714;
@@ -525,9 +558,9 @@ footer > div p{
     }
 }
 
+@media screen and (width < 801px) {
+    .section-tours {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 
-
-
-
-
-
+    }
+}

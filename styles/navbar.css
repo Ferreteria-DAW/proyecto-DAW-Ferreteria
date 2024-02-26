@@ -1,5 +1,6 @@
 .navigation__checkbox{
     display: none;
+    width: 100%;
   }
   .navigation__button {
     background-color: #fff;
