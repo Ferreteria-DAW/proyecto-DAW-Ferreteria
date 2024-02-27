@@ -11,7 +11,7 @@ PROTEGIDA */
 
 const createProduct = async (req, res, next) => {
     try {
-        let { productName, productDescription, productPrice } = req.body;
+        let { productName, productDescription, productPrice, category } = req.body;
         if(!productName || !productDescription || !productPrice || !req.files) return next(new HttpError("Por favor ingrese todos los campos", 400));
 
         const { thumbnail } = req.files;
@@ -25,10 +25,11 @@ const createProduct = async (req, res, next) => {
             if(err) return next(new HttpError("Error al subir la imagen", 500));
 
             else {
-                const newProduct = await productDescription.create({
+                const newProduct = await Product.create({
                     productName,
                     productDescription,
                     productPrice,
+                    category,
                     thumbnail: newFilename,
                     creator: req.user.id,
                 });
@@ -51,7 +52,7 @@ NO PROTEGIDA */
 
 const getProducts = async (req, res, next) => {
     try {
-        const products = await Post.find().sort( { createdAt: -1});
+        const products = await Product.find().sort( { createdAt: -1});
         res.status(200).json(products);
     } catch(err) {
         return next(new HttpError("Error al obtener los productos", 500));
