@@ -35,8 +35,7 @@ const registerUser = async (req, res, next) => {
             email: lowerEmail,
             password: hashedPassword,
         });
-        res.status(201).json({ message: `Usuario registrado correctamente con el email ${newUser.email}`});
-        
+        res.status(201).json({ message: `Usuario registrado correctamente con el email ${newUser.email}`});   
     } catch(err) {
         next(new HttpError('No se pudo registrar el usuario', 500));
     }
