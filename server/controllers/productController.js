@@ -44,3 +44,16 @@ const createProduct = async (req, res, next) => {
         next(new HttpError("Error al crear el producto", 500));
     }
 }
+
+/* Ver productos
+Ruta: get --> api/products
+NO PROTEGIDA */
+
+const getProducts = async (req, res, next) => {
+    try {
+        const products = await Post.find().sort( { createdAt: -1});
+        res.status(200).json(products);
+    } catch(err) {
+        return next(new HttpError("Error al obtener los productos", 500));
+    }
+}
