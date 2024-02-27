@@ -148,3 +148,38 @@ const editProduct = async (req, res, next) => {
         return next(new HttpError("Error al editar el producto", 500));
     }
 }
+
+/* Eliminar producto
+delete --> api/products/:id
+PROTEGIDA */
+
+const deleteProduct = async (req, res, next) => {
+    try {
+        const productId = req.params.id;
+
+        if(!productId) return next(new HttpError("Producto no encontrado", 404));
+
+        const product = await Product.findById(productId);
+        const fileName = product?.thumbnail;
+        fs.unlink(path.join(__dirname, '..', 'uploads', fileName), async (err) => {
+            if(err) return next(new HttpError("Error al eliminar el producto", 500));
+
+            else {
+                await Product.findByIdAndDelete(productId);
+                res.json(`Producto ${productId} eliminado con éxito`);
+            }
+            
+        })
+    } catch(err) {
+        return next(new HttpError("Error al eliminar el producto", 500));
+    }
+}
+
+module.exports = {
+    createProduct,
+    getProducts,
+    getProduct,
+    getProductsByCategory,
+    editProduct,
+    deleteProduct
+}
