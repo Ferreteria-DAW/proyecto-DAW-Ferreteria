@@ -126,3 +126,35 @@ const changeAvatar = async (req, res, next) => {
         return next(new HttpError('No se pudo cambiar la foto de perfil', 500));
     }
 }
+
+/* EDITAR USUARIO
+Ruta: post __> api/users/edit-user
+PROTEGIDA */
+
+const editUser = async (req, res, next) => {
+    try {
+        const { username, email, currentPassword, newPassword, confirmNewPassword } = req.body;
+
+        if(!username || !email || !currentPassword || !confirmNewPassword) return next(new HttpError('Todos los campos son obligatorios', 422));
+
+        const user = await User.findById(req.user.id);
+        if(!user) return next(new HttpError('Usuario no encontrado', 404));
+
+        const emailExists = await User.findOne({ email });
+        if(emailExists && emailExists._id != user.id) return next(new HttpError('El email ya está en uso', 422));
+
+        const validateCurrentPassword = await bcrypt.compare(currentPassword, user.password);
+
+        if(!validateCurrentPassword) return next(new HttpError('La contraseña actual es incorrecta', 422));
+
+        if(newPassword !== confirmNewPassword) return next(new HttpError('Las contraseñas no coinciden', 422));
+
+        const salt = await bcrypt.genSalt(12);
+        const hashedPassword = await bcrypt.hash(newPassword, salt);
+
+        const newUserInfo = await User.findByIdAndUpdate(req.user.id, {username, email, password: hashedPassword}, {new: true});
+        res.status(200).json(newUserInfo);
+    } catch(err) {
+        return next(new HttpError('No se pudo editar el usuario', 500));
+    }
+}
