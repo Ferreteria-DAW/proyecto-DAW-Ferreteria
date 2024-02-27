@@ -30,12 +30,12 @@ const registerUser = async (req, res, next) => {
         const salt = await bcrypt.genSalt(12);
         const hashedPassword = await bcrypt.hash(password, salt);
 
-        const newUser = new User({
+        const newUser = await User.create({
             username,
             email: lowerEmail,
             password: hashedPassword,
         });
-        res.status(201).json({ message: `Usuario registrado correctamente con el email ${lowerEmail}`});
+        res.status(201).json({ message: `Usuario registrado correctamente con el email ${newUser.email}`});
         
     } catch(err) {
         next(new HttpError('No se pudo registrar el usuario', 500));
