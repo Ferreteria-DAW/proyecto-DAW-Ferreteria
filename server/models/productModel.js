@@ -10,6 +10,10 @@ const productSchema = new Schema({
         type: String,
         required: true
     },
+    category: {
+        type: String,
+        required: true
+    },
     productPrice: {
         type: Number,
         required: true
