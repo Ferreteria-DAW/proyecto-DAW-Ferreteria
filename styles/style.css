@@ -118,10 +118,13 @@ body {
     gap: 4rem;
     margin-top: 2rem;
     margin-bottom: 2rem;
+    padding: 2rem;
 }
 
 .col-1-of-3 {
     margin: 0 auto;
+    width: 100%;
+    height: 100%;
 }
 
 .section-tours-title {
@@ -130,7 +133,7 @@ body {
 
 .section-tours-title h3,
 .professionalism-section h3,
-.quality-section h3 {
+.quality-section h2 {
     font-size: 2rem;
     color: var(--orange);
 }
@@ -154,18 +157,19 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(435px, 1fr));
     width: 100%;
-    padding: 5rem;
     gap: 2rem;
     margin: 0 auto;
 
 }
 
 .professionalism-section h3 {
+    padding-left: 5rem;
     grid-column-start: 1;
     grid-column-end: 4;
 }
 
 .professionalism-section h2 {
+    padding-left: 5rem;
     grid-column-start: 1;
     grid-column-end: 4;
 }
@@ -176,6 +180,12 @@ body {
     display: flex;
     gap: 5rem;
     text-align: justify;
+}
+
+.professionalism-container p{
+    width: 100%;
+    padding: 5rem;
+    padding-top: 0;
 }
 
 .container-tools {
@@ -234,14 +244,16 @@ body {
 .SlideLogo {
     height: 50vh;
     display: flex;
-    margin-left: -25rem;
+    flex-direction: column;
+    width: 100%;
 }
 
 .heading {
+    width: 100%;
+    text-align: center;
     font-size: 2rem;
     color: var(--brown);
     position: relative;
-    left: 50%;
     margin-top: 3rem;
     font-size: 5rem;
 }
@@ -254,13 +266,8 @@ body {
     padding: 10px;
 }
 
-.flecha {
-    width: 40px;
-    height: 40px;
-}
-
 .carousel-container {
-    width: 80%;
+    width: 90%;
     margin: auto;
     overflow: hidden;
     position: relative;
@@ -305,6 +312,7 @@ body {
 .quality-section h3 {
     font-size: 4rem;
     margin-bottom: 3rem;
+    color: var(--orange);
 }
 
 .quality-section h2,
@@ -467,9 +475,9 @@ footer div {
 
 
 .col1 {
-    width: 80%;
+    width: 90%;
     line-height: 2;
-    
+
 }
 
 .col2 {
@@ -502,15 +510,15 @@ footer>div p {
 
 .copy {
     display: flex;
-    grid-template-columns: 3fr 1fr 1fr 1fr;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
     height: 10vh;
     background-color: #3f2714;
-    align-items: center;
 }
 
 .copy p {
     color: white;
-    margin-left: 30rem;
     padding: 2rem;
     font-size: 2rem;
 }
@@ -519,6 +527,7 @@ footer>div p {
     color: var(--color-secondary-dark);
     font-size: 2rem;
     text-decoration: none;
+    padding: 2rem;
 
     &:hover {
         text-decoration: underline;
@@ -594,18 +603,190 @@ footer>div p {
 }
 
 @media screen and (width < 1025px) {
+
+    .section-tours-title h1,
+    .professionalism-section h2 {
+        font-size: 4rem;
+        color: var(--brown);
+    }
+
+    .section-tours-title p,
+    .professionalism-section p {
+        font-size: 1.8rem;
+    }
+
+    .section-tours-title strong {
+        font-size: 2rem;
+    }
+
+    .section-tours {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+
+    .section-tours-title p,
+    .professionalism-section p {
+        font-size: 1.6rem;
+    }
+
+    .container-tools img {
+        width: 20rem;
+        border-radius: 2rem;
+    }
+
+    .container-tools .img3 {
+        position: absolute;
+        left: 0;
+        bottom: -3rem;
+        width: 300px;
+        height: auto;
+    }
+
     .article-main img {
         display: none;
     }
 
-}
+    .quality-section>article>h3 {
+        font-size: 3.5rem;
+    }
 
-@media screen and (width < 801px) {
-    .section-tours {
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    .quality-section>article>div p {
+        font-size: 1.6rem;
+    }
+
+    .quality-section>article>div p strong {
+        font-size: 1.8rem;
+    }
+
+    .check-element p {
+        font-size: x-large;
+    }
+
+    .meet-us h2 {
+        font-size: 3rem;
 
     }
 
+    .meet-us h3 {
+        font-size: 2rem;
+
+    }
+
+    .meet-us a {
+        font-size: 1.5rem;
+    }
+
+    footer h2 {
+        font-size: 1.5rem;
+    }
+
+    footer>div a {
+        font-size: 1.3rem;
+    }
+
+    footer>div p {
+        font-size: 1.3rem;
+    }
+
+    .copy p {
+        font-size: 1rem;
+    }
+
+    .copy a {
+        font-size: 1rem;
+    }
+
+}
+
+@media screen and (width < 769px) {
+
+    .section-tours-title h1,
+    .professionalism-section h2 {
+        font-size: 3rem;
+        color: var(--brown);
+    }
+
+    .section-tours-title p,
+    .professionalism-section p {
+        font-size: 1.5rem;
+    }
+
+    .section-tours-title strong {
+        font-size: 1.8rem;
+    }
+
+    .section-tours {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    .quality-section>article>h3 {
+        font-size: 3rem;
+    }
+
+    .quality-section>article>div p {
+        font-size: 1.5rem;
+    }
+
+    .quality-section>article>div p strong {
+        font-size: 1.7rem;
+    }
+
+}
+
+@media screen and (width < 470px) {
+
+    .main-contact-section a,
+.quality-section>div a {
+    font-size: 1.3rem;
+}
+
+    .section-tours-title h1,
+    .professionalism-section h2 {
+        font-size: 2.5rem;
+    }
+
+    .section-tours-title h3,
+    .professionalism-section h3,
+    .quality-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .section-tours-title p,
+    .professionalism-section p {
+        font-size: 1.3rem;
+    }
+
+    .section-tours-title strong {
+        font-size: 1.5rem;
+    }
+
+    .section-tours {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    .professionalism-section h3 {
+        padding-left: 2rem;
+    }
+    
+    .professionalism-section h2 {
+        padding-left: 2rem;
+    }
+
+    .professionalism-section p {
+        padding-left: 2rem;
+    }
+    
+    
+    .quality-section>article>h3 {
+        font-size: 3rem;
+    }
+
+    .quality-section>article>div p {
+        font-size: 1.5rem;
+    }
+
+    .quality-section>article>div p strong {
+        font-size: 1.7rem;
+    }
 
 }
 
