@@ -74,3 +74,19 @@ const getProduct = async (req, res, next) => {
         return next(new HttpError("Error al obtener el producto", 500));
     }
 }
+
+/* Ver productos por categoría
+Ruta: get --> api/products/categories/:category
+NO PROTEGIDA */
+
+const getProductsByCategory = async (req, res, next) => {
+    try {
+        const { category } = req.params;
+        const categoryProducts = await Product.find( { category }).sort({ createdAt: -1});
+        if(!categoryProducts) return next(new HttpError("No se encontraron productos en esta categoría", 404));
+
+        res.status(200).json(categoryProducts);
+    } catch(err) {
+        return next(new HttpError("Error al obtener los productos", 500));
+    }
+}
