@@ -32,7 +32,7 @@ const productSchema = new Schema({
         required: true
     },
     creator: {
-        type: Schema.Tyoes.ObjectId, ref: 'User'
+        type: Schema.Types.ObjectId, ref: 'User'
     }
 }, { timestamps: true });
 
