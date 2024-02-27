@@ -4,7 +4,7 @@ import axios from 'axios';
 
 const Register = () => {
   const [userData, setUserData] = useState({
-    name: '',
+    username: '',
     email: '',
     password: '',
     confirmPassword: ''
@@ -40,10 +40,10 @@ const Register = () => {
         <h2>Registrarse</h2>
         <form action="" className="form-register__form" onSubmit={registerUser}>
          {error && <p className="form__error-message">{error}</p>}
-          <input type="text" name="username"  placeholder='Nombre completo' value={userData.username} onChange={changeInputHandler} autoFocus/>
-          <input type="email" name="email"  placeholder='Email' value={userData.email} onChange={changeInputHandler} />
-          <input type="password" name="password"  placeholder='contraseña' value={userData.password} onChange={changeInputHandler} />
-          <input type="password" name="confirmPassword"  placeholder='Confirmar contraseña' value={userData.confirmPassword} onChange={changeInputHandler} />
+          <input type="text" name="username"  placeholder='Nombre completo' value={userData.username} onChange={changeInputHandler} autoComplete='username' autoFocus/>
+          <input type="email" name="email"  placeholder='Email' value={userData.email} onChange={changeInputHandler} autoComplete='email'/>
+          <input type="password" name="password"  placeholder='contraseña' value={userData.password} onChange={changeInputHandler} autoComplete='new-password'/>
+          <input type="password" name="confirmPassword"  placeholder='Confirmar contraseña' value={userData.confirmPassword} onChange={changeInputHandler} autoComplete='new-password'/>
           <button type="submit" className='btn primary'>Registrarse</button>
         </form>
         <small>¿Ya tienes una cuenta? <Link to={`/login`}>iniciar sesión</Link> </small>

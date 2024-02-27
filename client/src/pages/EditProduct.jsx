@@ -8,6 +8,7 @@ import axios from "axios";
 const EditProduct = () => {
   const [productName, setProductName] = useState("");
   const [category, setCategory] = useState("No clasificado");
+  const [productPrice, setProductPrice] = useState("");
   const [productDescription, setProductDescription] = useState("");
   const [thumbnail, setThumbnail] = useState("");
   const [error, setError] = useState("");
@@ -82,6 +83,7 @@ const EditProduct = () => {
 
     const productData = new FormData();
     productData.set("productName", productName);
+    productData.set("productPrice", productPrice);
     productData.set("category", category);
     productData.set("productDescription", productDescription);
     productData.set("thumbnail", thumbnail);
@@ -93,6 +95,7 @@ const EditProduct = () => {
         { withCredentials: true, headers: { Authorization: `Bearer ${token}` } }
       );
       if (response.status == 200) {
+        console.log('edición')
         return navigate("/");
       }
     } catch (error) {
@@ -117,6 +120,12 @@ const EditProduct = () => {
             onChange={(e) => setProductName(e.target.value)}
             autoFocus
           />
+           <input
+            type="number"
+            placeholder="Precio"
+            value={productPrice}
+            onChange={(e) => setProductPrice(e.target.value)}
+          />
           <select
             name="category"
             value={category}
@@ -126,12 +135,12 @@ const EditProduct = () => {
               <option key={cat}>{cat}</option>
             ))}
           </select>
-          <ReactQuill
-            modules={modules}
-            formats={formats}
+          <textarea
+            placeholder="Descripción"
+            name="productDescription"
             value={productDescription}
-            onChange={setProductDescription}
-          />
+            onChange={(e) => setProductDescription(e.target.value)}
+          ></textarea>
           <input
             type="file"
             name="thumbnail"

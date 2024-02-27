@@ -17,7 +17,7 @@ const Login = () => {
 
   const changeInputHandler = (e) => {
     setUserData((prevState) => {
-      return { ...prevState, [e.target.username]: e.target.value };
+      return { ...prevState, [e.target.name]: e.target.value };
     });
   };
 
@@ -47,6 +47,7 @@ const Login = () => {
             value={userData.email}
             onChange={changeInputHandler}
             autoFocus
+            autoComplete='email'
           />
           <input
             type="password"
@@ -54,6 +55,7 @@ const Login = () => {
             placeholder="contraseña"
             value={userData.password}
             onChange={changeInputHandler}
+            autoComplete='current-password'
           />
           <button type="submit" className="btn primary">
             Iniciar sesión

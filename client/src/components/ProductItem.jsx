@@ -7,6 +7,7 @@ const ProductItem = ({
     category,
     productName,
     productDescription,
+    productPrice,
     thumbnail
 }) => {
 
@@ -28,6 +29,7 @@ const ProductItem = ({
             <Link to={`/products/categories/${category}`} className='btn category' >
                 {category}
             </Link>
+            <p>{productPrice}</p>
         </div>
     </article>
   )
