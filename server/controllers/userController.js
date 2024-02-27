@@ -158,3 +158,11 @@ const editUser = async (req, res, next) => {
         return next(new HttpError('No se pudo editar el usuario', 500));
     }
 }
+
+module.exports = {
+    registerUser,
+    loginUser,
+    getUser,
+    changeAvatar,
+    editUser,
+}
