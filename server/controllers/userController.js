@@ -84,3 +84,45 @@ const getUser = async (req, res, next) => {
         return next(new HttpError('No se pudo obtener el usuario', 500));
     }
 }
+
+/* Cambiar foto de perfild de usuario */
+/* Ruta: post : api/users/change-avatar */
+/* PROTEGIDA */
+
+const changeAvatar = async (req, res, next) => {
+    try {
+        if(!req.files.avatar) return next(new HttpError('No se ha cargado ninguna imagen', 422));
+
+        const user = await User.findById(req.user.id);
+
+        if(user.avatar) {
+            fs.unlink(path.join(__dirname, '..', 'uploads', user.avatar), (err) => {
+                if(err) return next(new HttpError('No se pudo cambiar la foto de perfil', 500));
+            })
+        }
+
+        const { avatar } = req.files;
+
+        if(avatar.size > 500000) return next(new HttpError('La imagen no debe pesar más de 500KB', 422));
+
+        let fileName = avatar.name;
+        let splittedName = fileName.split('.');
+        let newFIlename = splittedName[0] + uuid() + '.' + splittedName[splittedName.length - 1];
+
+        avatar.mv(path.join(__dirname, '..', 'uploads', newFIlename), async (err) => {
+            if(err) return next(new HttpError('No se pudo cambiar la foto de perfil', 500));
+
+            const updatedAvatar = await User.findByIdAndUpdate(
+                req.user.id,
+                { avatar: newFIlename },
+                { new: true },
+            );
+
+            if(!updatedAvatar) return next(new HttpError('No se pudo cambiar la foto de perfil', 500));
+
+            res.status(200).json(updatedAvatar);
+        });
+    } catch(err) {
+        return next(new HttpError('No se pudo cambiar la foto de perfil', 500));
+    }
+}
