@@ -1,4 +1,0 @@
-src/config.js
-.env
-storage/uploads/** 
-!.gitkeep
