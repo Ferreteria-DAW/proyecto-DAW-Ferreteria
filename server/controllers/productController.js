@@ -57,3 +57,20 @@ const getProducts = async (req, res, next) => {
         return next(new HttpError("Error al obtener los productos", 500));
     }
 }
+
+
+/* Ver un product
+Ruta: get --> api/products/:id
+NO PROTEGIDA */
+
+const getProduct = async (req, res, next) => {
+    try {
+        const productId = req.params.id;
+        const product = await Product.findById(productId);
+        if(!product) return next(new HttpError("Producto no encontrado", 404));
+
+        res.status(200).json(product);
+    } catch(err) {
+        return next(new HttpError("Error al obtener el producto", 500));
+    }
+}
