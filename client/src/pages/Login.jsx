@@ -37,7 +37,7 @@ const Login = () => {
   return (
     <section className="login">
       <div className="container">
-        <h2>Sign In</h2>
+        <h2>Inicio de sesión</h2>
         <form action="" className="form-login__form" onSubmit={loginUser}>
           {error && <p className="form__error-message">{error}</p>}
           <input
@@ -51,12 +51,12 @@ const Login = () => {
           <input
             type="password"
             name="password"
-            placeholder="password"
+            placeholder="contraseña"
             value={userData.password}
             onChange={changeInputHandler}
           />
           <button type="submit" className="btn primary">
-            login
+            Iniciar sesión
           </button>
         </form>
         <small>
