@@ -8,6 +8,21 @@ const Products = () => {
     const [products, setProducts] = useState([]);
     const [isLoading, setIsloading] = useState(false);
 
+    useEffect(() => {
+        const fetchProducts = async () => {
+            setIsloading(true);
+            try {
+                const response = await axios.get(`${process.env.REACT_APP_BASE_URL}/products`);
+                setProducts(response?.data);
+            } catch(err) {
+                console.log(err);
+            }
+            setIsloading(false);
+        }
+        fetchProducts();
+    }, []);
+
+    if(isLoading) return <Loader />
     
   return (
     <section className='products'>
