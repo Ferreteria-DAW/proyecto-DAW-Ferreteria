@@ -13,7 +13,7 @@ const Login = () => {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  const {setCurrentUser} = useContext(UserContext);
+  const {setUser} = useContext(UserContext);
 
   const changeInputHandler = (e) => {
     setUserData((prevState) => {
@@ -27,7 +27,7 @@ const Login = () => {
     try {
       const response = await axios.post(`${process.env.REACT_APP_BASE_URL}/users/login`, userData);
       const user = await response.data;
-      setCurrentUser(user);
+      setUser(user);
       navigate('/');
     } catch(err) {
       setError(err.response.data.message);
