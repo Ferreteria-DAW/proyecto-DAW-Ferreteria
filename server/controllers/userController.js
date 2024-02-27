@@ -41,3 +41,29 @@ const registerUser = async (req, res, next) => {
         next(new HttpError('No se pudo registrar el usuario', 500));
     }
 }
+/* Inicio de sesión Usuario */
+/* Ruta: post : api/users/login */
+/* NO PROTEGIDA */
+const loginUser = async (req, res, next) => {
+    try {
+        const { email, password } = req.body;
+        if(!email || !password) return next(new HttpError('Todos los campos son obligatorios', 422));
+        const lowerEmail = email.toLowerCase();
+        const user = await User.findOne({ email: lowerEmail });
+
+        if(!user) return next(new HttpError('El usuario no existe', 422));
+
+        const isMatch = await bcrypt.compare(password, user.password);
+
+        if(!isMatch) return next(new HttpError('Credenciales incorrectas', 422));
+        const { _id: id, name } = user;
+        const token = jwt.sign({ id, name }, process.env.JWT_SECRET, {
+            expiresIn: '1d',
+        });
+
+        res.status(200).json({ token, id, name });
+        
+    } catch(err) {
+        return next(new HttpError('No se pudo iniciar sesión', 500));
+    }
+}
