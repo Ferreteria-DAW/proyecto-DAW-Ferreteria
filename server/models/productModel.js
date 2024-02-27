@@ -12,8 +12,17 @@ const productSchema = new Schema({
     },
     category: {
         type: String,
-        required: true
-    },
+        enum: [
+          "Cerrajeria",
+          "Fontaneria",
+          "Pintura",
+          "Hogar",
+          "Decoracion",
+          "Iluminacion",
+          "No clasificado",
+        ],
+        message: "La categoría no es válida",
+      },
     productPrice: {
         type: Number,
         required: true
