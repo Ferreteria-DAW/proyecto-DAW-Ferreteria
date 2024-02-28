@@ -111,14 +111,14 @@ body {
 
 .section-tours {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(470px, 1fr));
     justify-content: center;
     align-items: center;
     gap: 4rem;
     margin-top: 2rem;
     margin-bottom: 2rem;
     padding: 2rem;
-    height: 80rem;
+    height: 90rem;
 }
 
 .col-1-of-3 {
@@ -155,11 +155,10 @@ body {
 
 .professionalism-section {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(435px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
     width: 100%;
     gap: 2rem;
-    margin: 0 auto;
-
+    margin-top: 10rem;
 }
 
 .professionalism-section h3 {
@@ -173,19 +172,21 @@ body {
     grid-column-start: 1;
     grid-column-end: 4;
 }
+.professionalism-section p{
+    width: 100%;
+}
 
 .professionalism-container {
     grid-column-start: 1;
     grid-column-end: 3;
-    display: flex;
-    gap: 5rem;
     text-align: justify;
 }
 
-.professionalism-container p{
+.professionalism-container p {
     width: 100%;
     padding: 5rem;
     padding-top: 0;
+    font-size: x-large;
 }
 
 .container-tools {
@@ -602,17 +603,20 @@ footer>div p {
     }
 }
 
+@media screen and (width < 1441px) {
+
+    .section-tours {
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        height: 90rem;
+    }
+}
+
 @media screen and (width < 1025px) {
 
     .section-tours-title h1,
     .professionalism-section h2 {
         font-size: 4rem;
         color: var(--brown);
-    }
-
-    .section-tours-title p,
-    .professionalism-section p {
-        font-size: 1.8rem;
     }
 
     .section-tours-title strong {
@@ -717,7 +721,7 @@ footer>div p {
 
     .section-tours {
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        height: 50rem;
+        height: 60rem;
     }
 
     .quality-section>article>h3 {
@@ -737,9 +741,9 @@ footer>div p {
 @media screen and (width < 470px) {
 
     .main-contact-section a,
-.quality-section>div a {
-    font-size: 1.2rem;
-}
+    .quality-section>div a {
+        font-size: 1.2rem;
+    }
 
     .section-tours-title h1,
     .professionalism-section h2 {
@@ -757,28 +761,24 @@ footer>div p {
         font-size: 1.3rem;
     }
 
-    .section-tours-title strong {
-        font-size: 1.5rem;
-    }
-
     .section-tours {
         grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
         height: 60rem;
     }
 
+    .professionalism-section {
+        grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    }
+
     .professionalism-section h3 {
         padding-left: 2rem;
     }
-    
+
     .professionalism-section h2 {
         padding-left: 2rem;
     }
 
-    .professionalism-section p {
-        padding-left: 2rem;
-    }
-    
-    
+
     .quality-section>article>h3 {
         font-size: 3rem;
     }
