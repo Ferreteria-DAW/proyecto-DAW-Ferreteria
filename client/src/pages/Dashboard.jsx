@@ -46,7 +46,7 @@ const Dashboard = () => {
 
   return (
     <section className="dashboard">
-      {products.length ? (
+      {products && products.length > 0 ? (
         <div className="container dashboard__container">
           {products.map((product) => {
             return (
@@ -59,13 +59,13 @@ const Dashboard = () => {
                 </div>
                 <div className="dashboard__product-actions">
                   <Link to={`/products/${product._id}`} className="btn sm">
-                    View
+                    Ver
                   </Link>
                   <Link
                     to={`/products/${product._id}/edit`}
                     className="btn sm primary"
                   >
-                    Edit
+                    Editar
                   </Link>
                   <DeleteProduct productId={product._id} />
                 </div>

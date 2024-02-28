@@ -92,6 +92,20 @@ const getProductsByCategory = async (req, res, next) => {
     }
 }
 
+/* Ver productos por usuario
+GET: api/products/users/:id
+NO PROTEGIDA */
+const getUserProducts = async (req, res, next) => {
+    try {
+      const { id } = req.params;
+      const userProducts = await Product.find({ creator: id }).sort({ createdAt: -1 });
+      
+      res.status(200).json(userProducts);
+    } catch (error) {
+      return next(new HttpError(error));
+    }
+  };
+
 /* Editar producto
 patch --> api/products/:id
 PROTEGIDA */
@@ -181,6 +195,7 @@ module.exports = {
     getProducts,
     getProduct,
     getProductsByCategory,
+    getUserProducts,
     editProduct,
     deleteProduct
 }
