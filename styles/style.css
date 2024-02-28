@@ -101,7 +101,6 @@ body {
 }
 
 .main-contact-section a:hover {
-    font-size: 1.5rem;
     text-decoration: underline;
     color: var(--orange);
 }
@@ -119,6 +118,7 @@ body {
     margin-top: 2rem;
     margin-bottom: 2rem;
     padding: 2rem;
+    height: 80rem;
 }
 
 .col-1-of-3 {
@@ -621,6 +621,7 @@ footer>div p {
 
     .section-tours {
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        height: 60rem;
     }
 
     .section-tours-title p,
@@ -716,6 +717,7 @@ footer>div p {
 
     .section-tours {
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        height: 50rem;
     }
 
     .quality-section>article>h3 {
@@ -736,7 +738,7 @@ footer>div p {
 
     .main-contact-section a,
 .quality-section>div a {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
 }
 
     .section-tours-title h1,
@@ -761,6 +763,7 @@ footer>div p {
 
     .section-tours {
         grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        height: 60rem;
     }
 
     .professionalism-section h3 {
