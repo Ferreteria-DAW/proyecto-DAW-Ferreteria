@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 import ProductItem from "./ProductItem";
-import Loader from "./Loader";
+import CircularProgress from '@mui/material/CircularProgress';
+
 
 const Products = () => {
   const [products, setProducts] = useState([]);
@@ -24,7 +25,7 @@ const Products = () => {
     fetchProducts();
   }, []);
 
-  if (isLoading) return <Loader />;
+  if (isLoading) return <CircularProgress />;
 
   return (
     <section className="products">

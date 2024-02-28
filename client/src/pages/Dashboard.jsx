@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 
 import axios from "axios";
-import Loader from "../components/Loader";
+import CircularProgress from '@mui/material/CircularProgress';
 import DeleteProduct from "./DeleteProduct";
 
 import { UserContext } from "../context/userContext";
@@ -42,7 +42,7 @@ const Dashboard = () => {
     fetchProducts();
   }, [id]);
 
-  if (isLoading) return <Loader />;
+  if (isLoading) return <CircularProgress />;
 
   return (
     <section className="dashboard">

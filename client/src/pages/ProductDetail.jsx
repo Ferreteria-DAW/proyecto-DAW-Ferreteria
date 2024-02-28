@@ -2,7 +2,7 @@ import React, {useContext, useEffect, useState} from "react";
 
 import { Link, useParams } from "react-router-dom";
 import {UserContext} from '../context/userContext'
-import Loader from '../components/Loader';
+import CircularProgress from '@mui/material/CircularProgress';
 import DeleteProduct from './DeleteProduct';
 import axios from 'axios';
 
@@ -29,7 +29,7 @@ const ProductDetail = () => {
   }, [])
 
   if(isLoading) {
-    return <Loader />
+    return <CircularProgress />
   }
 
   return (

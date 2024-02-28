@@ -63,27 +63,38 @@ const Header = () => {
             {user ? ( // Usuario autenticado
               <>
                 <Avatar className="mui-avatar" alt={user.username} src={`${process.env.REACT_APP_ASSETS_URL}/uploads/${avatar}`} />
-                <li onClick={navHandler}>
-                  <Link to={`/profile/${user.id}`}>
+                <li>
+                  <Link to={`/profile/${user.id}`}  onClick={window.innerWidth <= 768 && navHandler}>
                     {user.rol === "admin" ? "admin" : user?.username}
                   </Link>
                 </li>
                 {rol === "admin" && (
-                  <li onClick={navHandler}>
-                    <Link to="/create">Crear Producto</Link>
+                  <li>
+                    <Link to="/create" onClick={window.innerWidth <= 768 && navHandler}>Crear Producto</Link>
                   </li>
                 )}
-                <li onClick={navHandler}>
+                <li>
+                  <Link to="/" onClick={window.innerWidth <= 768 && navHandler}>
+                    Inicio
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/products" onClick={window.innerWidth <= 768 && navHandler}>
+                    Productos
+                  </Link>
+                </li>
+                <li>
                   <Link to="/logout">Logout</Link>
                 </li>
+                
               </>
             ) : ( // Usuario no autenticado
               <>
-                <li onClick={navHandler}>
-                  <Link to="/login">Iniciar sesión</Link>
+                <li>
+                  <Link to="/login" onClick={window.innerWidth <= 768 && navHandler}>Iniciar sesión</Link>
                 </li>
-                <li onClick={navHandler}>
-                  <Link to="/register">Registro</Link>
+                <li>
+                  <Link to="/register" onClick={window.innerWidth <= 768 && navHandler}>Registro</Link>
                 </li>
               </>
             )}

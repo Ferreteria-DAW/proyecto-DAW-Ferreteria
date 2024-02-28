@@ -3,7 +3,7 @@ import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { UserContext } from '../context/userContext';
 import axios from 'axios';
 
-import Loader from '../components/Loader';
+import CircularProgress from '@mui/material/CircularProgress';
 
 const DeleteProduct = ({productId: id}) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -33,7 +33,7 @@ const DeleteProduct = ({productId: id}) => {
     }
   };
 
-  if(isLoading) return <Loader />;
+  if(isLoading) return <CircularProgress />;
 
   return (
     <Link className='btn sm danger' onClick={() => removeProduct(id)}>Eliminar</Link>

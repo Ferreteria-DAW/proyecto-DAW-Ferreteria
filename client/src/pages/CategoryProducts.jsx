@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import ProductItem from '../components/ProductItem';
-import Loader from '../components/Loader';
+import CircularProgress from '@mui/material/CircularProgress';
 import axios from 'axios';
 
 
@@ -26,7 +26,7 @@ const CategoryProduct = () => {
       }, [category])
     
       if(isLoading) {
-        return <Loader />
+        return <CircularProgress />
       }
 
       return (
