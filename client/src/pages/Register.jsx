@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios';
+import PasswordStrength from '../components/passwordStrength';
 
 const Register = () => {
   const [userData, setUserData] = useState({
@@ -43,7 +44,8 @@ const Register = () => {
           <input type="text" name="username"  placeholder='Nombre completo' value={userData.username} onChange={changeInputHandler} autoComplete='username' autoFocus/>
           <input type="email" name="email"  placeholder='Email' value={userData.email} onChange={changeInputHandler} autoComplete='email'/>
           <input type="password" name="password"  placeholder='contraseña' value={userData.password} onChange={changeInputHandler} autoComplete='new-password'/>
-          <input type="password" name="confirmPassword"  placeholder='Confirmar contraseña' value={userData.confirmPassword} onChange={changeInputHandler} autoComplete='new-password'/>
+          {/* <input type="password" name="confirmPassword"  placeholder='Confirmar contraseña' value={userData.confirmPassword} onChange={changeInputHandler} autoComplete='new-password'/> */}
+          <PasswordStrength name={'confirmPassword'} value={userData.confirmPassword} placeholder={'Confirmar contraseña'} onChange={(value) => setUserData(prevState => ({...prevState, confirmPassword: value}))} />
           <button type="submit" className='btn primary'>Registrarse</button>
         </form>
         <small>¿Ya tienes una cuenta? <Link to={`/login`}>iniciar sesión</Link> </small>

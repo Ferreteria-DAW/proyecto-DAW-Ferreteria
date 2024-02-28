@@ -55,12 +55,12 @@ const loginUser = async (req, res, next) => {
         const isMatch = await bcrypt.compare(password, user.password);
 
         if(!isMatch) return next(new HttpError('Credenciales incorrectas', 422));
-        const { _id: id, name } = user;
-        const token = jwt.sign({ id, name }, process.env.JWT_SECRET, {
+        const { _id: id, username } = user;
+        const token = jwt.sign({ id, username }, process.env.JWT_SECRET, {
             expiresIn: '1d',
         });
 
-        res.status(200).json({ token, id, name });
+        res.status(200).json({ token, id, username });
         
     } catch(err) {
         return next(new HttpError('No se pudo iniciar sesión', 500));

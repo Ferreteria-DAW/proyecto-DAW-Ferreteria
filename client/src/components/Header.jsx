@@ -10,6 +10,7 @@ const Header = () => {
     window.innerWidth > 768 ? true : false
   );
   const { user } = useContext(UserContext);
+  console.log(user)
 
   const navHandler = () => {
     if (window.innerWidth <= 768) setIsNavShowing(false);
@@ -22,10 +23,10 @@ const Header = () => {
         <Link to="/" className="nav_logo" onClick={navHandler}>
           <img src="" alt="Logo" />
         </Link>
-        {user?.id && isNavShowing && (
+        {user?.id && isNavShowing && 
           <ul className="nav__menu">
             <li onClick={navHandler}>
-              <Link to={`/profile/${user.id}`}>{user?.name}</Link>
+              <Link to={`/profile/${user.id}`}>{user?.username}</Link>
             </li>
             <li onClick={navHandler}>
               <Link to="/create">Crear Producto</Link>
@@ -34,11 +35,14 @@ const Header = () => {
               <Link to="/logout">Logout</Link>
             </li>
           </ul>
-        )}
+        }
         {!user?.id && isNavShowing && (
           <ul className="nav__menu">
             <li onClick={navHandler}>
-              <Link to="/login">Login</Link>
+              <Link to="/login">Iniciar sesión</Link>
+            </li>
+            <li onClick={navHandler}>
+              <Link to="/register">Registro</Link>
             </li>
           </ul>
         )}

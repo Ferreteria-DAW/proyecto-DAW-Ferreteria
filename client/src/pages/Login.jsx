@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 import {UserContext} from '../context/userContext';
+import PasswordStrength from "../components/passwordStrength";
 
 const Login = () => {
   const [userData, setUserData] = useState({
@@ -49,14 +50,15 @@ const Login = () => {
             autoFocus
             autoComplete='email'
           />
-          <input
+          {/* <input
             type="password"
             name="password"
             placeholder="contraseña"
             value={userData.password}
             onChange={changeInputHandler}
             autoComplete='current-password'
-          />
+          /> */}
+           <PasswordStrength name={'password'} value={userData.password} placeholder={'Contraseña'} onChange={(value) => setUserData(prevState => ({...prevState, password: value}))} />
           <button type="submit" className="btn primary">
             Iniciar sesión
           </button>
