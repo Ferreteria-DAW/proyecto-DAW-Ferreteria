@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-import './index.css';
+import './index2.css';
 
 import Layout from './components/Layout';
 import HomePage from './pages/HomePage';
@@ -17,6 +17,7 @@ import DeleteProduct from './pages/DeleteProduct';
 import CategoryProducts from './pages/CategoryProducts';
 import Dashboard from './pages/Dashboard';
 import Logout from './pages/Logout';
+import ProductsPage from './pages/ProductsPage';
 import UserProvider from './context/userContext';
 
 const router = createBrowserRouter([
@@ -31,6 +32,7 @@ const router = createBrowserRouter([
       {path: 'login', element: <Login />},
       {path: 'profile/:id', element: <Profile />},
       {path: 'create', element: <CreateProduct />},
+      {path: 'products', element: <ProductsPage />},
       {path: 'products/:id/edit', element: <EditProduct />},
       {path: 'products/:id/delete', element: <DeleteProduct />},
       {path: 'products/categories/:category', element: <CategoryProducts />},

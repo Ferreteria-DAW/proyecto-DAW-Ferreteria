@@ -142,7 +142,7 @@ section {
 
 .error-page h2 {
     margin-top: 2rem;
-}
+} 
 
 
 /* ------------------------- NAVBAR ------------------------- */
@@ -181,12 +181,12 @@ nav {
 
 .nav__toggle-btn {
     display: none;
-}
+} 
 
 
 /* ------------------------- FOOTER ------------------------- */
 
-footer {
+/* footer {
     background: var(--color-gray-900);
     margin-top: 6rem;
     padding-top: 6rem;
@@ -221,7 +221,7 @@ footer {
     font-weight: 300;
 }
 
-
+ */
 
 /* ------------------------- PRODUCTS ------------------------- */
 
@@ -367,14 +367,6 @@ input, select, textarea {
     color: var(--color-primary);
 }
 
-/* ------------------------- CUSTOM STYLES FRO REACT QUILL ------------------------- */
-
-.ql-editor {
-    overflow: scroll;
-    background: var(--color-white);
-    height: 10rem !important;
-}
-
 
 
 
@@ -495,9 +487,9 @@ input, select, textarea {
         font-size: 1.35rem;
     }
 
-    .container {
+    /* .container {
         width: var(--container-width-md);
-    }
+    } */
 
     /* NAVBAR */
 
@@ -662,3 +654,11 @@ input.control::placeholder {
     background: #57c558;
     width: 100%;
 }
+
+
+
+
+
+
+
+

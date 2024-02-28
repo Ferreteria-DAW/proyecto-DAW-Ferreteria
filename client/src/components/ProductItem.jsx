@@ -30,14 +30,14 @@ const ProductItem = ({
       <p dangerouslySetInnerHTML={{ __html: substrDescription }} />
 
       <div className="product__footer">
-        <Link to={`/products/categories/${category}`} className="btn category">
+        <Link to={`/products/categories/${category}`} className="btn category product-category">
           {category}
         </Link>
-        <p>{`${productPrice} €`}</p>
-        <div className="buy-btn">
-          <button className="btn primary">Comprar</button>
-        </div>
+        <p className='price'>{`${productPrice} €`}</p>
       </div>
+        <div className="buy-btn">
+          <button className="btn primary buy">Comprar</button>
+        </div>
     </article>
   );
 };

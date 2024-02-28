@@ -48,9 +48,9 @@ const Dashboard = () => {
     <section className="dashboard">
       {products && products.length > 0 ? (
         <div className="container dashboard__container">
-          {products.map((product) => {
+          {products.map((product, index) => {
             return (
-              <article key={product.id} className="dashboard__product">
+              <article key={index} className="dashboard__product">
                 <div className="dashboard__product-info">
                   <div className="dashboard__product-thumbnail">
                     <img src={`${process.env.REACT_APP_ASSETS_URL}/uploads/${product.thumbnail}`} alt="" />

@@ -78,7 +78,7 @@ const CreateProduct = () => {
         { withCredentials: true, headers: { Authorization: `Bearer ${token}` } }
       );
       if (response.status == 201) {
-        return navigate("/");
+        return navigate("/products");
       }
     } catch (error) {
       setError(error.response.data.message);
@@ -88,7 +88,7 @@ const CreateProduct = () => {
   return (
     <section className="create-product">
       <div className="container">
-        <h2>Create product</h2>
+        <h2>Crear Producto</h2>
         {error && <p className="form__error-message">{error}</p>}
         <form
           action=""

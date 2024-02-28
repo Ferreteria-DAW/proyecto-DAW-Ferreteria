@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
 import { AiOutlineClose } from "react-icons/ai";
 import Avatar from '@mui/material/Avatar';
+import logo from "../images/toolstore/logoFerreteria.png";
 
 import axios from "axios";
 
@@ -11,7 +12,8 @@ import { UserContext } from "../context/userContext";
 const Header = () => {
  
   const [isNavShowing, setIsNavShowing] = useState(window.innerWidth > 768);
-
+  const [isBurgerActive, setIsBurgerActive] = useState(false)
+  console.log(isNavShowing)
   const { user } = useContext(UserContext);
   const rol = user ? user.rol : "";
 
@@ -21,6 +23,7 @@ const Header = () => {
     const handleResize = () => {
       setIsNavShowing(window.innerWidth > 768);
     };
+    console.log(isNavShowing)
 
     window.addEventListener("resize", handleResize);
 
@@ -54,8 +57,8 @@ const Header = () => {
   return (
     <nav>
       <div className="container nav__container">
-        <Link to="/" className="nav_logo" onClick={navHandler}>
-          <img src="" alt="Logo" />
+        <Link to="/">
+          <img src={logo} alt="Logo"  className="logo"/>
         </Link>
       
         {isNavShowing && ( // Mostrar el menú solo si isNavShowing es true
@@ -64,22 +67,22 @@ const Header = () => {
               <>
                 <Avatar className="mui-avatar" alt={user.username} src={`${process.env.REACT_APP_ASSETS_URL}/uploads/${avatar}`} />
                 <li>
-                  <Link to={`/profile/${user.id}`}  onClick={window.innerWidth <= 768 && navHandler}>
+                  <Link to={`/profile/${user.id}`}  onClick={isBurgerActive && navHandler}>
                     {user.rol === "admin" ? "admin" : user?.username}
                   </Link>
                 </li>
                 {rol === "admin" && (
                   <li>
-                    <Link to="/create" onClick={window.innerWidth <= 768 && navHandler}>Crear Producto</Link>
+                    <Link to="/create" onClick={isBurgerActive && navHandler}>Crear Producto</Link>
                   </li>
                 )}
                 <li>
-                  <Link to="/" onClick={window.innerWidth <= 768 && navHandler}>
+                  <Link to="/" onClick={isBurgerActive && navHandler}>
                     Inicio
                   </Link>
                 </li>
                 <li>
-                  <Link to="/products" onClick={window.innerWidth <= 768 && navHandler}>
+                  <Link to="/products" onClick={isBurgerActive && navHandler}>
                     Productos
                   </Link>
                 </li>
@@ -91,10 +94,13 @@ const Header = () => {
             ) : ( // Usuario no autenticado
               <>
                 <li>
-                  <Link to="/login" onClick={window.innerWidth <= 768 && navHandler}>Iniciar sesión</Link>
+                  <Link to="/about" onClick={isBurgerActive && navHandler}>Sobre nosotros</Link>
                 </li>
                 <li>
-                  <Link to="/register" onClick={window.innerWidth <= 768 && navHandler}>Registro</Link>
+                  <Link to="/login" onClick={isBurgerActive && navHandler}>Iniciar sesión</Link>
+                </li>
+                <li>
+                  <Link to="/register" onClick={isBurgerActive && navHandler}>Registro</Link>
                 </li>
               </>
             )}
@@ -103,7 +109,10 @@ const Header = () => {
 
         <button
           className="nav__toggle-btn"
-          onClick={navHandler} // Toggle de isNavShowing en lugar de cambiarlo directamente
+          onClick={() => {
+            navHandler(); 
+            setIsBurgerActive(!isBurgerActive);
+          }} // Toggle de isNavShowing en lugar de cambiarlo directamente
         >
           {isNavShowing ? <AiOutlineClose /> : <FaBars />}
         </button>

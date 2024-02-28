@@ -30,15 +30,16 @@ const CategoryProduct = () => {
       }
 
       return (
-        <section className="products">
+        <section className="products category">
       {products.length > 0 ? <div className="container products__container">
-        {products.map(({_id: id, thumbnail, category, productName, productDescription }, index) => (
+        {products.map(({_id: id, thumbnail, productPrice, category, productName, productDescription }, index) => (
           <ProductItem
             key={id}
             postID={id}
             thumbnail={thumbnail}
             category={category}
             productName={productName}
+            productPrice={productPrice}
             productDescription={productDescription}
           />
         ))}
