@@ -10,7 +10,7 @@ const Header = () => {
     window.innerWidth > 768 ? true : false
   );
   const { user } = useContext(UserContext);
-  console.log(user)
+  const rol = user ? user.rol : "";
 
   const navHandler = () => {
     if (window.innerWidth <= 768) setIsNavShowing(false);
@@ -23,29 +23,36 @@ const Header = () => {
         <Link to="/" className="nav_logo" onClick={navHandler}>
           <img src="" alt="Logo" />
         </Link>
-        {user?.id && isNavShowing && 
-          <ul className="nav__menu">
-            <li onClick={navHandler}>
-              <Link to={`/profile/${user.id}`}>{user?.username}</Link>
-            </li>
-            <li onClick={navHandler}>
-              <Link to="/create">Crear Producto</Link>
-            </li>
-            <li onClick={navHandler}>
-              <Link to="/logout">Logout</Link>
-            </li>
-          </ul>
-        }
-        {!user?.id && isNavShowing && (
-          <ul className="nav__menu">
-            <li onClick={navHandler}>
-              <Link to="/login">Iniciar sesión</Link>
-            </li>
-            <li onClick={navHandler}>
-              <Link to="/register">Registro</Link>
-            </li>
-          </ul>
+
+        {user ? ( // Usuario autenticado
+          <>
+            <ul className="nav__menu">
+              <li onClick={navHandler}>
+                <Link to={`/profile/${user.id}`}>{user?.username}</Link>
+              </li>
+              {rol === "admin" && (
+                <li onClick={navHandler}>
+                  <Link to="/create">Crear Producto</Link>
+                </li>
+              )}
+              <li onClick={navHandler}>
+                <Link to="/logout">Logout</Link>
+              </li>
+            </ul>
+          </>
+        ) : ( // Usuario no autenticado
+          <>
+            <ul className="nav__menu">
+              <li onClick={navHandler}>
+                <Link to="/login">Iniciar sesión</Link>
+              </li>
+              <li onClick={navHandler}>
+                <Link to="/register">Registro</Link>
+              </li>
+            </ul>
+          </>
         )}
+
         <button
           className="nav__toggle-btn"
           onClick={() => setIsNavShowing(!isNavShowing)}

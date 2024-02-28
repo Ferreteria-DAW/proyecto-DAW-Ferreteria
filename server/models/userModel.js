@@ -19,6 +19,11 @@ const userSchema = new Schema({
     avatar: {
         type: String
     },
+    rol: {
+        type: String,
+        default: 'user',
+        enum: ['user', 'admin']
+    }
 });
 
 module.exports = model('User', userSchema);

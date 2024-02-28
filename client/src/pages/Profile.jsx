@@ -83,9 +83,11 @@ const Profile = () => {
   return (
     <section className="profile">
       <div className="container profile__container">
-        <Link to={`/myproducts/${user.id}`} className="btn">
-          Productos
-        </Link>
+        {user && user.rol === "admin" && 
+          <Link to={`/myproducts/${user.id}`} className="btn">
+            Productos
+          </Link>
+        }
         <div className="profile__details">
           <div className="avatar__wrapper">
             <div className="profile__avatar">
@@ -156,7 +158,7 @@ const Profile = () => {
               value={confirmNewPassword}
               onChange={(e) => setConfirmNewPassword(e.target.value)}
             />
-            
+
             <button type="submit" className="btn primary">
               Actualizar usuario
             </button>
