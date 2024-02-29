@@ -17,7 +17,7 @@ function showSlides(n) {
   
   clearTimeout(timer); // Limpia el timer actual
   timer = setTimeout(function() { showSlides(slideIndex += 1); }, 4000); // Establece un nuevo timer
-}
+}   
 
 // Inicializa el slider
 showSlides(slideIndex);
