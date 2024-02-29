@@ -155,7 +155,7 @@ body {
 
 .professionalism-section {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
     width: 100%;
     gap: 2rem;
     margin-top: 10rem;
@@ -172,9 +172,6 @@ body {
     grid-column-start: 1;
     grid-column-end: 4;
 }
-.professionalism-section p{
-    width: 100%;
-}
 
 .professionalism-container {
     grid-column-start: 1;
@@ -187,6 +184,7 @@ body {
     padding: 5rem;
     padding-top: 0;
     font-size: x-large;
+    width: 100%;
 }
 
 .container-tools {
@@ -338,10 +336,14 @@ body {
 
 .article-main img {
     width: 100rem;
-    border-radius: 50%;
+    border-radius: 35%;
 }
 
-.quality-section>article>div p strong {
+.quality-section p{
+    font-size: 2rem;
+}
+
+.quality-section strong{
     font-size: 2.2rem;
 }
 
@@ -359,14 +361,12 @@ body {
 }
 
 .check-element {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+    text-align: center;
     margin: 2rem;
 }
 
 .check-element p {
+    margin: 0 auto;
     font-size: x-large;
 }
 
@@ -633,6 +633,16 @@ footer>div p {
         font-size: 1.6rem;
     }
 
+    .professionalism-section h2, 
+    .professionalism-section h3{
+        padding-left: 3rem;
+    }
+
+    .professionalism-container p {
+        padding: 3rem;
+        padding-top: 0;
+    }
+
     .container-tools img {
         width: 20rem;
         border-radius: 2rem;
@@ -654,18 +664,13 @@ footer>div p {
         font-size: 3.5rem;
     }
 
-    .quality-section>article>div p {
+    .quality-section p {
         font-size: 1.6rem;
     }
 
-    .quality-section>article>div p strong {
-        font-size: 1.8rem;
+    .quality-section strong {
+        font-size: 1.7rem;
     }
-
-    .check-element p {
-        font-size: x-large;
-    }
-
     .meet-us h2 {
         font-size: 3rem;
 
@@ -728,12 +733,12 @@ footer>div p {
         font-size: 3rem;
     }
 
-    .quality-section>article>div p {
+    .quality-section p {
         font-size: 1.5rem;
     }
 
-    .quality-section>article>div p strong {
-        font-size: 1.7rem;
+    .quality-section strong {
+        font-size: 1.6rem;
     }
 
 }
@@ -771,11 +776,21 @@ footer>div p {
     }
 
     .professionalism-section h3 {
-        padding-left: 2rem;
+        padding-left: 1.8rem;
     }
 
     .professionalism-section h2 {
         padding-left: 2rem;
+    }
+
+    .professionalism-section h2, 
+    .professionalism-section h3{
+        padding-left: 2rem;
+    }
+
+    .professionalism-container p {
+        padding: 2rem;
+        padding-top: 0;
     }
 
 
@@ -783,12 +798,23 @@ footer>div p {
         font-size: 3rem;
     }
 
-    .quality-section>article>div p {
-        font-size: 1.5rem;
+    .quality-section p {
+        font-size: 1.3rem;
     }
 
-    .quality-section>article>div p strong {
-        font-size: 1.7rem;
+    .quality-section strong {
+        font-size: 1.4rem;
+    }
+
+    .check-container {
+
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+
+    }
+    
+    .check-element img {
+        width: 15px;
     }
 
 }
