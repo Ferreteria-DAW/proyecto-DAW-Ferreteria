@@ -192,7 +192,7 @@ const HomePage = () => {
       <h3>Ferretería en Gijón</h3>
       <div className="right-container">
         <h2>Conoce Nuestra Ferretería</h2>
-        <a href="templates/contacto.html">Más Info</a>
+        <Link to="/contact">Más Info</Link>
       </div>
 
       <div className="meet-us__img-container">

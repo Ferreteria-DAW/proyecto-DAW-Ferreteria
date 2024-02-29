@@ -78,7 +78,6 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     justify-content: center;
-    align-items: center;
     gap: 4rem;
     margin-top: 2rem;
     margin-bottom: 2rem;
@@ -86,8 +85,8 @@ body {
 }
 
 .col-1-of-3 {
-    margin: 0 auto;
-    width: 100%;
+    margin-inline: auto;
+    width: fit-content;
     height: 100%;
 }
 
@@ -343,6 +342,7 @@ body {
     padding: 8rem;
     height: 50vh;
     margin-bottom: 15rem;
+    width: 100%;
 }
 
 .meet-us h2 {
@@ -369,7 +369,7 @@ body {
     color: var(--white);
     text-decoration: none;
     margin: 0 auto;
-    font-size: 2rem;
+    font-size: 1.4rem;
     padding: 2rem;
     border-radius: 2rem;
     transition: all .2s;
@@ -386,10 +386,12 @@ body {
     justify-content: center;
     align-items: center;
     gap: 3.7rem;
+    width: fit-content;
 }
 
 .meet-us__img-container img {
     border-radius: 2rem;
+    width: 30rem;
 }
 
 .customers-reviews-section {
@@ -1667,14 +1669,14 @@ button.swiper-pagination-bullet {
   }
   
   .card__price-only {
-    margin-top: 3rem;
-    font-size: 2rem;
+    margin-top: 4rem;
+    font-size: 1.4rem;
     text-transform: uppercase;
   }
   
   .card__price-value {
     margin-top: 3rem;
-    font-size: 2rem;
+    font-size: 1.4rem;
     font-weight: 100;
   }
   
