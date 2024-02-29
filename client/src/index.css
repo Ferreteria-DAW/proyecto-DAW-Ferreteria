@@ -2316,6 +2316,7 @@ input.control::placeholder {
     margin-bottom: 4rem;
 }
 
+
 .product-detail__header {
     display: flex;
     justify-content: space-between;
@@ -2340,6 +2341,14 @@ input.control::placeholder {
     font-size: 1.2rem;
     display: inline-block;
     margin-inline: auto;
+}
+
+.product-detail p:last-of-type {
+    display: flex;
+    justify-content: flex-end;
+    text-decoration: underline;
+    margin-top: 2rem;
+    font-size: 3rem;
 }
 
 

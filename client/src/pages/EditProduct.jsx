@@ -26,34 +26,6 @@ const EditProduct = () => {
     if (!token) navigate("/login");
   }, []);
 
-  const modules = {
-    toolbar: [
-      [{ header: [1, 2, 3, 4, 5, 6, false] }],
-      ["bold", "italic", "underline", "strike", "blockquote"],
-      [
-        { list: "ordered" },
-        { list: "bullet" },
-        { indent: "-1" },
-        { indent: "+1" },
-      ],
-      ["link", "image"],
-      ["clean"],
-    ],
-  };
-
-  const formats = [
-    "header",
-    "bold",
-    "italic",
-    "underline",
-    "strike",
-    "blockquote",
-    "list",
-    "bullet",
-    "indent",
-    "link",
-    "image",
-  ];
 
   const PRODUCT_CATEGORIES = [
     "Cerrajeria",
@@ -70,6 +42,8 @@ const EditProduct = () => {
         try {
             const response = await axios.get(`${process.env.REACT_APP_BASE_URL}/products/${id}`);
             setProductName(response.data.productName);
+            setProductPrice(response.data.productPrice);
+            setCategory(response.data.category);
             setProductDescription(response.data.productDescription);
         } catch(err) {
             setError(err);
@@ -106,7 +80,7 @@ const EditProduct = () => {
   return (
     <section className="create-product">
       <div className="container">
-        <h2>Edit product</h2>
+        <h2>Editar Producto</h2>
         {error && <p className="form__error-message">{error}</p>}
         <form
           action=""

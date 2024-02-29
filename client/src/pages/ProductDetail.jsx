@@ -50,6 +50,7 @@ const ProductDetail = () => {
           <img src={`${process.env.REACT_APP_ASSETS_URL}/uploads/${product.thumbnail}`} alt="" />
         </div>
         <p dangerouslySetInnerHTML={{__html: product.productDescription}}></p>
+        <p>{product.productPrice} €</p>
       </div>}
     </section>
   );

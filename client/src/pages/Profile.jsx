@@ -88,7 +88,7 @@ const Profile = () => {
       <div className="container profile__container">
         {user && user.rol === "admin" && 
           <Link to={`/myproducts/${user.id}`} className="btn">
-            Productos
+            DashBoard
           </Link>
         }
         <div className="profile__details">
