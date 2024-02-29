@@ -324,7 +324,7 @@ header img{
     background-color: var(--orange);
     position: relative;
     padding: 8rem;
-    height: 50vh;
+    height: 100vh;
     margin-bottom: 15rem;
 }
 
@@ -344,7 +344,9 @@ header img{
     display: flex;
     justify-content: space-between;
     margin-left: 15rem;
+    margin-bottom: 10px;
 }
+    /* Meet Us  */
 
 .meet-us a{
     background-color: var(--brown);
@@ -361,17 +363,93 @@ header img{
     }
 }
 
-.meet-us__img-container{
-    margin-top: 5rem;
-    position: absolute;
-    display: flex;
-    justify-content: center;
+/* Slide */
+
+.slider {
+    position: relative;
+    width: 100%; /* El slider ocupará el ancho completo de su contenedor padre */
+    max-width: 600px; /* Puedes ajustar esto según el diseño de tu sitio */
+    margin: auto;
+    overflow: hidden;
+  }
+
+  .slides{
+    width: 100%; /* Asegura que el contenedor de las diapositivas ocupe el ancho completo del slider */
+  }
+  
+  .slides .slide {
+    display: none;
+    width: 100%;
+    height: 420px; /* Altura fija para el contenedor del slider */
+    transition: 0.5s ease;
     align-items: center;
-    gap: 3.7rem;
+    justify-content: center;
+  }
+  
+  .slides .slide img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover; /* Esto asegura que las imágenes cubran el área disponible sin distorsionarse */
+    border-radius: 15px; /* Ajusta este valor para controlar el redondeo de los bordes */
 }
-.meet-us__img-container img{
-    border-radius: 2rem; 
-}
+  
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 45%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px; /* ajuste */
+    color: white;
+    font-size: 24px;
+    background-color: rgb(12, 51, 132); /* Naranja con transparencia */
+    border-radius: 0 10px 10px 0;
+    user-select: none;
+  }
+  
+  .prev {
+    position: absolute;
+    left: 0;
+  }
+  
+  .next {
+    position: absolute;
+    right: 0;
+    border-radius: 10px 0  0 10px;
+  }
+  
+  .prev:hover, .next:hover {
+    background-color: rgba(255, 98, 0, 0.9); /* Naranja más oscuro al pasar el ratón */
+  }
+  
+  .dots-container {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  .dot:hover, .dot:hover {
+    background-color: #ff8c00; /* Cambia #ff8c00 al código de color naranja que prefieras */
+  }
+
+  .dot.active, .dot.active:hover {
+    background-color: rgb(12, 51, 132); 
+  }
+  
+
+
+/* End Slide */
+
 
 .customers-reviews-section{
     background-color: var(--brown);

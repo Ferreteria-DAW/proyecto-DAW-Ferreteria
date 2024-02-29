@@ -327,16 +327,37 @@
             <h2>Conoce Nuestra Ferretería</h2>
             <a href="templates/contacto.html">Más información</a>
         </div>
-       
-        <div class="meet-us__img-container">
-            <img src="assets/img/meet-us1.png" alt="">
-            <img src="assets/img/meet-us2.png" alt="">
-            <img src="assets/img/meet-us1.png" alt="">
-            <img src="assets/img/meet-us2.png" alt="">
-        </div>
-    </section>
 
-    <section class="container">
+        <!-- SLIDER -->
+        <div class="slider">
+          <div class="slides">
+            <div class="slide"><img src="assets/img/meet-us1.png" alt="Meet Us Image 1"></div>
+            <div class="slide"><img src="assets/img/meet-us2.png" alt="Meet Us Image 2"></div>
+            <div class="slide"><img src="assets/img/meet-us1.png" alt="Meet Us Image 3"></div>
+            <div class="slide"><img src="assets/img/meet-us2.png" alt="Meet Us Image 4"></div>
+          </div>
+          <div class="prev" onclick="moverSlide(-1)">&#10094;</div>
+          <div class="next" onclick="moverSlide(1)">&#10095;</div>
+          <div class="dots-container">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+          </div>
+        </div>
+       
+
+
+<!--         <div class="meet-us__img-container">
+            <img src="assets/img/meet-us1.png" alt="">
+            <img src="assets/img/meet-us2.png" alt="">
+            <img src="assets/img/meet-us1.png" alt="">
+            <img src="assets/img/meet-us2.png" alt="">
+        </div> -->
+
+    </section>
+<!-- 
+     <section class="container">
       <div class="testimonial mySwiper">
         <div class="testi-content swiper-wrapper">
           <div class="slide swiper-slide">
@@ -372,12 +393,12 @@
           <div class="swiper-button-next nav-btn"></div>
           <div class="swiper-button-prev nav-btn"></div>
           <div class="swiper-pagination"></div>
-  
         </div>
-        
       </div>
-
     </section>
+  
+   -->
+  
 
     
       <section class="SlideLogo">
@@ -534,7 +555,9 @@
     </section>
 
     <!--SWIPPER JS-->
-    <script src="scripts/swiper-bundle.min.js"></script>
+<!--     <script src="scripts/swiper-bundle.min.js"></script> -->
     <script src="scripts/slider.js"></script>
+    <script src="scripts/sliderMeetUs.js"></script>
   </body>
 </html>
+ 
