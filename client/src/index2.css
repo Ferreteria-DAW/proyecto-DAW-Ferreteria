@@ -425,6 +425,7 @@ footer {
     gap: 4rem;
     color: var(--white);
     font-size: 1rem;
+    margin-top: 14rem;
 }
 
 footer h2 {
@@ -1960,7 +1961,22 @@ input:focus::placeholder, select:focus::placeholder, textarea:focus::placeholder
     display: grid;
     place-items: center;
 }
+.create-product {
+    height: auto;
+}
 
+.create-product button {
+    margin-top: -3rem;
+}
+
+.create-product input[type="file"] {
+    margin-top: -3rem;
+    margin-left: -1.5rem;
+}
+
+.select-category {
+    font-size: 1.4rem;
+}
 .register h2,
 .login h2,
 .create-product h2 {
@@ -2159,7 +2175,10 @@ input.control::placeholder {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 4rem;
+   
 }
+
+
 
 .product {
     background: var(--color-white);

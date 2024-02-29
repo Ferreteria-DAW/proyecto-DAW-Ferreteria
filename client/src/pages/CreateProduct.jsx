@@ -114,12 +114,13 @@ const CreateProduct = () => {
             onChange={(e) => setCategory(e.target.value)}
           >
             {PRODUCT_CATEGORIES.map((cat) => (
-              <option key={cat}>{cat}</option>
+              <option key={cat} className="select-category">{cat}</option>
             ))}
           </select>
           <textarea
             placeholder="Descripción"
             name="productDescription"
+            rows="10"
             value={productDescription}
             onChange={(e) => setProductDescription(e.target.value)}
           ></textarea>

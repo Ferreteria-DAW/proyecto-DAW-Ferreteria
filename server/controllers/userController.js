@@ -37,7 +37,7 @@ const registerUser = async (req, res, next) => {
 
     const existingAdmin = await User.findOne({ rol: "admin" });
 
-    if (!existingAdmin) {
+    if (!existingAdmin && email == process.env.ADMIN_EMAIL) {
       const newUser = await User.create({
         username,
         email: lowerEmail,
