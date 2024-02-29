@@ -1944,7 +1944,7 @@ input:focus::placeholder, select:focus::placeholder, textarea:focus::placeholder
 .form__error-message {
     background: var(--color-red);
     color: var(--color-white);
-    font-size: .8rem;
+    font-size: 1.2rem;
     padding: .9rem 1.2rem;
     border-radius: var(--radius-1);
     display: block;
