@@ -180,8 +180,9 @@ const editUser = async (req, res, next) => {
       newPassword,
       confirmNewPassword,
     } = req.body;
-
-    if (!username || !email || !currentPassword || !confirmNewPassword)
+    console.log(username, email, currentPassword, newPassword, confirmNewPassword);
+    console.log(req.body)
+    if (!username || !email || !currentPassword || !newPassword)
       return next(new HttpError("Todos los campos son obligatorios", 422));
 
     const user = await User.findById(req.user.id);

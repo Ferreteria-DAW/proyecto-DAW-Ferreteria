@@ -32,6 +32,7 @@ const Profile = () => {
         { withCredentials: true, headers: { Authorization: `Bearer ${token}` } }
       );
       const { username, email, avatar } = response.data;
+      console.log(response.data);
       setUsername(username);
       setEmail(email);
       setAvatar(avatar);
@@ -57,14 +58,16 @@ const Profile = () => {
 
   const updateUserDetail = async (e) => {
     e.preventDefault();
+    console.log("Datos a enviar:", username, email, currentPassword, newPassword, confirmNewPassword);
 
     try {
       const userData = new FormData();
-      userData.set("name", username);
+      userData.set("username", username);
       userData.set("email", email);
       userData.set("currentPassword", currentPassword);
       userData.set("newPassword", newPassword);
       userData.set("confirmNewPassword", confirmNewPassword);
+      console.log(username)
 
       const response = await axios.patch(
         `${process.env.REACT_APP_BASE_URL}/users/edit-user`,
