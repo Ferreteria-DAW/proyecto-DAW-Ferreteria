@@ -79,13 +79,14 @@ body {
     width: 100px;
 }
 
-.main-contact-section {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 5rem;
-    margin-bottom: 5rem;
+.main-contact-section{
+    text-align: center;
+}
+
+.main-contact-section>div{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
 }
 
 
@@ -111,7 +112,7 @@ body {
 
 .section-tours {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(470px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     justify-content: center;
     align-items: center;
     gap: 4rem;
@@ -155,7 +156,7 @@ body {
 
 .professionalism-section {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     width: 100%;
     gap: 2rem;
     margin-top: 10rem;
@@ -184,7 +185,6 @@ body {
     padding: 5rem;
     padding-top: 0;
     font-size: x-large;
-    width: 100%;
 }
 
 .container-tools {
@@ -377,7 +377,7 @@ body {
 .meet-us {
     background-color: var(--orange);
     position: relative;
-    padding: 8rem;
+    padding: 4rem;
     height: 50vh;
     margin-bottom: 15rem;
 }
@@ -407,26 +407,13 @@ body {
     text-decoration: none;
     margin: 0 auto;
     font-size: 2rem;
-    padding: 2rem;
+    padding: 1rem;
     border-radius: 2rem;
     transition: all .2s;
 
     &:hover {
         transform: scale(1.1);
     }
-}
-
-.meet-us__img-container {
-    margin-top: 5rem;
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 3.7rem;
-}
-
-.meet-us__img-container img {
-    border-radius: 2rem;
 }
 
 .customers-reviews-section {
@@ -456,7 +443,7 @@ body {
 footer {
     background-color: var(--brown);
     width: 100%;
-    padding: 5rem;
+    padding: 2rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 4rem;
@@ -514,7 +501,6 @@ footer>div p {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    height: 10vh;
     background-color: #3f2714;
 }
 
@@ -603,14 +589,6 @@ footer>div p {
     }
 }
 
-@media screen and (width < 1441px) {
-
-    .section-tours {
-        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-        height: 90rem;
-    }
-}
-
 @media screen and (width < 1025px) {
 
     .section-tours-title h1,
@@ -619,14 +597,15 @@ footer>div p {
         color: var(--brown);
     }
 
+    .section-tours {
+        height: 60rem;
+    }
+
+
     .section-tours-title strong {
         font-size: 2rem;
     }
 
-    .section-tours {
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        height: 60rem;
-    }
 
     .section-tours-title p,
     .professionalism-section p {
@@ -724,11 +703,6 @@ footer>div p {
         font-size: 1.8rem;
     }
 
-    .section-tours {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        height: 60rem;
-    }
-
     .quality-section>article>h3 {
         font-size: 3rem;
     }
@@ -771,10 +745,6 @@ footer>div p {
         height: 60rem;
     }
 
-    .professionalism-section {
-        grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
-    }
-
     .professionalism-section h3 {
         padding-left: 1.8rem;
     }
@@ -791,6 +761,16 @@ footer>div p {
     .professionalism-container p {
         padding: 2rem;
         padding-top: 0;
+    }
+
+    .container-tools img {
+        width: 17rem;
+        border-radius: 2rem;
+    }
+    
+    .container-tools .img3 {
+        height: 14rem;
+        margin-left: 2rem;
     }
 
 
@@ -815,6 +795,19 @@ footer>div p {
     
     .check-element img {
         width: 15px;
+    }
+
+    .right-container h2{
+        font-size: 2rem;
+    }
+
+    footer{
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .copy{
+        justify-content: center;
+        flex-direction: column;
     }
 
 }
