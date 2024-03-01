@@ -31,3 +31,11 @@ body{
     border-radius: 25px;
     box-shadow: 3px 3px 8px #c4c4c4, -3px -3px 8px #fff;
 }
+
+#container.active .toggle{
+    left: 40px;
+}
+
+body.active{
+    background-color: rgb(23, 23, 23);
+}
