@@ -18,6 +18,8 @@ import CategoryProducts from './pages/CategoryProducts';
 import Dashboard from './pages/Dashboard';
 import Logout from './pages/Logout';
 import ProductsPage from './pages/ProductsPage';
+import Contact from './pages/Contact';
+import About from './pages/About';
 import UserProvider from './context/userContext';
 
 const router = createBrowserRouter([
@@ -37,7 +39,9 @@ const router = createBrowserRouter([
       {path: 'products/:id/delete', element: <DeleteProduct />},
       {path: 'products/categories/:category', element: <CategoryProducts />},
       {path: 'myproducts/:id', element: <Dashboard />},
+      {path: 'about', element: <About />},
       {path: 'logout', element: <Logout />},
+      {path: 'contact', element: <Contact />}
     ]
 
   }
