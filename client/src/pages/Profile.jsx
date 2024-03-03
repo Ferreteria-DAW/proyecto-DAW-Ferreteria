@@ -51,10 +51,12 @@ const Profile = () => {
         { withCredentials: true, headers: { Authorization: `Bearer ${token}` } }
       );
       setAvatar(response?.data.avatar);
+      window.location.reload();
     } catch (err) {
       console.log(err);
     }
   };
+
 
   const updateUserDetail = async (e) => {
     e.preventDefault();
