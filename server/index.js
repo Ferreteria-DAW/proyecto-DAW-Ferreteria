@@ -4,7 +4,7 @@ const { connect } = require("mongoose");
 require("dotenv").config();
 const upload = require("express-fileupload");
 
-const userRoutes = erquire("./routes/userRoutes.js");
+const userRoutes = require("./routes/userRoutes.js");
 const productRoutes = require("./routes/productsRoutes.js");
 const { notFound, errorHandler } = require("./middleware/errorMiddleware");
 
@@ -16,7 +16,7 @@ app.use(upload());
 app.use("/uploads", express.static(__dirname + "/uploads"));
 
 app.use("/api/users", userRoutes);
-app.use("/api/posts", postsRoutes);
+app.use("/api/products", productRoutes);
 
 app.use(notFound);
 app.use(errorHandler);

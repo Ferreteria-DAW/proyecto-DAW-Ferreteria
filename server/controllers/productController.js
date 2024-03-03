@@ -11,7 +11,7 @@ PROTEGIDA */
 
 const createProduct = async (req, res, next) => {
     try {
-        let { productName, productDescription, productPrice } = req.body;
+        let { productName, productDescription, productPrice, category } = req.body;
         if(!productName || !productDescription || !productPrice || !req.files) return next(new HttpError("Por favor ingrese todos los campos", 400));
 
         const { thumbnail } = req.files;
@@ -25,10 +25,11 @@ const createProduct = async (req, res, next) => {
             if(err) return next(new HttpError("Error al subir la imagen", 500));
 
             else {
-                const newProduct = await productDescription.create({
+                const newProduct = await Product.create({
                     productName,
                     productDescription,
                     productPrice,
+                    category,
                     thumbnail: newFilename,
                     creator: req.user.id,
                 });
@@ -51,7 +52,7 @@ NO PROTEGIDA */
 
 const getProducts = async (req, res, next) => {
     try {
-        const products = await Post.find().sort( { createdAt: -1});
+        const products = await Product.find().sort( { createdAt: -1});
         res.status(200).json(products);
     } catch(err) {
         return next(new HttpError("Error al obtener los productos", 500));
@@ -90,6 +91,20 @@ const getProductsByCategory = async (req, res, next) => {
         return next(new HttpError("Error al obtener los productos", 500));
     }
 }
+
+/* Ver productos por usuario
+GET: api/products/users/:id
+NO PROTEGIDA */
+const getUserProducts = async (req, res, next) => {
+    try {
+      const { id } = req.params;
+      const userProducts = await Product.find({ creator: id }).sort({ createdAt: -1 });
+      
+      res.status(200).json(userProducts);
+    } catch (error) {
+      return next(new HttpError(error));
+    }
+  };
 
 /* Editar producto
 patch --> api/products/:id
@@ -180,6 +195,7 @@ module.exports = {
     getProducts,
     getProduct,
     getProductsByCategory,
+    getUserProducts,
     editProduct,
     deleteProduct
 }
