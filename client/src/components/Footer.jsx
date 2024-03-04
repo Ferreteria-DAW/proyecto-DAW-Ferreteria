@@ -1,8 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import toggleMenu from '../toggle';
+
 
 const Footer = () => {
+
+  const toggleMenu = () => {
+    const toggle = document.getElementById('boton-container');
+    toggle.classList.toggle('active');
+  };
   
   return (
     // <footer>
@@ -47,9 +52,9 @@ const Footer = () => {
     </div>
     
     
-<div id="boton-container" className='active'>
-    <div className="toggle" onClick={toggleMenu}></div>
-</div>
+    <div id="boton-container" className="active">
+      <div className="toggle" onClick={toggleMenu}></div>
+    </div>
   </footer>
   
   )

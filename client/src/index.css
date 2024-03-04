@@ -2799,3 +2799,19 @@ body.active {
     background-color: #000;
     color: #fff;
 }
+
+.switch-btn {
+    font-size: 3rem;
+    cursor: pointer;
+}
+
+body.dark {
+    background-color: #000;
+    & .container{
+
+    }
+
+    & input {
+
+    }
+}

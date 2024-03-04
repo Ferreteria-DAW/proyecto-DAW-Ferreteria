@@ -5,6 +5,8 @@ import { AiOutlineClose } from "react-icons/ai";
 import Avatar from '@mui/material/Avatar';
 import logo from "../images/toolstore/logoFerreteria.png";
 
+import { FaRegSun } from "react-icons/fa";
+
 import axios from "axios";
 
 import { UserContext } from "../context/userContext";
@@ -53,6 +55,12 @@ const Header = () => {
   const navHandler = () => {
     setIsNavShowing(!isNavShowing);
   };
+
+  const handleToggle = () => {
+    const body = document.querySelector('body');
+    body.classList.toggle('dark');
+    console.log('click')
+  }
 
   return (
     <nav>
@@ -107,6 +115,7 @@ const Header = () => {
                 </li>
               </>
             )}
+            <FaRegSun className="switch-btn" onClick={handleToggle}/>
           </ul>
         )}
 
