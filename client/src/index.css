@@ -2811,7 +2811,76 @@ body.dark {
         color: #fff;
     }
 
-    & footer {
+    & .contact-link{
+        color: #fff;        
+    }
+    & footer{
         background-color: rgba(255, 255, 255, 0.08);
     }
+
+    & .card{
+        background-color: #121212;
+    }
+
+    & .card__side--front{
+        background-color: #3d3d3d;
+    }
+
+    & .card__side--back{
+        background-color: #000;
+    }
+
+    & .card__side--back-1 {
+        background-image: linear-gradient(to right bottom, #000000, #000000);
+    }
+    
+    & .card__heading{
+        color: #fff;
+    }
+
+    & .card__details h3{
+        color: #ffffff;
+    }
+
+    & .card__details ul li{
+        color: #fff;
+    }
+
+    & .card__cta{
+        background-color: #000000;
+    }
+
+    & .card__price-box{
+        color: #fff;
+    }
+
+    & .card__price-only{
+        color: #fff;
+    }
+
+    & .card__price-value{
+        color: #fff;
+    }
+
+    & .btn{
+        background-color: #000000;
+        color: #fff;
+    }
+
+    & .btn:hover{
+        background-color: #000000;
+        color: #fff;
+    }
+
+    & .btn--white{
+        background-color: #ffffff;
+        color: #000000;
+    }
+
+    & .btn--white:hover{
+        background-color: #424242;
+        color: #fff;
+    }
+
+    
 }
