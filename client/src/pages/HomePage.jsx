@@ -69,7 +69,7 @@ const HomePage = () => {
           category={"Pintura"}
           title={"Materiales para pintar"}
           description={
-            "Disponemos de pinturas profesionales con colores personalizados, para exterior, interior o muebles"
+            "Disponemos de pinturas profesionales para exterior, interior o muebles"
           }
         />
         <Card
@@ -92,27 +92,25 @@ const HomePage = () => {
         <h3>PROFESIONALIDAD Y EXCELENCIA</h3>
         <h2>Ferretería en Gijón</h2>
         <div className="professionalism-container">
-          <p>
-            Si necesitas hacer una copia de una llave en Gijón, ¡estás en el
-            lugar correcto! Realizamos copias de llaves para cualquier tipo de
-            cerradura. También puedes encontrar una amplia variedad de
-            cerraduras para puertas y armarios en nuestra tienda. Además,
-            ofrecemos una selección de pinturas de calidad, así como productos
-            de droguería y todo tipo de menaje del hogar. No nos olvidamos de
-            las herramientas. Disponemos de una amplia variedad de herramientas
-            de calidad para todo tipo de proyectos, incluyendo eléctricas y de
-            batería. También encontrarás una selección de productos de
-            decoración para el hogar, como cuadros, espejos y objetos
-            decorativos. Por otro lado, si necesitas cualquier pieza de
-            fontanería, ¡no busques más ! Ofrecemos multitud de productos de
-            fontanería, como tuberías, grifos y accesorios para baño y cocina.
-            También contamos con productos de grifería de calidad para todo tipo
-            de necesidades. Si necesitas algo específico que no encuentras en
-            nuestra tienda, haremos todo lo posible por conseguirlo para ti. Te
-            esperamos en nuestra ferretería en Gijón.
-          </p>
-
-
+            <p>
+              Si necesitas hacer una copia de una llave en Gijón, ¡estás en el
+              lugar correcto! Realizamos copias de llaves para cualquier tipo de
+              cerradura. También puedes encontrar una amplia variedad de
+              cerraduras para puertas y armarios en nuestra tienda. Además,
+              ofrecemos una selección de pinturas de calidad, así como productos
+              de droguería y todo tipo de menaje del hogar. No nos olvidamos de
+              las herramientas. Disponemos de una amplia variedad de herramientas
+              de calidad para todo tipo de proyectos, incluyendo eléctricas y de
+              batería. También encontrarás una selección de productos de
+              decoración para el hogar, como cuadros, espejos y objetos
+              decorativos. Por otro lado, si necesitas cualquier pieza de
+              fontanería, ¡no busques más ! Ofrecemos multitud de productos de
+              fontanería, como tuberías, grifos y accesorios para baño y cocina.
+              También contamos con productos de grifería de calidad para todo tipo
+              de necesidades. Si necesitas algo específico que no encuentras en
+              nuestra tienda, haremos todo lo posible por conseguirlo para ti. Te
+              esperamos en nuestra ferretería en Gijón.
+            </p>
           <div className="container-tools">
             <div><img src={tool1} alt="Imagen herramientas" className="img1" />
               <img src={tool2} alt="Imagen herramientas" className="img2" />

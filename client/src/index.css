@@ -82,6 +82,7 @@ body {
     height: 4rem;
     font-size: 2rem;
     text-decoration: none;
+    transition: 0.5s;
 }
 
 .quality-section>div a {
@@ -95,8 +96,7 @@ body {
 }
 
 .main-contact-section a:hover {
-    text-decoration: underline;
-    color: var(--orange);
+    transform: translateY(-0.5rem);
 }
 
 .main-contact-section:visited {
@@ -147,6 +147,7 @@ body {
 }
 
 .professionalism-section {
+    position: relative;
     width: 100%;
     gap: 2rem;
     margin: 0 auto;
@@ -157,7 +158,6 @@ body {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 5rem;
-    text-align: justify;
     width: 100%;
 }
 
@@ -731,22 +731,23 @@ footer>div p {
         font-size: 1.3rem;
     }
 
+    .container-tools img {
+        width: 15rem;
+    }
+
     .container-tools .img3 {
         left: 1.5rem;
+        height: 10rem;
     }
 
     .section-tours-title strong {
         font-size: 1.5rem;
+        
     }
 
     .section-tours {
         grid-template-columns: repeat(2, 1fr);
     }
-
-    .professionalism-section p {
-        padding: 1rem;
-    }
-
 
     .quality-section>article>h3 {
         font-size: 3rem;
@@ -1710,7 +1711,7 @@ button.swiper-pagination-bullet {
     margin-top: 2rem;
     text-transform: uppercase;
     text-decoration: none;
-    padding: 1.5rem 4rem;
+    padding: 1rem 2rem;
     display: inline-block;
     border-radius: 10rem;
     transition: all .2s;
@@ -1927,7 +1928,7 @@ textarea:focus {
 button {
     background-color: rgba(242, 148, 0, 255);
     color: var(--blue);
-    padding: 10px 20px;
+    padding: 3px 10px;
     border: none;
     border-radius: 10px;
     cursor: pointer;
@@ -1983,7 +1984,7 @@ footer>div a {
 /* NUEVOS */
 
 a {
-    color: var(--color-gray-700);
+    color: var(--blue);
     text-decoration: none;
 }
 
@@ -2126,11 +2127,15 @@ nav {
 
 .nav__menu li {
     font-size: 2.5rem;
+    background-color: var(--orange);
+    border-radius: 1rem;
+    padding: 0.2rem 1rem;
+    font-weight: bold;
+    transition: 0.5s;
 }
 
 .nav__menu li:hover {
-    text-decoration: underline;
-    color: var(--color-secondary-dark);
+    transform: scale(1.05);
 }
 
 .nav__toggle-btn {
@@ -2615,18 +2620,21 @@ input.control::placeholder {
 
     .nav__menu {
         position: absolute;
-        top: 5rem;
+        top: 4rem;
         right: 0;
         flex-direction: column;
         gap: 0;
     }
 
     .nav__menu li {
-        width: 100%;
+        width: 160px;
         animation: dropDown .5s ease forwards;
         opacity: 0;
+        margin: 0.5rem;
+        margin-right: 5rem;
         transform: rotateX(90deg);
         transform-origin: top;
+        text-align: center;
     }
 
     @keyframes dropDown {
@@ -2657,15 +2665,15 @@ input.control::placeholder {
     }
 
     .nav__menu li a {
-        display: block;
-        ;
         padding: .85rem 2.5rem;
         margin-right: 8rem;
         text-decoration: none;
+        transition: 0.5s;
+        margin: 0 auto;
     }
 
-    .nav__menu li a:hover {
-        color: var(--orange);
+     .nav__menu li a:hover {
+        transform: scale(1.1);
     }
 
     .nav__toggle-btn {
@@ -2674,7 +2682,7 @@ input.control::placeholder {
         border: none;
         font-size: 3.2rem;
         cursor: pointer;
-        z-index: 1000;
+        z-index: 1;
     }
 
     .product__container {
