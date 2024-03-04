@@ -82,6 +82,12 @@ const Header = () => {
                   </Link>
                 </li>
                 <li>
+                  <Link to="/about" onClick={isBurgerActive && navHandler}>Sobre nosotros</Link>
+                </li>
+                <li>
+                  <Link to="/contact" onClick={isBurgerActive && navHandler}>Contacto</Link>
+                </li>
+                <li>
                   <Link to="/products" onClick={isBurgerActive && navHandler}>
                     Productos
                   </Link>
@@ -93,9 +99,7 @@ const Header = () => {
               </>
             ) : ( // Usuario no autenticado
               <>
-                <li>
-                  <Link to="/about" onClick={isBurgerActive && navHandler}>Sobre nosotros</Link>
-                </li>
+               
                 <li>
                   <Link to="/login" onClick={isBurgerActive && navHandler}>Iniciar sesión</Link>
                 </li>
