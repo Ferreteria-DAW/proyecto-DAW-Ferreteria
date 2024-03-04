@@ -585,7 +585,28 @@ footer>div p {
     }
 }
 
-@media screen and (width<769px) {
+@media screen and (width<768px) {
+    .about-us{
+        display: flex;
+        flex-direction: column;
+        gap: 5rem;
+        padding: 5rem;
+
+        & .col-about-1 p {
+            font-size: 2rem;
+            line-height: 1.75;
+            text-align: center;
+            margin-top: 3rem;
+        }
+    }
+
+    .about-us img{
+        width: 100%;
+        margin-top: 0;
+    }
+}
+
+@media screen and (width=768px){
     .about-us{
         display: flex;
         flex-direction: column;
@@ -597,6 +618,7 @@ footer>div p {
         width: 100%;
         margin-top: 0;
     }
+
 }
 
 @media screen and (width=820px){
