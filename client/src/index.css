@@ -17,13 +17,14 @@
     --black: rgba(0, 0, 0, 255);
     --blue: rgb(12, 51, 132);
     --shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-
+ 
     --color-secondary-light: #ffb900;
     --color-secondary-dark: #ff7730;
-
+ 
     --color-tertiary-light: #2998ff;
     --color-tertiary-dark: #5643fa;
-
+}
+:root {
     --color-primary: #6f6af8;
     --color-white: #fff;
     --color-red: rgb(255, 63, 63);
@@ -33,15 +34,15 @@
     --color-gray-500: hsl(220, 20%, 10%, 50%);
     --color-gray-700: #252542;
     --color-gray-900: #0c0c22;
-
+ 
     --color-bg: hwb(240 95% 0%);
-
+ 
     --transition: all 0.3s ease;
-
+ 
     --container-width-lg: 84%;
     --container-width-md: 92%;
     --form-width: 50%;
-
+ 
     --radius-1: .3rem;
     --radius-2: .6rem;
     --radius-3: 1rem;
@@ -59,24 +60,29 @@ body {
 }
 
 
-
-
 .logo {
-    margin-left: -5rem;
-    width: 7rem;
+    margin: 5rem;
+    width: 100px;
 }
 
 .main-contact-section {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 0 auto;
     gap: 5rem;
+    width: 80%;
     margin-bottom: 5rem;
+    border-bottom: 2px solid var(--blue);
 }
 
+.main-contact-section a{
+    text-align: center;
+    width: 100%;
+    height: 3rem;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
 
-.main-contact-section a,
 .quality-section>div a {
     font-size: 1.5rem;
     text-decoration: none;
@@ -99,8 +105,9 @@ body {
 
 .section-tours {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     justify-content: center;
+    align-items: center;
     gap: 4rem;
     margin-top: 2rem;
     margin-bottom: 2rem;
@@ -108,8 +115,8 @@ body {
 }
 
 .col-1-of-3 {
-    margin-inline: auto;
-    width: fit-content;
+    margin: 0 auto;
+    width: 100%;
     height: 100%;
 }
 
@@ -141,7 +148,7 @@ body {
 
 .professionalism-section {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(435px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     width: 100%;
     gap: 2rem;
     margin: 0 auto;
@@ -149,38 +156,35 @@ body {
 }
 
 .professionalism-section h3 {
-    padding-left: 5rem;
+    padding-left: 2rem;
     grid-column-start: 1;
     grid-column-end: 4;
 }
 
 .professionalism-section h2 {
-    padding-left: 5rem;
+    padding-left: 2rem;
     grid-column-start: 1;
     grid-column-end: 4;
 }
 
 .professionalism-container {
-    grid-column-start: 1;
-    grid-column-end: 3;
     display: flex;
     gap: 5rem;
     text-align: justify;
+    padding-left:2rem ;
 }
 
 .professionalism-container p{
     width: 100%;
-    padding: 5rem;
-    padding-top: 0;
 }
 
 .container-tools {
-    grid-column-start: 3;
-    grid-column-end: 5;
     position: relative;
-    min-width: 400px;
-    height: 100%;
-    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 500px;
 }
 
 .container-tools img {
@@ -188,7 +192,6 @@ body {
     border-radius: 2rem;
 }
 
-.img1,
 .img2 {
     margin-left: 2rem;
 }
@@ -196,7 +199,7 @@ body {
 .container-tools .img3 {
     position: absolute;
     left: 0;
-    bottom: -3rem;
+    top: 28rem;
     width: 400px;
     /* Cambia este valor al ancho deseado */
     height: auto;
@@ -336,19 +339,19 @@ body {
 
 .check-container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
     width: 100%;
-    margin-top: 2rem;
+    margin-top: 4rem;
     justify-content: center;
     align-items: center;
 }
 
 .check-element {
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin: 2rem;
 }
 
 .check-element p {
@@ -365,7 +368,6 @@ body {
     padding: 8rem;
     height: 50vh;
     margin-bottom: 15rem;
-    width: 100%;
 }
 
 .meet-us h2 {
@@ -392,7 +394,7 @@ body {
     color: var(--white);
     text-decoration: none;
     margin: 0 auto;
-    font-size: 1.4rem;
+    font-size: 2rem;
     padding: 2rem;
     border-radius: 2rem;
     transition: all .2s;
@@ -409,12 +411,10 @@ body {
     justify-content: center;
     align-items: center;
     gap: 3.7rem;
-    width: fit-content;
 }
 
 .meet-us__img-container img {
     border-radius: 2rem;
-    width: 30rem;
 }
 
 .customers-reviews-section {
@@ -444,17 +444,16 @@ body {
 footer {
     background-color: var(--brown);
     width: 100%;
-    padding: 5rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 4rem;
     color: var(--white);
-    font-size: 1rem;
-    margin-top: 14rem;
+    font-size: 2.2rem;
+    padding: 2rem;
 }
 
 footer h2 {
-    font-size: 1.8rem;
+    font-size: 2.3rem;
     color: var(--orange);
 }
 
@@ -465,25 +464,25 @@ footer div {
 
 
 .col1 {
-    width: 90%;
+    margin-left: 2rem;
+    width: 100%;
     line-height: 2;
-
 }
 
 .col2 {
-    width: 100%;
+    margin-left: 2rem;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    width: 100%;
 }
 
 .col3 {
+    margin-left: 2rem;
     width: 100%;
-    line-height: 2;
 }
 
 footer>div a {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: white;
     text-decoration: none;
 
@@ -494,7 +493,7 @@ footer>div a {
 }
 
 footer>div p {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: white;
 }
 
@@ -583,15 +582,6 @@ footer>div p {
     }
 }
 
-@media screen and (width < 1750px) {
-    .container-tools {
-        grid-column-start: 1;
-        grid-column-end: 3;
-        grid-row-start: 4;
-        grid-row-end: 5;
-    }
-}
-
 @media screen and (width < 1025px) {
 
     .section-tours-title h1,
@@ -607,10 +597,6 @@ footer>div p {
 
     .section-tours-title strong {
         font-size: 2rem;
-    }
-
-    .section-tours {
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     }
 
     .section-tours-title p,
@@ -684,7 +670,6 @@ footer>div p {
     .copy a {
         font-size: 1rem;
     }
-
 }
 
 @media screen and (width < 769px) {
@@ -700,12 +685,23 @@ footer>div p {
         font-size: 1.5rem;
     }
 
-    .section-tours-title strong {
-        font-size: 1.8rem;
+    .professionalism-section{
+        grid-template-columns:repeat(1, 1fr);
     }
 
-    .section-tours {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    .container-tools {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 4;
+        grid-row-end: 5;
+    }
+
+    .container-tools .img3{
+        left: 16.4rem;
+    }
+
+    .section-tours-title strong {
+        font-size: 1.8rem;
     }
 
     .quality-section>article>h3 {
@@ -719,6 +715,7 @@ footer>div p {
     .quality-section>article>div p strong {
         font-size: 1.7rem;
     }
+
 
 }
 
@@ -750,7 +747,7 @@ footer>div p {
     }
 
     .section-tours {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .professionalism-section h3 {
@@ -776,6 +773,26 @@ footer>div p {
 
     .quality-section>article>div p strong {
         font-size: 1.7rem;
+    }
+
+    footer{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    footer h2 {
+        font-size: 1.2rem;
+    }
+
+    footer>div a {
+        font-size: 1rem;
+    }
+
+    footer>div p {
+        font-size: 1rem;
+    }
+
+    .col1, .col2, .col3{
+        margin-left: 0.5rem;
     }
 
 }
@@ -1571,8 +1588,7 @@ button.swiper-pagination-bullet {
     perspective: 150rem;
     -moz-perspective: 150rem;
     position: relative;
-    height: 25rem;
-    width: 30rem;
+    height: 35rem;
   }
   
   .card__side {
@@ -1654,8 +1670,7 @@ button.swiper-pagination-bullet {
   .card__details img {
     width: 8rem;
     height: auto;
-    position: relative;
-    margin-inline: auto;
+    margin: 0 auto;
     margin-top: 5rem;
     margin-bottom: 2rem;
   }
@@ -1688,18 +1703,17 @@ button.swiper-pagination-bullet {
   .card__price-box {
     text-align: center;
     color: #fff;
-    margin-bottom: 8rem;
   }
   
   .card__price-only {
-    margin-top: 4rem;
-    font-size: 1.4rem;
+    margin-top: 3rem;
+    font-size: 2rem;
     text-transform: uppercase;
   }
   
   .card__price-value {
-    margin-top: 3rem;
-    font-size: 1.4rem;
+    margin-top: 2rem;
+    font-size: 2rem;
     font-weight: 100;
   }
   
@@ -1720,47 +1734,38 @@ button.swiper-pagination-bullet {
   }
   
   .btn:hover {
+    background-color:  var(--blue);
     transform: translateY(-3px);
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
   }
-  
-  .btn:hover::after {
-    transform: scaleX(1.4) scaleY(1.6);
-    opacity: 0;
-  }
-  
-  .btn:active,
-  .btn:focus {
-    outline: none;
-    transform: translateY(-1px);
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
-  }
-  
-  .btn--white {
-    background-color: #fff;
-    color: #777;
-  }
-  
-  .btn--white::after {
-    background-color: #fff;
-  }
-  
-  @media screen and (width < 7025px) {
-    .card__details h3 {
-      font-size: 2.5rem;
-    }
-  }
+
   
   @media screen and (width < 769px) {
     .card__details h3 {
       font-size: 2rem;
     }
+
+    .card__price-only{
+        font-size: 1.8rem;
+    }
+
+    .card__price-value {
+        font-size: 1.5rem;
+      }
   }
   
   @media screen and (width < 480px) {
     .card__details h3 {
       font-size: 1.7rem;
     }
+
+    .card__price-only{
+        font-size: 1.7rem;
+    }
+
+    .card__price-value {
+        font-size: 1.4rem;
+      }
   }
 
   /* CONTACT */
@@ -1786,6 +1791,7 @@ button.swiper-pagination-bullet {
     text-decoration: none; 
     color: black;  
 }
+
 .main-contact-section a:hover{
     text-decoration: underline; 
     color: rgba(242,148,0,255);  
@@ -1974,38 +1980,11 @@ button {
 
 footer{
     background-color:  rgba(75,47,27,255);
-    padding: 10rem;
-    padding-left: 20rem;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    padding: 2rem;
     gap: 4rem;
 }
 
-footer > div h2{
-    font-size: 2.2rem;
-    color: white;
-    margin-bottom: 4rem;
-}
-
-.col1{
-    width: 40rem;
-    line-height: 2;
-}
-
-.col2{
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin-top: -1rem;
-    margin-left: 7rem;
-}
-
-.col3{
-    line-height: 2;
-}
-
 footer > div a{
-    font-size: 1.8rem;
     color: white;
     text-decoration: none;
 
@@ -2013,11 +1992,6 @@ footer > div a{
         color: var(--color-secondary-dark);
         text-decoration: underline;
     }
-}
-
-footer > div p{
-    font-size: 1.8rem;
-    color: white;
 }
 
 .copy{
@@ -2095,6 +2069,10 @@ section {
     margin-inline: auto;
 }
 
+.card__price-only{
+    color: var(--blue);
+}
+
 .btn {
     display: inline-block;
     font-size: 1.1rem !important;
@@ -2134,7 +2112,7 @@ section {
 }
 
 .btn:hover {
-    background: var(--color-gray-900);
+    background: var(--blue);
     color: var(--color-white);
 }
 

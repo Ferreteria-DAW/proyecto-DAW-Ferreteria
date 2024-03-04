@@ -127,8 +127,7 @@ const HomePage = () => {
             <p>
               Si necesitas hacer una copia de una llave en Gijón, ¡estás en el
               lugar correcto! <strong></strong>Realizamos copias de llaves para
-              cualquier tipo de
-              <strong>cerradura</strong>. También puedes encontrar una amplia
+              cualquier tipo de. También puedes encontrar una amplia
               variedad de cerraduras para puertas y armarios en nuestra tienda.
               Además,
               <strong>ofrecemos una selección de pinturas de calidad</strong>,
@@ -160,26 +159,27 @@ const HomePage = () => {
 
           <div className="check-container">
             <div className="check-element">
+              <img src={img8} alt="Logo check" className="icon" />
               <p>
-                <img src={img8} alt="Logo check" className="icon" />
                 Reparaciones
               </p>
             </div>
             <div className="check-element">
+              <img src={img8} alt="Logo check" className="icon" />
               <p>
-                <img src={img8} alt="Logo check" className="icon" />
                 Bricolaje
               </p>
             </div>
             <div className="check-element">
+              <img src={img8} alt="Logo check" className="icon" />
               <p>
-                <img src={img8} alt="Logo check" className="icon" />
                 Decoración
               </p>
             </div>
             <div className="check-element">
+
+              <img src={img8} alt="Logo check" className="icon" />
               <p>
-                <img src={img8} alt="Logo check" className="icon" />
                 Obra nueva
               </p>
             </div>
@@ -187,21 +187,21 @@ const HomePage = () => {
         </article>
       </section>
 
-      
-    <section className="meet-us">
-      <h3>Ferretería en Gijón</h3>
-      <div className="right-container">
-        <h2>Conoce Nuestra Ferretería</h2>
-        <Link to="/contact">Más Info</Link>
-      </div>
 
-      <div className="meet-us__img-container">
-        <img src={meet1} alt="" />
-        <img src={meet2} alt="" />
-        <img src={meet1} alt="" />
-        <img src={meet2} alt="" />
-      </div>
-    </section> /
+      <section className="meet-us">
+        <h3>Ferretería en Gijón</h3>
+        <div className="right-container">
+          <h2>Conoce Nuestra Ferretería</h2>
+          <Link to="/contact">Más Info</Link>
+        </div>
+
+        <div className="meet-us__img-container">
+          <img src={meet1} alt="" />
+          <img src={meet2} alt="" />
+          <img src={meet1} alt="" />
+          <img src={meet2} alt="" />
+        </div>
+      </section>
     </main>
   );
 };
