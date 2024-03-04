@@ -528,14 +528,16 @@ footer>div p {
 .about-us {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 3rem;
-    padding: 15rem;
-    font-size: 2.5rem;
-    gap: 5rem;
+    gap: 10rem;
+    padding: 11rem;
+    font-size: 2rem;
+    
 
     & img {
-        width: 70rem;
+        width: 55rem;
         height: auto;
+        margin-top: 8rem;
+        border-radius: 2rem;
         grid-row: 1 / 2;
         grid-column: 2 / 3;
         align-self: center;
@@ -580,6 +582,34 @@ footer>div p {
             transform: scale(1.1);
             background-color: #3f2714;
         }
+    }
+}
+
+@media screen and (width<769px) {
+    .about-us{
+        display: flex;
+        flex-direction: column;
+        gap: 5rem;
+        padding: 5rem;
+    }
+
+    .about-us img{
+        width: 100%;
+        margin-top: 0;
+    }
+}
+
+@media screen and (width=820px){
+    .about-us{
+        display: flex;
+        flex-direction: column;
+        gap: 5rem;
+        padding: 5rem;
+    }
+
+    .about-us img{
+        width: 100%;
+        margin-top: 0;
     }
 }
 
@@ -2764,4 +2794,9 @@ input.control::placeholder {
 
 .input-image{
     border: none;
+}
+
+.img-ferreteria-about{
+    width: 400px;
+    height: 300px;
 }
