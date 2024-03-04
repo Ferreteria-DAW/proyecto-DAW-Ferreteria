@@ -62,8 +62,8 @@ body {
 
 
 .logo {
-    margin: 5rem;
-    width: 100px;
+    margin: 1rem;
+    width: 120px;
 }
 
 .main-contact-section {
@@ -248,12 +248,6 @@ body {
 .logos {
     display: flex;
     animation: scroll 15s linear alternate infinite;
-}
-
-.logo {
-    flex: 0 0 auto;
-    box-sizing: border-box;
-    margin-right: 80px;
 }
 
 .logoMarca {
@@ -666,6 +660,10 @@ footer>div p {
 }
 
 @media screen and (width < 769px) {
+    .logo {
+        width: 80px;
+    }
+    
 
     .main-contact-section a {
         font-size: 1.7rem;
@@ -747,6 +745,11 @@ footer>div p {
 
     .section-tours {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .check-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
     }
 
     .quality-section>article>h3 {
@@ -2101,7 +2104,6 @@ nav {
     width: 100vw;
     display: grid;
     place-items: center;
-    background: rgba(255, 255, 255, 0.5);
     z-index: 1;
     border-bottom: 4px solid var(--color-bg);
     backdrop-filter: blur(20px);
@@ -2111,6 +2113,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
     height: 100%;
 }
 
@@ -2120,18 +2123,23 @@ nav {
 }
 
 .nav__menu {
+    margin: 5rem;
     display: flex;
     align-items: center;
-    gap: 3rem;
 }
 
 .nav__menu li {
     font-size: 2.5rem;
-    background-color: var(--orange);
+    margin: 2rem;
     border-radius: 1rem;
-    padding: 0.2rem 1rem;
+    padding: 0.3rem 1rem;
     font-weight: bold;
     transition: 0.5s;
+    border-radius: 1rem;
+    background-color: rgba(242, 148, 0, 255);
+}
+.nav__menu a{
+    width: 100%;
 }
 
 .nav__menu li:hover {
@@ -2614,27 +2622,32 @@ input.control::placeholder {
 
     /* NAVBAR */
 
-    .nav__container {
-        position: relative;
-    }
-
     .nav__menu {
         position: absolute;
-        top: 4rem;
-        right: 0;
+        display: flex;
         flex-direction: column;
-        gap: 0;
+        align-items: center;
+        z-index: 1;
+        top: -5rem;
+        right: 20%;
+        height: 15rem;
+        background-color: var(--orange);
+        animation: dropDown .5s ease forwards;
+        border-bottom-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
     }
 
     .nav__menu li {
-        width: 160px;
         animation: dropDown .5s ease forwards;
         opacity: 0;
-        margin: 0.5rem;
-        margin-right: 5rem;
+        top: 2rem;
         transform: rotateX(90deg);
         transform-origin: top;
         text-align: center;
+        background-color: none;
+        margin-bottom: 2px;
+        border-radius: 1rem;
+        padding: 0;
     }
 
     @keyframes dropDown {
