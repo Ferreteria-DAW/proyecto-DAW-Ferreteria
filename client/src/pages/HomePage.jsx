@@ -111,12 +111,14 @@ const HomePage = () => {
             nuestra tienda, haremos todo lo posible por conseguirlo para ti. Te
             esperamos en nuestra ferretería en Gijón.
           </p>
-        </div>
 
-        <div className="container-tools">
-          <img src={tool1} alt="Imagen herramientas" className="img1" />
-          <img src={tool2} alt="Imagen herramientas" className="img2" />
-          <img src={prices} alt="Mensaje precios" className="img3" />
+
+          <div className="container-tools">
+            <div><img src={tool1} alt="Imagen herramientas" className="img1" />
+              <img src={tool2} alt="Imagen herramientas" className="img2" />
+            </div>
+            <img src={prices} alt="Mensaje precios" className="img3" />
+          </div>
         </div>
       </section>
 
