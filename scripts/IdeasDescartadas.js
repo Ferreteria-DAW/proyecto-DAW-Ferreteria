@@ -33,3 +33,25 @@ function currentSlide(n) {
   clearTimeout(timer); // Para el autoplay
   showSlides(slideIndex = n); // Muestra el slide correspondiente
 }
+
+
+
+// Añadir al final de tu archivo JavaScript actual
+
+let touchStartX = 0;
+let touchEndX = 0;
+
+function checkTouchMove() {
+  if (touchEndX < touchStartX) showSlides(slideIndex += 1); // Deslizar hacia la izquierda
+  if (touchEndX > touchStartX) showSlides(slideIndex -= 1); // Deslizar hacia la derecha
+}
+
+// Añade event listeners para el touch
+slides[0].parentNode.addEventListener('touchstart', e => {
+  touchStartX = e.changedTouches[0].screenX;
+});
+
+slides[0].parentNode.addEventListener('touchend', e => {
+  touchEndX = e.changedTouches[0].screenX;
+  checkTouchMove();
+});
