@@ -51,10 +51,6 @@ const Footer = () => {
       </p>
     </div>
     
-    
-    <div id="boton-container" className="active">
-      <div className="toggle" onClick={toggleMenu}></div>
-    </div>
   </footer>
   
   )
