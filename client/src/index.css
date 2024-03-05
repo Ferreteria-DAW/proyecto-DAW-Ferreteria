@@ -2814,10 +2814,11 @@ body.dark {
     & .contact-link{
         color: #fff;        
     }
-    & footer{
-        background-color: rgba(255, 255, 255, 0.08);
-    }
 
+    & .contact-link:hover{
+        color: #ff7730;
+    }
+    
     & .card{
         background-color: #121212;
     }
@@ -2829,7 +2830,7 @@ body.dark {
     & .card__side--back{
         background-color: #000;
     }
-
+    
     & .card__side--back-1 {
         background-image: linear-gradient(to right bottom, #000000, #000000);
     }
@@ -2837,19 +2838,19 @@ body.dark {
     & .card__heading{
         color: #fff;
     }
-
+    
     & .card__details h3{
         color: #ffffff;
     }
-
+    
     & .card__details ul li{
         color: #fff;
     }
-
+    
     & .card__cta{
         background-color: #000000;
     }
-
+    
     & .card__price-box{
         color: #fff;
     }
@@ -2861,26 +2862,50 @@ body.dark {
     & .card__price-value{
         color: #fff;
     }
-
+    
     & .btn{
         background-color: #000000;
         color: #fff;
     }
-
+    
     & .btn:hover{
         background-color: #000000;
         color: #fff;
     }
-
+    
     & .btn--white{
         background-color: #ffffff;
         color: #000000;
     }
-
+    
     & .btn--white:hover{
         background-color: #424242;
         color: #fff;
     }
+    
+    & .quality-section{
+        background-color: rgba(255, 255, 255, 0.3);
+    }
 
+    & .meet-us{
+        background-color: rgba(255, 255, 255, 0.16);
+
+        h3{
+            color: var(--orange);
+        }
+
+        .right-container link{
+            background-color: var(--orange);
+        }
+
+        .darkInfo{
+            background-color: var(--orange);
+        }
+    }
+
+
+    & footer{
+        background-color: rgba(255, 255, 255, 0.08);
+    }
     
 }
