@@ -37,7 +37,9 @@ const About = () => {
           </p>
         </div>
 
+
         <img
+          className="img-ferreteria-about"
           src={Img1}
           alt="ferreteriaDependiente"
         />
