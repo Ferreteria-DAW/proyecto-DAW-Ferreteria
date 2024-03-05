@@ -3,6 +3,9 @@ import phone from '../images/toolstore/telefono.png';
 import location from '../images/toolstore/location3.png';
 import message from '../images/toolstore/message.png';
 
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootsrap/dist/js/bootstrap.bundle.min";
+
 const Contact = () => {
   return (
     <>
@@ -56,6 +59,7 @@ const Contact = () => {
       </section>
 
       <section className="form-section">
+
         {/* GOOGLE MAPS --> <div id="map" className="map"></div> */}
         
         <div className="form-container">

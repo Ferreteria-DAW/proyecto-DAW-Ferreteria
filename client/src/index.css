@@ -598,6 +598,12 @@ footer>div p {
             text-align: center;
             margin-top: 3rem;
         }
+        .h3-about{
+            text-align: center;
+        }
+        .h1-about{
+            text-align: center;
+        }
     }
 
     .about-us img{
@@ -2833,3 +2839,6 @@ input.control::placeholder {
     width: 400px;
     height: 300px;
 }
+
+
+
