@@ -836,6 +836,29 @@ footer>div p {
         font-size: 1.7rem;
     }
 
+    .form-section {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        gap: 2rem;
+        margin: 0 auto;
+        padding-right: 2rem;
+        
+    }
+
+    .form-container{
+        width: 100%;
+        padding-right: 10rem;
+    }
+
+    .form-contact{
+        width: 100%;
+    }
+
+    .form-container{
+        
+    }
+
 }
 
 
@@ -2012,13 +2035,12 @@ button.swiper-pagination-bullet {
   
 }
 
-@media  screen and (max-width: 492px) {
-    .form-contact{
-        width: 300px;
-    
-    }
-    
+@media screen and (max-width:492px){
+
 }
+
+
+
 
 .form-group {
     margin-bottom: 20px;
