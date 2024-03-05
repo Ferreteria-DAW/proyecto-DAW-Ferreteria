@@ -38,6 +38,7 @@ const About = () => {
         </div>
 
 
+
         <img
           className="img-ferreteria-about"
           src={Img1}

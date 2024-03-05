@@ -528,16 +528,16 @@ footer>div p {
 .about-us {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 10rem;
-    padding: 11rem;
-    font-size: 2rem;
-    
+
+    gap: 3rem;
+    padding: 15rem;
+    font-size: 2.5rem;
+    gap: 5rem;
 
     & img {
-        width: 55rem;
+        width: 70rem;
         height: auto;
-        margin-top: 8rem;
-        border-radius: 2rem;
+
         grid-row: 1 / 2;
         grid-column: 2 / 3;
         align-self: center;
@@ -584,6 +584,7 @@ footer>div p {
         }
     }
 }
+
 
 @media screen and (width<768px) {
     .about-us{
@@ -634,6 +635,7 @@ footer>div p {
         margin-top: 0;
     }
 }
+
 
 @media screen and (width < 1750px) {
     .container-tools {
@@ -1921,18 +1923,14 @@ button.swiper-pagination-bullet {
     }
 }
 
-@media (max-width: 768px) {
-    .container{
-        grid-template-columns: repeat(1, 1fr);
-    }
-}
-
 .image-container {
     text-align: center;
 }
 
 .image-container img {
+
     margin-inline: auto;
+
     width: 11rem;
     height: 11rem;
     border-radius: 50%;
@@ -2825,6 +2823,7 @@ input.control::placeholder {
     }
 } 
 
+
 .input-image{
     border: none;
 }
@@ -2832,4 +2831,151 @@ input.control::placeholder {
 .img-ferreteria-about{
     width: 400px;
     height: 300px;
+}
+
+
+
+
+#boton-container{
+    background-color: #f8f8f8;
+    position: relative;
+    width: 80px;
+    height: 40px;
+    box-shadow: inset 4px 4px 6px #cecece, inset -4px   -4px 6px #fff;
+    margin: 0 auto;
+    margin-top: 350px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.toggle{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    transform: scale(.7);
+    background-color: linear-gradient(145deg, #d8d8d8, #ffffff);
+    border-radius: 25px;
+    box-shadow: 3px 3px 8px #c4c4c4, -3px -3px 8px #fff;
+    transition:  0.5s ease;
+}
+
+#container.active .toggle{
+    left: 40px;
+}
+
+body.active {
+    background-color: #000;
+    color: #fff;
+}
+
+.switch-btn {
+    font-size: 3rem;
+    cursor: pointer;
+}
+
+body.dark {
+    background-color: #121212;
+    & h1,h2,p{
+        color: #fff;
+    }
+
+    & .contact-link{
+        color: #fff;        
+    }
+
+    & .contact-link:hover{
+        color: #ff7730;
+    }
+    
+    & .card{
+        background-color: #121212;
+    }
+
+    & .card__side--front{
+        background-color: #3d3d3d;
+    }
+
+    & .card__side--back{
+        background-color: #000;
+    }
+    
+    & .card__side--back-1 {
+        background-image: linear-gradient(to right bottom, #000000, #000000);
+    }
+    
+    & .card__heading{
+        color: #fff;
+    }
+    
+    & .card__details h3{
+        color: #ffffff;
+    }
+    
+    & .card__details ul li{
+        color: #fff;
+    }
+    
+    & .card__cta{
+        background-color: #000000;
+    }
+    
+    & .card__price-box{
+        color: #fff;
+    }
+
+    & .card__price-only{
+        color: #fff;
+    }
+
+    & .card__price-value{
+        color: #fff;
+    }
+    
+    & .btn{
+        background-color: #000000;
+        color: #fff;
+    }
+    
+    & .btn:hover{
+        background-color: #000000;
+        color: #fff;
+    }
+    
+    & .btn--white{
+        background-color: #ffffff;
+        color: #000000;
+    }
+    
+    & .btn--white:hover{
+        background-color: #424242;
+        color: #fff;
+    }
+    
+    & .quality-section{
+        background-color: rgba(255, 255, 255, 0.3);
+    }
+
+    & .meet-us{
+        background-color: rgba(255, 255, 255, 0.16);
+
+        h3{
+            color: var(--orange);
+        }
+
+        .right-container link{
+            background-color: var(--orange);
+        }
+
+        .darkInfo{
+            background-color: var(--orange);
+        }
+    }
+
+
+    & footer{
+        background-color: rgba(255, 255, 255, 0.08);
+    }
+
 }

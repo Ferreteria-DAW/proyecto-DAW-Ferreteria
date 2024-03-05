@@ -5,6 +5,8 @@ import { AiOutlineClose } from "react-icons/ai";
 import Avatar from '@mui/material/Avatar';
 import logo from "../images/toolstore/logoFerreteria.png";
 
+import { FaRegSun } from "react-icons/fa";
+
 import axios from "axios";
 
 import { UserContext } from "../context/userContext";
@@ -54,6 +56,12 @@ const Header = () => {
     setIsNavShowing(!isNavShowing);
   };
 
+  const handleToggle = () => {
+    const body = document.querySelector('body');
+    body.classList.toggle('dark');
+    console.log('click')
+  }
+
   return (
     <nav>
       <div className="container nav__container">
@@ -82,12 +90,6 @@ const Header = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/about" onClick={isBurgerActive && navHandler}>Sobre nosotros</Link>
-                </li>
-                <li>
-                  <Link to="/contact" onClick={isBurgerActive && navHandler}>Contacto</Link>
-                </li>
-                <li>
                   <Link to="/products" onClick={isBurgerActive && navHandler}>
                     Productos
                   </Link>
@@ -104,8 +106,7 @@ const Header = () => {
                 
               </>
             ) : ( // Usuario no autenticado
-              <>
-               
+              <>  
                 <li>
                   <Link to="/login" onClick={isBurgerActive && navHandler}>Iniciar sesión</Link>
                 </li>
@@ -114,6 +115,7 @@ const Header = () => {
                 </li>
               </>
             )}
+            <FaRegSun className="switch-btn" onClick={handleToggle}/>
           </ul>
         )}
 

@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
-
+import Products from "../components/Products";
 
 
 import Card from "../components/Card";
@@ -27,12 +26,15 @@ const HomePage = () => {
         <Link
           to="https://www.google.com/maps/place/C.+Anselmo+Solar,+52,+33204+Gij%C3%B3n,+Asturias/@43.5306354,-5.644582,17z/data=!3m1!4b1!4m6!3m5!1s0xd367b7d96127bd5:0xc16f7aa563e5d3c6!8m2!3d43.5306354!4d-5.644582!16s%2Fg%2F11c28d_s0v?entry=ttu"
           target="_blank"
+
+          className="contact-link"
         >
           Calle Anselmo Solar 52
         </Link>
-        <Link to="mailto:correo@gmail.com">Envianos un Email</Link>
+        <Link to="mailto:correo@gmail.com" className="contact-link">Envianos un Email</Link>
 
-        <Link to="">984 70 09 04</Link>
+        <Link to="" className="contact-link">984 70 09 04</Link>
+
       </section>
 
       <section className="section-tours-title">
@@ -194,7 +196,7 @@ const HomePage = () => {
       <h3>Ferretería en Gijón</h3>
       <div className="right-container">
         <h2>Conoce Nuestra Ferretería</h2>
-        <Link to="/contact">Más Info</Link>
+        <Link to="/contact" className="darkInfo">Más Info</Link>
       </div>
 
       <div className="meet-us__img-container">
