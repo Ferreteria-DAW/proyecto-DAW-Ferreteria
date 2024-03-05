@@ -18,32 +18,34 @@ const Footer = () => {
     //     </div>
     // </footer>
     <footer>
-    <div className="col1">
-      <h2>FERRETERIA VEGAGRANDE</h2>
-      <p>Ferretería en Gijón con más de 50 años de historia. Venta de material eléctrico, fontanería, herramientas,
-        menaje del hogar,
-        cerrajería, pintura… ¡Te esperamos!</p>
-    </div>
-    <div className="col2">
-      <h2>Nuestra Web</h2>
-      <Link to="/">Inicio</Link>
-      <Link to="/products">Productos y Servicios</Link>
-      <Link to="/about">Quienes Somos</Link>
-      <Link to="/contact">Contacto</Link>
-    </div>
-    <div className="col col3">
-      <h2>Contacto</h2>
-      <p>
-        Telefono: <br />
-        984 19 48 15 <br />
-        WhatsApp: <br />
-        677 49 58 05 <br />
-        Dirección: <br />
-        C. Aguado, 36, 33202 Gijón, Asturias
-      </p>
-    </div>
-  </footer>
-  
+      <div className="col1">
+        <h2>FERRETERIA VEGAGRANDE</h2>
+        <p>Ferretería en Gijón con más de 50 años de historia. Venta de material eléctrico, fontanería, herramientas,
+          menaje del hogar,
+          cerrajería, pintura… ¡Te esperamos!</p>
+      </div>
+      <div className="col2">
+        <h2>Nuestra Web</h2>
+        <div>
+          <Link to="/">·Inicio</Link>
+          <Link to="/products">·Productos y Servicios</Link>
+          <Link to="/about">·Quienes Somos</Link>
+          <Link to="/contact">·Contacto</Link>
+        </div>
+      </div>
+      <div className="col col3">
+        <h2>Contacto</h2>
+        <p>
+          Telefono: <br />
+          984 19 48 15 <br />
+          WhatsApp: <br />
+          677 49 58 05 <br />
+          Dirección: <br />
+          C. Aguado, 36, 33202 Gijón, Asturias
+        </p>
+      </div>
+    </footer>
+
   )
 }
 

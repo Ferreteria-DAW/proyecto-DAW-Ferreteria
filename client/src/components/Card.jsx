@@ -20,7 +20,7 @@ const Card = ({ img, category,title, description }) => {
             <p className="card__price-value">
              {description}
             </p>
-            <Link to={`products/categories/${category}`} className="btn btn--white">Ver</Link>
+            <div><Link to={`products/categories/${category}`} className="btn btn--white">Ver</Link></div>
           </div>
         </div>
       </div>
