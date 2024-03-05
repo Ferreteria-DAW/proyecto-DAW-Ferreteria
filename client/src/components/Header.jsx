@@ -6,6 +6,7 @@ import Avatar from '@mui/material/Avatar';
 import logo from "../images/toolstore/logoFerreteria.png";
 
 import { FaRegSun } from "react-icons/fa";
+import { FaRegMoon } from "react-icons/fa";
 
 import axios from "axios";
 
@@ -15,6 +16,8 @@ const Header = () => {
  
   const [isNavShowing, setIsNavShowing] = useState(window.innerWidth > 768);
   const [isBurgerActive, setIsBurgerActive] = useState(false)
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
   console.log(isNavShowing)
   const { user } = useContext(UserContext);
   const rol = user ? user.rol : "";
@@ -56,11 +59,11 @@ const Header = () => {
     setIsNavShowing(!isNavShowing);
   };
 
-  const handleToggle = () => {
+  const toggleDarkMode = () => {
     const body = document.querySelector('body');
     body.classList.toggle('dark');
-    console.log('click')
-  }
+    setIsDarkMode(prevMode => !prevMode);
+  };
 
   return (
     <nav>
@@ -115,7 +118,7 @@ const Header = () => {
                 </li>
               </>
             )}
-            <FaRegSun className="switch-btn" onClick={handleToggle}/>
+            {!isDarkMode ? <FaRegSun className="switch-btn" onClick={toggleDarkMode} /> : <FaRegMoon className="switch-btn" onClick={toggleDarkMode}/>}
           </ul>
         )}
 
