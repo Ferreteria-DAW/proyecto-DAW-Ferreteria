@@ -38,8 +38,8 @@ const HomePage = () => {
       </section>
 
       <section className="section-tours-title">
-        <h3>FERRETERIA CON 50 AÑOS DE HISTORIA</h3>
-        <h1>Nuestros Productos</h1>
+        <h3 className="light">FERRETERIA CON 50 AÑOS DE HISTORIA</h3>
+        <h1 className="light">Nuestros Productos</h1>
         <p>
           <strong>Tenemos todo lo que necesita</strong> ¿Lo duda? Ven a
           visitarnos y encontrá exactamente lo que está buscando
@@ -93,8 +93,8 @@ const HomePage = () => {
       </section>
 
       <section className="professionalism-section">
-        <h3>PROFESIONALIDAD Y EXCELENCIA</h3>
-        <h2>Ferretería en Gijón</h2>
+        <h3 className="light">PROFESIONALIDAD Y EXCELENCIA</h3>
+        <h2 className="light">Ferretería en Gijón</h2>
         <div className="professionalism-container">
             <p>
               Si necesitas hacer una copia de una llave en Gijón, ¡estás en el

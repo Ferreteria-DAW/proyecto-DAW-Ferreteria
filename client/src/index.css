@@ -21,7 +21,7 @@
     --color-secondary-light: #ffb900;
     --color-secondary-dark: #ff7730;
 
-    --color-tertiary-light: #2998ff;
+    --color-tertiary-light: #4437c0;
     --color-tertiary-dark: #5643fa;
 }
 
@@ -2863,9 +2863,36 @@ body.active {
     cursor: pointer;
 }
 
+.switch-btn.moon {
+    color: var(--white);
+}
+
 body.dark {
     background-color: #121212;
-    & h1,h2,p{
+    & h1:not(.light),h2:not(.light),h3:not(.light),p{
+        color: #fff;
+    }
+
+    & h2.light,
+    & h1.light {
+        color: var(--color-tertiary-dark);
+    }
+
+    & nav,
+    & .product {
+        background-color: rgba(255, 255, 255, 0.12);
+    }
+
+    & input:not(input[type="file"]),
+    & textarea,
+    & select {
+        background-color: rgba(255, 255, 255, 0.12);
+        color: #fff;
+    }
+
+    & input::placeholder,
+    & textarea::placeholder,
+    & select::placeholder {
         color: #fff;
     }
 
@@ -2922,12 +2949,12 @@ body.dark {
     }
     
     & .btn{
-        background-color: #000000;
+        background-color: var(--color-tertiary-dark);
         color: #fff;
     }
     
     & .btn:hover{
-        background-color: #000000;
+        background-color: var(--color-tertiary-light);
         color: #fff;
     }
     

@@ -118,7 +118,7 @@ const Header = () => {
                 </li>
               </>
             )}
-            {!isDarkMode ? <FaRegSun className="switch-btn" onClick={toggleDarkMode} /> : <FaRegMoon className="switch-btn" onClick={toggleDarkMode}/>}
+            {!isDarkMode ? <FaRegSun className="switch-btn" onClick={toggleDarkMode} /> : <FaRegMoon className="switch-btn moon" onClick={toggleDarkMode}/>}
           </ul>
         )}
 
