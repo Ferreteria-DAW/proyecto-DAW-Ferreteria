@@ -125,6 +125,7 @@ const CreateProduct = () => {
             onChange={(e) => setProductDescription(e.target.value)}
           ></textarea>
           <input
+            className="input-image"
             type="file"
             name="thumbnail"
             id=""

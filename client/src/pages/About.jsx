@@ -17,8 +17,8 @@ const About = () => {
 
       <section className="about-us">
         <div className="col-about-1">
-          <h3>FERRETERÍA EN GIJÓN</h3>
-          <h1>Nuestra ferretería</h1>
+          <h3 className="h3-about">FERRETERÍA EN GIJÓN</h3>
+          <h1 className="h1-about">Nuestra ferretería</h1>
           <p>
             Ferretería VegaGrande es una empresa familiar con más de 50 años de
             experiencia en el sector, dando respuesta día a día a las
@@ -37,7 +37,10 @@ const About = () => {
           </p>
         </div>
 
+
+
         <img
+          className="img-ferreteria-about"
           src={Img1}
           alt="ferreteriaDependiente"
         />

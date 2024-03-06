@@ -5,6 +5,9 @@ import { AiOutlineClose } from "react-icons/ai";
 import Avatar from '@mui/material/Avatar';
 import logo from "../images/toolstore/logoFerreteria.png";
 
+import { FaRegSun } from "react-icons/fa";
+import { FaRegMoon } from "react-icons/fa";
+
 import axios from "axios";
 
 import { UserContext } from "../context/userContext";
@@ -13,6 +16,8 @@ const Header = () => {
  
   const [isNavShowing, setIsNavShowing] = useState(window.innerWidth > 768);
   const [isBurgerActive, setIsBurgerActive] = useState(false)
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
   console.log(isNavShowing)
   const { user } = useContext(UserContext);
   const rol = user ? user.rol : "";
@@ -52,6 +57,12 @@ const Header = () => {
 
   const navHandler = () => {
     setIsNavShowing(!isNavShowing);
+  };
+
+  const toggleDarkMode = () => {
+    const body = document.querySelector('body');
+    body.classList.toggle('dark');
+    setIsDarkMode(prevMode => !prevMode);
   };
 
   return (
@@ -107,6 +118,7 @@ const Header = () => {
                 </li>
               </>
             )}
+            {!isDarkMode ? <FaRegSun className="switch-btn" onClick={toggleDarkMode} /> : <FaRegMoon className="switch-btn moon" onClick={toggleDarkMode}/>}
           </ul>
         )}
 

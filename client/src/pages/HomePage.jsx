@@ -17,7 +17,72 @@ import img8 from "../images/toolstore/correct.png";
 import meet1 from "../images/toolstore/meet-us1.png";
 import meet2 from "../images/toolstore/meet-us2.png";
 
+
+
+
+
 const HomePage = () => {
+
+  const currentSlider = (n) => {
+    let slideIndex = 1; // Empezamos con el índice 1 para que coincida con el array de slides (que empieza en 0)
+let slides = document.getElementsByClassName("slide");
+let dots = document.getElementsByClassName("dot"); // Obtenemos todos los puntos
+let timer;
+
+function showSlides(n) {
+  if (n > slides.length) { slideIndex = 1; }    // Si el índice es mayor que el número de slides, vuelve al primero
+  if (n < 1) { slideIndex = slides.length; } // Si el índice es menor que 1, vaya al último slide
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none"; // Oculta todos los slides
+  }
+  for (let i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", ""); // Remueve la clase "active" de todos los dots
+  }
+  slides[slideIndex-1].style.display = "block"; // Muestra el slide actual
+  dots[slideIndex-1].className += " active"; // Añade la clase "active" al dot actual
+  
+  clearTimeout(timer); // Limpia el timer actual
+  timer = setTimeout(function() { showSlides(slideIndex += 1); }, 4000); // Establece un nuevo timer
+}
+
+// Inicializa el slider
+showSlides(slideIndex);
+
+// Función para controlar las flechas
+function moverSlide(n) {
+  clearTimeout(timer); // Para el autoplay
+  showSlides(slideIndex += n); // Muestra el slide correspondiente
+}
+
+// Puntos de navegación
+function currentSlide(n) {
+  clearTimeout(timer); // Para el autoplay
+  showSlides(slideIndex = n); // Muestra el slide correspondiente
+}
+
+
+
+// Añadir al final de tu archivo JavaScript actual
+
+let touchStartX = 0;
+let touchEndX = 0;
+
+function checkTouchMove() {
+  if (touchEndX < touchStartX) showSlides(slideIndex += 1); // Deslizar hacia la izquierda
+  if (touchEndX > touchStartX) showSlides(slideIndex -= 1); // Deslizar hacia la derecha
+}
+
+// Añade event listeners para el touch
+slides[0].parentNode.addEventListener('touchstart', e => {
+  touchStartX = e.changedTouches[0].screenX;
+});
+
+slides[0].parentNode.addEventListener('touchend', e => {
+  touchEndX = e.changedTouches[0].screenX;
+  checkTouchMove();
+});
+
+  }
   return (
     // <Products />
     <main>
@@ -69,7 +134,7 @@ const HomePage = () => {
           category={"Pintura"}
           title={"Materiales para pintar"}
           description={
-            "Disponemos de pinturas profesionales con colores personalizados, para exterior, interior o muebles"
+            "Disponemos de pinturas profesionales para exterior, interior o muebles"
           }
         />
         <Card
@@ -92,31 +157,31 @@ const HomePage = () => {
         <h3>PROFESIONALIDAD Y EXCELENCIA</h3>
         <h2>Ferretería en Gijón</h2>
         <div className="professionalism-container">
-          <p>
-            Si necesitas hacer una copia de una llave en Gijón, ¡estás en el
-            lugar correcto! Realizamos copias de llaves para cualquier tipo de
-            cerradura. También puedes encontrar una amplia variedad de
-            cerraduras para puertas y armarios en nuestra tienda. Además,
-            ofrecemos una selección de pinturas de calidad, así como productos
-            de droguería y todo tipo de menaje del hogar. No nos olvidamos de
-            las herramientas. Disponemos de una amplia variedad de herramientas
-            de calidad para todo tipo de proyectos, incluyendo eléctricas y de
-            batería. También encontrarás una selección de productos de
-            decoración para el hogar, como cuadros, espejos y objetos
-            decorativos. Por otro lado, si necesitas cualquier pieza de
-            fontanería, ¡no busques más ! Ofrecemos multitud de productos de
-            fontanería, como tuberías, grifos y accesorios para baño y cocina.
-            También contamos con productos de grifería de calidad para todo tipo
-            de necesidades. Si necesitas algo específico que no encuentras en
-            nuestra tienda, haremos todo lo posible por conseguirlo para ti. Te
-            esperamos en nuestra ferretería en Gijón.
-          </p>
-        </div>
-
-        <div className="container-tools">
-          <img src={tool1} alt="Imagen herramientas" className="img1" />
-          <img src={tool2} alt="Imagen herramientas" className="img2" />
-          <img src={prices} alt="Mensaje precios" className="img3" />
+            <p>
+              Si necesitas hacer una copia de una llave en Gijón, ¡estás en el
+              lugar correcto! Realizamos copias de llaves para cualquier tipo de
+              cerradura. También puedes encontrar una amplia variedad de
+              cerraduras para puertas y armarios en nuestra tienda. Además,
+              ofrecemos una selección de pinturas de calidad, así como productos
+              de droguería y todo tipo de menaje del hogar. No nos olvidamos de
+              las herramientas. Disponemos de una amplia variedad de herramientas
+              de calidad para todo tipo de proyectos, incluyendo eléctricas y de
+              batería. También encontrarás una selección de productos de
+              decoración para el hogar, como cuadros, espejos y objetos
+              decorativos. Por otro lado, si necesitas cualquier pieza de
+              fontanería, ¡no busques más ! Ofrecemos multitud de productos de
+              fontanería, como tuberías, grifos y accesorios para baño y cocina.
+              También contamos con productos de grifería de calidad para todo tipo
+              de necesidades. Si necesitas algo específico que no encuentras en
+              nuestra tienda, haremos todo lo posible por conseguirlo para ti. Te
+              esperamos en nuestra ferretería en Gijón.
+            </p>
+          <div className="container-tools">
+            <div><img src={tool1} alt="Imagen herramientas" className="img1" />
+              <img src={tool2} alt="Imagen herramientas" className="img2" />
+            </div>
+            <img src={prices} alt="Mensaje precios" className="img3" />
+          </div>
         </div>
       </section>
 
@@ -127,8 +192,7 @@ const HomePage = () => {
             <p>
               Si necesitas hacer una copia de una llave en Gijón, ¡estás en el
               lugar correcto! <strong></strong>Realizamos copias de llaves para
-              cualquier tipo de
-              <strong>cerradura</strong>. También puedes encontrar una amplia
+              cualquier tipo de. También puedes encontrar una amplia
               variedad de cerraduras para puertas y armarios en nuestra tienda.
               Además,
               <strong>ofrecemos una selección de pinturas de calidad</strong>,
@@ -160,26 +224,27 @@ const HomePage = () => {
 
           <div className="check-container">
             <div className="check-element">
+              <img src={img8} alt="Logo check" className="icon" />
               <p>
-                <img src={img8} alt="Logo check" className="icon" />
                 Reparaciones
               </p>
             </div>
             <div className="check-element">
+              <img src={img8} alt="Logo check" className="icon" />
               <p>
-                <img src={img8} alt="Logo check" className="icon" />
                 Bricolaje
               </p>
             </div>
             <div className="check-element">
+              <img src={img8} alt="Logo check" className="icon" />
               <p>
-                <img src={img8} alt="Logo check" className="icon" />
                 Decoración
               </p>
             </div>
             <div className="check-element">
+
+              <img src={img8} alt="Logo check" className="icon" />
               <p>
-                <img src={img8} alt="Logo check" className="icon" />
                 Obra nueva
               </p>
             </div>
@@ -187,21 +252,33 @@ const HomePage = () => {
         </article>
       </section>
 
-      
-    <section className="meet-us">
-      <h3>Ferretería en Gijón</h3>
-      <div className="right-container">
-        <h2>Conoce Nuestra Ferretería</h2>
-        <Link to="/contact">Más Info</Link>
-      </div>
 
-      <div className="meet-us__img-container">
-        <img src={meet1} alt="" />
-        <img src={meet2} alt="" />
-        <img src={meet1} alt="" />
-        <img src={meet2} alt="" />
-      </div>
-    </section> /
+      <section className="meet-us">
+        <h3>Ferretería en Gijón</h3>
+        <div className="right-container">
+          <h2>Conoce Nuestra Ferretería</h2>
+          <Link to="/contact">Más Info</Link>
+        </div>
+
+        {/* SLIDER */}
+        <div class="slider">
+          <div class="slides">
+            <div class="slide"><img src={meet1} alt="Meet Us Image 1"/></div>
+            <div class="slide"><img src={meet2} alt="Meet Us Image 2"/></div>
+            <div class="slide"><img src={meet1} alt="Meet Us Image 3"/></div>
+            <div class="slide"><img src={meet2} alt="Meet Us Image 4"/></div>
+          </div>
+          <div class="prev" onclick="moverSlide(-1)">&#10094;</div>
+          <div class="next" onclick="moverSlide(1)">&#10095;</div>
+          <div class="dots-container">
+            <span class="dot" onClick={currentSlider(1)}></span>
+            <span class="dot" onClick={currentSlider(2)}></span>
+            <span class="dot" onClick={currentSlider(3)}></span>
+            <span class="dot" onClick={currentSlider(4)}></span>
+          </div>
+        </div>
+
+      </section>
     </main>
   );
 };
