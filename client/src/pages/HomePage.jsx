@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Products from "../components/Products";
 
-
 import Card from "../components/Card";
 import img1 from "../images/toolstore/key-chain.png";
 import img2 from "../images/toolstore/faucet.png";
@@ -18,6 +17,10 @@ import img8 from "../images/toolstore/correct.png";
 import meet1 from "../images/toolstore/meet-us1.png";
 import meet2 from "../images/toolstore/meet-us2.png";
 
+
+
+
+
 const HomePage = () => {
   return (
     // <Products />
@@ -26,20 +29,17 @@ const HomePage = () => {
         <Link
           to="https://www.google.com/maps/place/C.+Anselmo+Solar,+52,+33204+Gij%C3%B3n,+Asturias/@43.5306354,-5.644582,17z/data=!3m1!4b1!4m6!3m5!1s0xd367b7d96127bd5:0xc16f7aa563e5d3c6!8m2!3d43.5306354!4d-5.644582!16s%2Fg%2F11c28d_s0v?entry=ttu"
           target="_blank"
-
-          className="contact-link"
         >
           Calle Anselmo Solar 52
         </Link>
-        <Link to="mailto:correo@gmail.com" className="contact-link">Envianos un Email</Link>
+        <Link to="mailto:correo@gmail.com">Envianos un Email</Link>
 
-        <Link to="" className="contact-link">984 70 09 04</Link>
-
+        <Link to="">984 70 09 04</Link>
       </section>
 
       <section className="section-tours-title">
-        <h3 className="light">FERRETERIA CON 50 AÑOS DE HISTORIA</h3>
-        <h1 className="light">Nuestros Productos</h1>
+        <h3>FERRETERIA CON 50 AÑOS DE HISTORIA</h3>
+        <h1>Nuestros Productos</h1>
         <p>
           <strong>Tenemos todo lo que necesita</strong> ¿Lo duda? Ven a
           visitarnos y encontrá exactamente lo que está buscando
@@ -93,8 +93,8 @@ const HomePage = () => {
       </section>
 
       <section className="professionalism-section">
-        <h3 className="light">PROFESIONALIDAD Y EXCELENCIA</h3>
-        <h2 className="light">Ferretería en Gijón</h2>
+        <h3>PROFESIONALIDAD Y EXCELENCIA</h3>
+        <h2>Ferretería en Gijón</h2>
         <div className="professionalism-container">
             <p>
               Si necesitas hacer una copia de una llave en Gijón, ¡estás en el
@@ -191,20 +191,32 @@ const HomePage = () => {
         </article>
       </section>
 
-      
-    <section className="meet-us">
-      <h3>Ferretería en Gijón</h3>
-      <div className="right-container">
-        <h2>Conoce Nuestra Ferretería</h2>
-        <Link to="/contact" className="darkInfo">Más Info</Link>
-      </div>
 
-        <div className="meet-us__img-container">
-          <img src={meet1} alt="" />
-          <img src={meet2} alt="" />
-          <img src={meet1} alt="" />
-          <img src={meet2} alt="" />
+      <section className="meet-us">
+        <h3>Ferretería en Gijón</h3>
+        <div className="right-container">
+          <h2>Conoce Nuestra Ferretería</h2>
+          <Link to="/contact">Más Info</Link>
         </div>
+
+        {/* SLIDER */}
+        <div class="slider">
+          <div class="slides">
+            <div class="slide"><img src={meet1} alt="Meet Us Image 1"/></div>
+            <div class="slide"><img src={meet2} alt="Meet Us Image 2"/></div>
+            <div class="slide"><img src={meet1} alt="Meet Us Image 3"/></div>
+            <div class="slide"><img src={meet2} alt="Meet Us Image 4"/></div>
+          </div>
+          <div class="prev" onclick="moverSlide(-1)">&#10094;</div>
+          <div class="next" onclick="moverSlide(1)">&#10095;</div>
+          <div class="dots-container">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+          </div>
+        </div>
+
       </section>
     </main>
   );
