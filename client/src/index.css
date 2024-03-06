@@ -83,6 +83,7 @@ body {
     font-size: 2rem;
     text-decoration: none;
     transition: 0.5s;
+    margin-bottom:1rem ;
 }
 
 .quality-section>div a {
@@ -442,7 +443,6 @@ footer div {
 
 
 .col1 {
-    margin-left: 2rem;
     width: 100%;
     line-height: 2;
 }
@@ -565,227 +565,6 @@ footer>div p {
             background-color: #3f2714;
         }
     }
-}
-
-@media screen and (width < 1025px) {
-
-
-    .section-tours {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .section-tours-title h1,
-    .professionalism-section h2 {
-        font-size: 4rem;
-        color: var(--brown);
-    }
-
-    .section-tours-title p,
-    .professionalism-section p {
-        font-size: 1.8rem;
-    }
-
-    .section-tours-title strong {
-        font-size: 2rem;
-    }
-
-    .section-tours-title p,
-    .professionalism-section p {
-        font-size: 1.6rem;
-    }
-
-    .container-tools img {
-        width: 20rem;
-        border-radius: 2rem;
-    }
-
-    .container-tools .img3 {
-        width: 250px;
-    }
-
-    .article-main img {
-        display: none;
-    }
-
-    .quality-section>article>h3 {
-        font-size: 3.5rem;
-    }
-
-    .quality-section>article>div p {
-        font-size: 1.6rem;
-    }
-
-    .quality-section>article>div p strong {
-        font-size: 1.8rem;
-    }
-
-    .check-element p {
-        font-size: x-large;
-    }
-
-    .meet-us h2 {
-        font-size: 3rem;
-
-    }
-
-    .meet-us h3 {
-        font-size: 2rem;
-
-    }
-
-    .meet-us a {
-        font-size: 1.5rem;
-    }
-
-    footer h2 {
-        font-size: 1.5rem;
-    }
-
-    footer>div a {
-        font-size: 1.3rem;
-    }
-
-    footer>div p {
-        font-size: 1.3rem;
-    }
-
-    .copy p {
-        font-size: 1rem;
-    }
-
-    .copy a {
-        font-size: 1rem;
-    }
-}
-
-@media screen and (width < 769px) {
-    .logo {
-        width: 80px;
-    }
-    
-
-    .main-contact-section a {
-        font-size: 1.7rem;
-    }
-
-    .section-tours-title h1,
-    .professionalism-section h2 {
-        font-size: 3rem;
-        color: var(--brown);
-    }
-
-    .section-tours-title p,
-    .professionalism-section p {
-        font-size: 1.5rem;
-    }
-
-    .professionalism-container {
-        grid-template-columns: repeat(1, 1fr);
-    }
-
-    .section-tours-title strong {
-        font-size: 1.8rem;
-    }
-
-    .quality-section>article>h3 {
-        font-size: 3rem;
-    }
-
-    .quality-section>article>div p {
-        font-size: 1.5rem;
-    }
-
-    .quality-section>article>div p strong {
-        font-size: 1.7rem;
-    }
-
-
-}
-
-@media screen and (width < 470px) {
-
-    .main-contact-section {
-        width: 100%;
-    }
-
-    .main-contact-section a {
-        font-size: 1.2rem;
-    }
-
-    .section-tours-title h1,
-    .professionalism-section h2 {
-        font-size: 2.5rem;
-    }
-
-    .section-tours-title h3,
-    .professionalism-section h3,
-    .quality-section h2 {
-        font-size: 1.5rem;
-    }
-
-    .section-tours-title p,
-    .professionalism-section p {
-        font-size: 1.3rem;
-    }
-
-    .container-tools img {
-        width: 15rem;
-    }
-
-    .container-tools .img3 {
-        left: 1.5rem;
-        height: 10rem;
-    }
-
-    .section-tours-title strong {
-        font-size: 1.5rem;
-        
-    }
-
-    .section-tours {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .check-container {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
-    }
-
-    .quality-section>article>h3 {
-        font-size: 3rem;
-    }
-
-    .quality-section>article>div p {
-        font-size: 1.5rem;
-    }
-
-    .quality-section>article>div p strong {
-        font-size: 1.7rem;
-    }
-
-    footer {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    footer h2 {
-        font-size: 1.2rem;
-    }
-
-    footer>div a {
-        font-size: 1rem;
-    }
-
-    footer>div p {
-        font-size: 1rem;
-    }
-
-    .col1,
-    .col2,
-    .col3 {
-        margin-left: 0.5rem;
-    }
-
 }
 
 
@@ -2136,8 +1915,8 @@ nav {
     font-weight: bold;
     transition: 0.5s;
     border-radius: 1rem;
-    background-color: rgba(242, 148, 0, 255);
 }
+
 .nav__menu a{
     width: 100%;
 }
@@ -2603,6 +2382,98 @@ input.control::placeholder {
 
 /* ------------------------- MEDIA QUERIES (SMALL DEVICES) ------------------------- */
 
+@media screen and (width < 1025px) {
+
+
+    .section-tours {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .section-tours-title h1,
+    .professionalism-section h2 {
+        font-size: 4rem;
+        color: var(--brown);
+    }
+
+    .section-tours-title p,
+    .professionalism-section p {
+        font-size: 1.8rem;
+    }
+
+    .section-tours-title strong {
+        font-size: 2rem;
+    }
+
+    .section-tours-title p,
+    .professionalism-section p {
+        font-size: 1.6rem;
+    }
+
+    .container-tools img {
+        width: 20rem;
+        border-radius: 2rem;
+    }
+
+    .container-tools .img3 {
+        width: 250px;
+    }
+
+    .article-main img {
+        display: none;
+    }
+
+    .quality-section>article>h3 {
+        font-size: 3.5rem;
+    }
+
+    .quality-section>article>div p {
+        font-size: 1.6rem;
+    }
+
+    .quality-section>article>div p strong {
+        font-size: 1.8rem;
+    }
+
+    .check-element p {
+        font-size: x-large;
+    }
+
+    .meet-us h2 {
+        font-size: 3rem;
+
+    }
+
+    .meet-us h3 {
+        font-size: 2rem;
+
+    }
+
+    .meet-us a {
+        font-size: 1.5rem;
+    }
+
+    footer h2 {
+        font-size: 1.5rem;
+    }
+
+    footer>div a {
+        font-size: 1.3rem;
+    }
+
+    footer>div p {
+        font-size: 1.3rem;
+    }
+
+    .copy p {
+        font-size: 1rem;
+    }
+
+    .copy a {
+        font-size: 1rem;
+    }
+}
+
 @media screen and (max-width: 800px) {
     h1 {
         font-size: 2rem;
@@ -2690,6 +2561,7 @@ input.control::placeholder {
     }
 
     .nav__toggle-btn {
+        margin: 2rem;
         display: inline-block;
         background: transparent;
         border: none;
@@ -2744,4 +2616,150 @@ input.control::placeholder {
     .dashboard__product-thumbnail {
         width: 5rem;
     }
+}
+
+@media screen and (width < 769px) {
+    .logo {
+        width: 80px;
+    }
+
+    .nav__menu {
+        right: 30%;
+    }
+    
+
+    .main-contact-section a {
+        font-size: 1.7rem;
+    }
+
+    .section-tours-title h1,
+    .professionalism-section h2 {
+        font-size: 3rem;
+        color: var(--brown);
+    }
+
+    .section-tours-title p,
+    .professionalism-section p {
+        font-size: 1.5rem;
+    }
+
+    .professionalism-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .section-tours-title strong {
+        font-size: 1.8rem;
+    }
+
+    .quality-section>article>h3 {
+        font-size: 3rem;
+    }
+
+    .quality-section>article>div p {
+        font-size: 1.5rem;
+    }
+
+    .quality-section>article>div p strong {
+        font-size: 1.7rem;
+    }
+
+
+}
+
+@media screen and (width < 470px) {
+
+    .nav__menu {
+        right: 18%;
+    }
+
+    .main-contact-section {
+        width: 100%;
+    }
+
+    .main-contact-section a {
+        font-size: 1.2rem;
+    }
+
+    .section-tours-title h1,
+    .professionalism-section h2 {
+        font-size: 2.5rem;
+    }
+
+    .section-tours-title h3,
+    .professionalism-section h3,
+    .quality-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .section-tours-title p,
+    .professionalism-section p {
+        font-size: 1.3rem;
+    }
+
+    .container-tools img {
+        width: 15rem;
+    }
+
+    .container-tools .img3 {
+        left: 1.5rem;
+        height: 10rem;
+    }
+
+    .section-tours-title strong {
+        font-size: 1.5rem;
+        
+    }
+
+    .section-tours {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .check-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    .quality-section>article>h3 {
+        font-size: 3rem;
+    }
+
+    .quality-section>article>div p {
+        font-size: 1.5rem;
+    }
+
+    .quality-section>article>div p strong {
+        font-size: 1.7rem;
+    }
+
+    footer {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    footer div {
+        border-left: solid var(--orange);
+        padding-left: 0;
+        padding: 1rem;
+    }
+
+    footer h2 {
+        margin-top: 1rem;
+        font-size: 1.2rem;
+    }
+
+    footer>div a {
+        font-size: 1rem;
+    }
+
+    footer>div p {
+        font-size: 1rem;
+    }
+
+    .col1,
+    .col2,
+    .col3 {
+        border-top:3px solid var(--orange);
+        border-left: none;
+        margin-left:0;
+    }
+
 }
