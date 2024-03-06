@@ -1904,7 +1904,7 @@ nav {
 .nav__menu {
     margin: 5rem;
     display: flex;
-    align-items: center;
+
 }
 
 .nav__menu li {
@@ -2495,18 +2495,27 @@ input.control::placeholder {
 
     .nav__menu {
         position: absolute;
-        display: flex;
+        display: colu;
         flex-direction: column;
         align-items: center;
         z-index: 1;
         top: -5rem;
         right: 20%;
-        height: 15rem;
         background-color: var(--orange);
         animation: dropDown .5s ease forwards;
         border-bottom-left-radius: 1rem;
         border-bottom-right-radius: 1rem;
+        animation: extend 0.5s forwards;
     }
+
+    @keyframes extend {
+        0% {
+          height: 0%;
+        }
+        100% {
+          height: 15rem; /* Puedes ajustar este valor según tu necesidad */
+        }
+      }
 
     .nav__menu li {
         animation: dropDown .5s ease forwards;
@@ -2529,23 +2538,23 @@ input.control::placeholder {
     }
 
     .nav__menu li:nth-child(2) {
-        animation-delay: .3s;
+        animation-delay: 0.2s;
     }
 
     .nav__menu li:nth-child(3) {
-        animation-delay: .6s;
+        animation-delay: 0.4s;
     }
 
     .nav__menu li:nth-child(4) {
-        animation-delay: .9s;
+        animation-delay: 0.6s;
     }
 
     .nav__menu li:nth-child(5) {
-        animation-delay: 1.2s;
+        animation-delay: 0.8s;
     }
 
     .nav__menu li:nth-child(6) {
-        animation-delay: 1.5s;
+        animation-delay: 1s;
     }
 
     .nav__menu li a {
