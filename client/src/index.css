@@ -83,7 +83,7 @@ body {
     font-size: 2rem;
     text-decoration: none;
     transition: 0.5s;
-    margin-bottom:1rem ;
+    margin-bottom: 1rem;
 }
 
 .quality-section>div a {
@@ -1435,7 +1435,7 @@ button.swiper-pagination-bullet {
 }
 
 .card__details h3 {
-    font-size: 3rem;
+    font-size: 2.6rem;
     text-align: center;
 }
 
@@ -1612,14 +1612,15 @@ header img {
 }
 
 @media (max-width: 768px) {
+
     /* .container {
         grid-template-columns: repeat(1, 1fr);
     } */
-    .contact-container{
+    .contact-container {
         grid-template-columns: repeat(1, 1fr);
     }
 
-    .form-section{
+    .form-section {
         width: 100%;
         padding: 1rem;
     }
@@ -1660,7 +1661,7 @@ header img {
     width: 70rem;
     margin: 50px auto;
     color: black;
-    
+
 }
 
 
@@ -1681,7 +1682,7 @@ header img {
 
 
 
-@media screen and (max-width:492px){
+@media screen and (max-width:492px) {
     .map {
         width: 100%;
     }
@@ -1698,7 +1699,7 @@ header img {
         width: 200%;
     }
 
-    .form-section > div {
+    .form-section>div {
         width: 100%;
     }
 }
@@ -1854,6 +1855,7 @@ section {
 .container {
     width: var(--container-width-lg);
     margin-inline: auto;
+    align-items: center;
 }
 
 .card__price-only {
@@ -1926,8 +1928,8 @@ nav {
 
 .nav__container {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
-    align-items: center;
     width: 100%;
     height: 100%;
 }
@@ -1938,9 +1940,12 @@ nav {
 }
 
 .nav__menu {
-    margin: 5rem;
+    margin-right: 2rem;
+    padding: 2rem;
     display: flex;
-
+    justify-content: right;
+    align-items: center;
+    color: var(--blue);
 }
 
 .nav__menu li {
@@ -1953,9 +1958,9 @@ nav {
     border-radius: 1rem;
 }
 
-.nav__menu a{
+.nav__menu a {
     width: 100%;
-    color: var(--black);
+    color: var(--blue);
     font-size: 1.5rem;
 
     &:hover {
@@ -2535,29 +2540,22 @@ input.control::placeholder {
 
     /* NAVBAR */
 
-    .nav__menu {
-        position: absolute;
-        display: colu;
-        flex-direction: column;
-        align-items: center;
-        z-index: 1;
-        top: -5rem;
-        right: 20%;
-        background-color: var(--orange);
-        animation: dropDown .5s ease forwards;
-        border-bottom-left-radius: 1rem;
-        border-bottom-right-radius: 1rem;
-        animation: extend 0.5s forwards;
+    .nav__container {
+        position: relative;
     }
 
-    @keyframes extend {
-        0% {
-          height: 0%;
-        }
-        100% {
-          height: 15rem; /* Puedes ajustar este valor según tu necesidad */
-        }
-      }
+    .nav__menu {
+        margin-top: 2rem;
+        position: absolute;
+        flex-direction: column;
+        align-items: center;
+        z-index: 1000;
+        height: fit-content;
+        border-bottom-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        background-color: var(--orange);
+    }
+
 
     .nav__menu li {
         animation: dropDown .5s ease forwards;
@@ -2607,7 +2605,7 @@ input.control::placeholder {
         margin: 0 auto;
     }
 
-     .nav__menu li a:hover {
+    .nav__menu li a:hover {
         transform: scale(1.1);
     }
 
@@ -2677,7 +2675,7 @@ input.control::placeholder {
     .nav__menu {
         right: 30%;
     }
-    
+
 
     .main-contact-section a {
         font-size: 1.7rem;
@@ -2758,7 +2756,7 @@ input.control::placeholder {
 
     .section-tours-title strong {
         font-size: 1.5rem;
-        
+
     }
 
     .section-tours {
@@ -2808,25 +2806,26 @@ input.control::placeholder {
     .col1,
     .col2,
     .col3 {
-        border-top:3px solid var(--orange);
+        border-top: 3px solid var(--orange);
         border-left: none;
-        margin-left:0;
+        margin-left: 0;
     }
 
 }
 
-.input-image{
+
+.input-image {
     border: none;
 }
 
-.img-ferreteria-about{
+.img-ferreteria-about {
     width: 400px;
     height: 300px;
 }
 
 
 
-.mapFerreteria{
+.mapFerreteria {
     width: 600px;
     height: 400px;
     border: 1px solid black;
@@ -2838,19 +2837,19 @@ input.control::placeholder {
 
 
 
-#boton-container{
+#boton-container {
     background-color: #f8f8f8;
     position: relative;
     width: 80px;
     height: 40px;
-    box-shadow: inset 4px 4px 6px #cecece, inset -4px   -4px 6px #fff;
+    box-shadow: inset 4px 4px 6px #cecece, inset -4px -4px 6px #fff;
     margin: 0 auto;
     margin-top: 350px;
     border-radius: 25px;
     cursor: pointer;
 }
 
-.toggle{
+.toggle {
     position: absolute;
     top: 0;
     left: 0;
@@ -2860,10 +2859,10 @@ input.control::placeholder {
     background-color: linear-gradient(145deg, #d8d8d8, #ffffff);
     border-radius: 25px;
     box-shadow: 3px 3px 8px #c4c4c4, -3px -3px 8px #fff;
-    transition:  0.5s ease;
+    transition: 0.5s ease;
 }
 
-#container.active .toggle{
+#container.active .toggle {
     left: 40px;
 }
 
@@ -2883,7 +2882,11 @@ body.active {
 
 body.dark {
     background-color: #121212;
-    & h1:not(.light),h2:not(.light),h3:not(.light),p{
+
+    & h1:not(.light),
+    h2:not(.light),
+    h3:not(.light),
+    p {
         color: #fff;
     }
 
@@ -2910,7 +2913,7 @@ body.dark {
         color: #fff;
     }
 
-    & .nav__menu a{
+    & .nav__menu a {
         color: var(--color-bg);
 
         &:hover {
@@ -2918,88 +2921,88 @@ body.dark {
         }
     }
 
-    & .contact-link{
-        color: #fff;        
+    & .contact-link {
+        color: #fff;
     }
 
-    & .contact-link:hover{
+    & .contact-link:hover {
         color: #ff7730;
     }
-    
-    & .card{
+
+    & .card {
         background-color: #121212;
     }
 
-    & .card__side--front{
+    & .card__side--front {
         background-color: #3d3d3d;
     }
- 
-    & .card__heading{
+
+    & .card__heading {
         color: #fff;
     }
-    
-    & .card__details h3{
+
+    & .card__details h3 {
         color: #ffffff;
     }
-    
-    & .card__details ul li{
-        color: #fff;
-    }
-    
-    & .card__price-box{
+
+    & .card__details ul li {
         color: #fff;
     }
 
-    & .card__price-only{
+    & .card__price-box {
         color: #fff;
     }
 
-    & .card__price-value{
+    & .card__price-only {
         color: #fff;
     }
-    
-    & .btn{
+
+    & .card__price-value {
+        color: #fff;
+    }
+
+    & .btn {
         background-color: var(--color-secondary-dark);
         color: #fff;
     }
-    
-    & .btn:hover{
+
+    & .btn:hover {
         background-color: var(--color-tertiary-light);
         color: #fff;
     }
-    
-    & .btn--white{
+
+    & .btn--white {
         background-color: #ffffff;
         color: #000000;
     }
-    
-    & .btn--white:hover{
+
+    & .btn--white:hover {
         background-color: #424242;
         color: #fff;
     }
-    
-    & .quality-section{
+
+    & .quality-section {
         background-color: rgba(255, 255, 255, 0.3);
     }
 
-    & .meet-us{
+    & .meet-us {
         background-color: rgba(255, 255, 255, 0.16);
 
-        h3{
+        h3 {
             color: var(--orange);
         }
 
-        .right-container link{
+        .right-container link {
             background-color: var(--orange);
         }
 
-        .darkInfo{
+        .darkInfo {
             background-color: var(--orange);
         }
     }
 
 
-    & footer{
+    & footer {
         background-color: rgba(255, 255, 255, 0.08);
     }
 
