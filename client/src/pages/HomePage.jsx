@@ -185,6 +185,7 @@ const HomePage = () => {
           <h2>Conoce Nuestra Ferretería</h2>
           <Link to="/contact">Más Info</Link>
         </div>
+      
       </section>
     </main>
   );

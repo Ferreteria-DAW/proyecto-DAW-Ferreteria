@@ -57,6 +57,7 @@ const Header = () => {
 
   const navHandler = () => {
     setIsNavShowing(!isNavShowing);
+    if(document.querySelector('.nav__menu'))document.querySelector('.nav__menu').classList.toggle('active');
   };
 
   const toggleDarkMode = () => {
