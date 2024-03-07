@@ -1876,6 +1876,11 @@ section {
     margin-bottom: 2rem;
 }
 
+.btn.sm {
+    background: var(--color-secondary-light);
+    color: var(--color-white);
+}
+
 .btn.primary {
     background: var(--color-secondary-dark);
     color: var(--color-white);
