@@ -17,7 +17,61 @@ import img8 from "../images/toolstore/correct.png";
 import meet1 from "../images/toolstore/meet-us1.png";
 import meet2 from "../images/toolstore/meet-us2.png";
 
+
+
+
+
 const HomePage = () => {
+
+  const currentSlider = (n) => {
+    let slideIndex = 1; // Empezamos con el índice 1 para que coincida con el array de slides (que empieza en 0)
+let slides = document.getElementsByClassName("slide");
+let dots = document.getElementsByClassName("dot"); // Obtenemos todos los puntos
+let timer;
+
+function showSlides(n) {
+  if (n > slides.length) { slideIndex = 1; }    // Si el índice es mayor que el número de slides, vuelve al primero
+  if (n < 1) { slideIndex = slides.length; } // Si el índice es menor que 1, vaya al último slide
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none"; // Oculta todos los slides
+  }
+  for (let i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", ""); // Remueve la clase "active" de todos los dots
+  }
+
+  
+  clearTimeout(timer); // Limpia el timer actual
+  timer = setTimeout(function() { showSlides(slideIndex += 1); }, 4000); // Establece un nuevo timer
+}
+
+// Inicializa el slider
+showSlides(slideIndex);
+
+// Función para controlar las flechas
+function moverSlide(n) {
+  clearTimeout(timer); // Para el autoplay
+  showSlides(slideIndex += n); // Muestra el slide correspondiente
+}
+
+// Puntos de navegación
+function currentSlide(n) {
+  clearTimeout(timer); // Para el autoplay
+  showSlides(slideIndex = n); // Muestra el slide correspondiente
+}
+
+
+
+// Añadir al final de tu archivo JavaScript actual
+
+let touchStartX = 0;
+let touchEndX = 0;
+
+function checkTouchMove() {
+  if (touchEndX < touchStartX) showSlides(slideIndex += 1); // Deslizar hacia la izquierda
+  if (touchEndX > touchStartX) showSlides(slideIndex -= 1); // Deslizar hacia la derecha
+}
+
+  }
   return (
     // <Products />
     <main>
@@ -195,12 +249,24 @@ const HomePage = () => {
           <Link to="/contact">Más Info</Link>
         </div>
 
-        <div className="meet-us__img-container">
-          <img src={meet1} alt="" />
-          <img src={meet2} alt="" />
-          <img src={meet1} alt="" />
-          <img src={meet2} alt="" />
+        {/* SLIDER */}
+        <div class="slider">
+          <div class="slides">
+            <div class="slide"><img src={meet1} alt="Meet Us Image 1"/></div>
+            <div class="slide"><img src={meet2} alt="Meet Us Image 2"/></div>
+            <div class="slide"><img src={meet1} alt="Meet Us Image 3"/></div>
+            <div class="slide"><img src={meet2} alt="Meet Us Image 4"/></div>
+          </div>
+          <div class="prev" onclick="moverSlide(-1)">&#10094;</div>
+          <div class="next" onclick="moverSlide(1)">&#10095;</div>
+          <div class="dots-container">
+            <span class="dot" onClick={currentSlider(1)}></span>
+            <span class="dot" onClick={currentSlider(2)}></span>
+            <span class="dot" onClick={currentSlider(3)}></span>
+            <span class="dot" onClick={currentSlider(4)}></span>
+          </div>
         </div>
+
       </section>
     </main>
   );

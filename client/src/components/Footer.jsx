@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+
 const Footer = () => {
+  
   return (
     // <footer>
     //     <ul className="footer__categories">
@@ -18,13 +20,13 @@ const Footer = () => {
     //     </div>
     // </footer>
     <footer>
-      <div className="col1">
+      <div className="col1 footer-about">
         <h2>FERRETERIA VEGAGRANDE</h2>
         <p>Ferretería en Gijón con más de 50 años de historia. Venta de material eléctrico, fontanería, herramientas,
           menaje del hogar,
           cerrajería, pintura… ¡Te esperamos!</p>
       </div>
-      <div className="col2">
+      <div className="col2 footer-anchor">
         <h2>Nuestra Web</h2>
         <div>
           <Link to="/">·Inicio</Link>
@@ -33,7 +35,7 @@ const Footer = () => {
           <Link to="/contact">·Contacto</Link>
         </div>
       </div>
-      <div className="col col3">
+      <div className="col col3 footer-contact">
         <h2>Contacto</h2>
         <p>
           Telefono: <br />
