@@ -2570,6 +2570,14 @@ input.control::placeholder {
         margin-bottom: 2px;
         border-radius: 1rem;
         padding: 0;
+
+        &:hover {
+            background-color: var(--blue);
+        }
+
+        & a:hover {
+            color: var(--white);
+        }
     }
 
     @keyframes dropDown {
