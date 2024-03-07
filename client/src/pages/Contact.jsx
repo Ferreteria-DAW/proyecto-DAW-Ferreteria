@@ -39,7 +39,6 @@ const Contact = () => {
           <img
             src={location}
             alt="Imagen 2"
-            className="logos"
           />
           <h2>Direccion</h2>
           <p>C/Aguado 36 33202 Gijon, Asturias</p>
@@ -48,7 +47,6 @@ const Contact = () => {
           <img
             src={message}
             alt="Imagen 3"
-            className="logos"
           />
           <h2>Mail</h2>
           <p>Envianos un email</p>
