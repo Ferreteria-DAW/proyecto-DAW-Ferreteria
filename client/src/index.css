@@ -2009,6 +2009,11 @@ textarea::placeholder {
     font-size: 1rem;
 }
 
+input::placeholder,
+textarea::placeholder{
+    font-size: 1.4rem;
+}
+
 input:focus::placeholder,
 select:focus::placeholder,
 textarea:focus::placeholder {
@@ -3037,6 +3042,8 @@ body.dark {
             color: var(--color-secondary-dark);
         }
     }
+
+
 
     & footer {
         background-color: rgba(255, 255, 255, 0.08);
