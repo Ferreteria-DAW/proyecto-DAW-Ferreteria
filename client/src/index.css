@@ -2946,10 +2946,6 @@ body.dark {
 
     & .nav__menu a {
         color: var(--color-bg);
-
-        &:hover {
-            color: var(--color-tertiary-dark);
-        }
     }
 
     & .contact-link {
