@@ -82,7 +82,7 @@ function checkTouchMove() {
         >
           Calle Anselmo Solar 52
         </Link>
-        <Link to="mailto:correo@gmail.com">Envianos un Email</Link>
+        <Link to="mailto:correo@gmail.com">Envíanos un Email</Link>
 
         <Link to="">984 70 09 04</Link>
       </section>
@@ -91,8 +91,8 @@ function checkTouchMove() {
         <h3>FERRETERIA CON 50 AÑOS DE HISTORIA</h3>
         <h1>Nuestros Productos</h1>
         <p>
-          <strong>Tenemos todo lo que necesita</strong> ¿Lo duda? Ven a
-          visitarnos y encontrá exactamente lo que está buscando
+          <strong>Tenemos todo lo que necesita.</strong> ¿Lo duda? Ven a
+          visitarnos y encuentra exactamente lo que está buscando.
         </p>
       </section>
       <section className="section-tours">

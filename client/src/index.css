@@ -2002,6 +2002,10 @@ textarea {
     font-size: 1.4rem;
 }
 
+select{
+    border: 1px solid #d1d1d1;
+}
+
 input::placeholder,
 select::placeholder,
 textarea::placeholder {
@@ -3029,7 +3033,7 @@ body.dark {
     }
 
     & select{
-        background-color: rgba(255, 255, 255, 0.16);
+        background-color: rgba(255, 255, 255, 0.08);
         border: 1px solid rgb(211, 211, 211);
     }
 
