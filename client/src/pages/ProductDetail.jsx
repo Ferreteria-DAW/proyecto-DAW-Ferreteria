@@ -29,7 +29,7 @@ const ProductDetail = () => {
   }, [])
 
   if(isLoading) {
-    return <CircularProgress />
+    return <CircularProgress className="loader"/>
   }
 
   return (

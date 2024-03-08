@@ -42,7 +42,7 @@ const Dashboard = () => {
     fetchProducts();
   }, [id]);
 
-  if (isLoading) return <CircularProgress />;
+  if (isLoading) return <CircularProgress className="loader"/>;
 
   return (
     <section className="dashboard">

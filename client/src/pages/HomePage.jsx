@@ -29,7 +29,7 @@ const HomePage = () => {
         >
           Calle Anselmo Solar 52
         </Link>
-        <Link to="mailto:correo@gmail.com">Envianos un Email</Link>
+        <Link to="mailto:correo@gmail.com">Envíanos un Email</Link>
 
         <Link to="">984 70 09 04</Link>
       </section>
@@ -38,8 +38,8 @@ const HomePage = () => {
         <h3>FERRETERIA CON 50 AÑOS DE HISTORIA</h3>
         <h1>Nuestros Productos</h1>
         <p>
-          <strong>Tenemos todo lo que necesita</strong> ¿Lo duda? Ven a
-          visitarnos y encontrá exactamente lo que está buscando
+          <strong>Tenemos todo lo que necesita.</strong> ¿Lo duda? Ven a
+          visitarnos y encuentra exactamente lo que está buscando.
         </p>
       </section>
       <section className="section-tours">
@@ -185,7 +185,12 @@ const HomePage = () => {
           <h2>Conoce Nuestra Ferretería</h2>
           <Link to="/contact">Más Info</Link>
         </div>
-      
+          <div className="images-container">
+            <img src={meet1} alt="" />
+            <img src={meet2} alt="" />
+            <img src={meet1} alt="" />
+            <img src={meet2} alt="" />
+          </div>
       </section>
     </main>
   );
