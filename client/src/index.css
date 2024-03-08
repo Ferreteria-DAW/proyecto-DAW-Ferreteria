@@ -1472,14 +1472,17 @@ input.control::placeholder {
     display: flex;
     flex-direction: column;
     gap: .7rem;
-    height: 50vh;
+    height: 70vh;
     margin-bottom: 6rem;
+    width: 100%;
 }
 
 .dashboard__product {
     display: flex;
+    width: 70%;
     align-items: center;
     justify-content: space-between;
+    text-align: center;
     gap: 1rem;
     background: var(--color-white);
     padding: .5rem 1.2rem;
@@ -1504,7 +1507,20 @@ input.control::placeholder {
     gap: 1rem;
 }
 
-
+@media screen and (width=820px){
+    .dashboard__product {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        align-items: center;
+        justify-content: space-between;
+        text-align: center;
+        gap: 1rem;
+        padding: .4rem .7rem;
+        
+    }
+    
+}
 
 
 /* ------------------------- PRODUCTS ------------------------- */
