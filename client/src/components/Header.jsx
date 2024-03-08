@@ -74,7 +74,7 @@ const Header = () => {
         </Link>
       
         {isNavShowing && ( // Mostrar el menú solo si isNavShowing es true
-          <ul className="nav__menu">
+         <ul className={`nav__menu ${isNavShowing ? 'active' : ''}`}>
             {user ? ( // Usuario autenticado
               <>
                 <Avatar className="mui-avatar" alt={user.username} src={`${process.env.REACT_APP_ASSETS_URL}/uploads/${avatar}`} />
