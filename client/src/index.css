@@ -1218,7 +1218,7 @@ nav {
 
 .nav__menu a {
     width: 100%;
-    color: var(--white);
+    color: var(--blue);
     font-size: 1.5rem;
 
     &:hover {
