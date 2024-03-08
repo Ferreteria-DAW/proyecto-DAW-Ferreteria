@@ -1850,11 +1850,12 @@ input.control::placeholder {
 
         &::after {
             content: "";
-            position: fixed;
+            position: absolute;
             top: 0;
             right: 0;
-            width: 100vw;
-            height: 111vh;
+            bottom: 0;
+            left: 0;
+            
             background: linear-gradient(
                 to bottom,
                 rgba(0, 0, 0, .05),
