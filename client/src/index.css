@@ -1876,6 +1876,11 @@ section {
     margin-bottom: 2rem;
 }
 
+.btn.sm {
+    background: var(--color-secondary-light);
+    color: var(--color-white);
+}
+
 .btn.primary {
     background: var(--color-secondary-dark);
     color: var(--color-white);
@@ -1997,11 +2002,20 @@ textarea {
     font-size: 1.4rem;
 }
 
+select{
+    border: 1px solid #d1d1d1;
+}
+
 input::placeholder,
 select::placeholder,
 textarea::placeholder {
     color: var(--color-gray-500);
     font-size: 1rem;
+}
+
+input::placeholder,
+textarea::placeholder{
+    font-size: 1.4rem;
 }
 
 input:focus::placeholder,
@@ -2206,7 +2220,7 @@ input.control::placeholder {
     flex-direction: column;
     gap: .7rem;
     height: 50vh;
-    margin-bottom: 2rem;
+    margin-bottom: 6rem;
 }
 
 .dashboard__product {
@@ -3019,13 +3033,20 @@ body.dark {
     }
 
     & select{
-        background-color: rgba(255, 255, 255, 0.16);
+        background-color: rgba(255, 255, 255, 0.08);
         border: 1px solid rgb(211, 211, 211);
     }
 
     & option{
         color: #000;
     }
+
+    & .nav__menu a {
+        &:hover {
+            color: var(--color-secondary-dark);
+        }
+    }
+
 
 
     & footer {
