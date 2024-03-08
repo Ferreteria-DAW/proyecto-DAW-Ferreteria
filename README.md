@@ -11,7 +11,7 @@
 
 ### GitHub: ***https://github.com/Ferreteria-DAW/proyecto-DAW-Ferreteria.git***
 
-* **Autores**
+* **Autores:**
     + ***Pablo González***
     + ***David Menéndez***
     + ***Alfonso Reviejo***
