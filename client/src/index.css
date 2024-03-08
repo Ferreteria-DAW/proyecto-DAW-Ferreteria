@@ -782,7 +782,7 @@ footer > div p {
 }
 
 .btn:hover {
-  background-color: var(--blue);
+  background-color: var(--color-bg);
   transform: translateY(-3px);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
 }
@@ -996,7 +996,7 @@ button {
   transition: all 0.5s;
 
   &:hover {
-    background-color: var(--orange);
+    background-color: var(--color-secondary-light);
     transform: scale(1.1);
   }
 }
@@ -1146,7 +1146,7 @@ section {
 }
 
 .btn:hover {
-  background: var(--blue);
+  background: var(--color-secondary-light);
   color: var(--color-white);
 }
 
@@ -1454,24 +1454,24 @@ input.control::placeholder {
 /* ------------------------- DASHBOARD ------------------------- */
 
 .dashboard__container {
-    display: flex;
-    flex-direction: column;
-    gap: .7rem;
-    height: 70vh;
-    margin-bottom: 6rem;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  height: 70vh;
+  margin-bottom: 6rem;
+  width: 100%;
 }
 
 .dashboard__product {
-    display: flex;
-    width: 70%;
-    align-items: center;
-    justify-content: space-between;
-    text-align: center;
-    gap: 1rem;
-    background: var(--color-white);
-    padding: .5rem 1.2rem;
-    border-radius: var(--radius-3);
+  display: flex;
+  width: 70%;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  gap: 1rem;
+  background: var(--color-white);
+  padding: 0.5rem 1.2rem;
+  border-radius: var(--radius-3);
 }
 
 .dashboard__product-info {
@@ -1492,21 +1492,18 @@ input.control::placeholder {
   gap: 1rem;
 }
 
-@media screen and (width=820px){
-    .dashboard__product {
-        display: flex;
-        flex-direction: column;
-        width: 80%;
-        align-items: center;
-        justify-content: space-between;
-        text-align: center;
-        gap: 1rem;
-        padding: .4rem .7rem;
-        
-    }
-    
+@media screen and (width=820px) {
+  .dashboard__product {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    gap: 1rem;
+    padding: 0.4rem 0.7rem;
+  }
 }
-
 
 /* ------------------------- PRODUCTS ------------------------- */
 
@@ -1644,17 +1641,16 @@ input.control::placeholder {
 }
 
 @media screen and (width<769px) {
-    .products__container {
-        grid-template-columns: repeat(2, 1fr);
-    }
+  .products__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media screen and (width<480px) {
-    .products__container {
-        grid-template-columns: repeat(1, 1fr);
-    }
+  .products__container {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
-
 
 /* ------------------------- PRODUCT DETAIL ------------------------- */
 
@@ -1792,32 +1788,22 @@ input.control::placeholder {
 
 .active {
   top: 0;
-} 
-
-.nav__menu.active {
-    transition: all 1s ease;
 }
 
+.nav__menu.active {
+  transition: all 1s ease;
+}
 
-
-@media screen and (max-width: 800px) {
-  h1 {
-    font-size: 2rem;
+@media (max-width: 1135px) {
+  .nav__toggle-btn {
+    margin: 2rem;
+    display: inline-block;
+    background: transparent;
+    border: none;
+    font-size: 3.2rem;
+    cursor: pointer;
+    z-index: 1000000;
   }
-
-  h2 {
-    font-size: 1.6rem;
-  }
-
-  h3 {
-    font-size: 1.35rem;
-  }
-
-  /* .container {
-        width: var(--container-width-md);
-    } 
-
-    /* NAVBAR */
 
   nav {
     position: relative;
@@ -1827,7 +1813,7 @@ input.control::placeholder {
     margin-top: 2rem;
     position: absolute;
     top: -40%;
-    right: 0;
+    right: -3rem;
     left: 0;
     flex-direction: column;
     align-items: center;
@@ -1871,8 +1857,8 @@ input.control::placeholder {
     padding: 0;
 
     & a {
-        color: var(--white);
-        font-size: 1.5rem;
+      color: var(--white);
+      font-size: 1.5rem;
     }
 
     &:hover {
@@ -1931,16 +1917,29 @@ input.control::placeholder {
     transform: scale(1.1);
   }
 
-  .nav__toggle-btn {
-    margin: 2rem;
-    display: inline-block;
-    background: transparent;
-    border: none;
-    font-size: 3.2rem;
-    cursor: pointer;
-    z-index: 1000000;
-    
+}
+
+@media screen and (max-width: 800px) {
+  h1 {
+    font-size: 2rem;
   }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  h3 {
+    font-size: 1.35rem;
+  }
+
+  /* .container {
+        width: var(--container-width-md);
+    } 
+
+    /* NAVBAR */
+
+  
+ 
 
   .product__container {
     grid-template-columns: 1fr;
@@ -2032,7 +2031,6 @@ input.control::placeholder {
 }
 
 @media screen and (width < 492px) {
-  
 
   .main-contact-section {
     width: 100%;
@@ -2170,7 +2168,6 @@ input.control::placeholder {
 #container.active .toggle {
   left: 40px;
 }
-
 
 /*------------------Dark Mode------------ */
 body.active {
@@ -2417,13 +2414,15 @@ body.dark {
   }
 }
 
-
 /* LOADER */
 
 .loader {
-    position: absolute;
-    top: 20rem;
-    left: 50%;
+  position: absolute;
+  top: 20rem;
+  left: 50%;
+}
+.meet-us {
+  position: relative;
 }
 
 .images-container {
@@ -2433,18 +2432,24 @@ body.dark {
   margin-top: 2rem;
 
   & img {
+    position: relative;
+    top: 15rem;
     border-radius: 2rem;
   }
+}
+@media (max-width: 492px ) {
+    .right-container {
+      display: flex;
+      flex-direction: column;
+    }
 }
 
 .meet-us {
   height: fit-content;
 }
 
-@media (max-width: 768px){ 
+@media (max-width: 768px) {
   .images-container {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
-
- 
 }
