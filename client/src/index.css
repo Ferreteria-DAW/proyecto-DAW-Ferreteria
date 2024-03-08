@@ -2425,3 +2425,26 @@ body.dark {
     top: 20rem;
     left: 50%;
 }
+
+.images-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+
+  & img {
+    border-radius: 2rem;
+  }
+}
+
+.meet-us {
+  height: fit-content;
+}
+
+@media (max-width: 768px){ 
+  .images-container {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+ 
+}
