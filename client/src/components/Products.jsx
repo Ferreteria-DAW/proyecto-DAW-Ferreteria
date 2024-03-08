@@ -25,7 +25,7 @@ const Products = () => {
     fetchProducts();
   }, []);
 
-  if (isLoading) return <CircularProgress />;
+  if (isLoading) return <CircularProgress className="loader"/>;
 
   return (
     <section className="products">

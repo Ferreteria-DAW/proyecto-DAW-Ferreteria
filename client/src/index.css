@@ -2414,3 +2414,12 @@ body.dark {
     width: 450px;
   }
 }
+
+
+/* LOADER */
+
+.loader {
+    position: absolute;
+    top: 20rem;
+    left: 50%;
+}

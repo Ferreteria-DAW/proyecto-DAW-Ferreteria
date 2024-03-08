@@ -26,7 +26,7 @@ const CategoryProduct = () => {
       }, [category])
     
       if(isLoading) {
-        return <CircularProgress />
+        return <CircularProgress className='loader'/>
       }
 
       return (

@@ -33,7 +33,7 @@ const DeleteProduct = ({productId: id}) => {
     }
   };
 
-  if(isLoading) return <CircularProgress />;
+  if(isLoading) return <CircularProgress className='loader'/>;
 
   return (
     <Link className='btn sm danger' onClick={() => removeProduct(id)}>Eliminar</Link>
