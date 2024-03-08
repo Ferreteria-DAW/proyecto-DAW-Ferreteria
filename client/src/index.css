@@ -1766,6 +1766,7 @@ input.control::placeholder {
     transition: all 1s ease;
 }
 
+
 @media screen and (max-width: 800px) {
     h1 {
         font-size: 2rem;
@@ -1819,7 +1820,7 @@ input.control::placeholder {
                 rgba(0, 0, 0, .5),
                 rgba(0, 0, 0, .7)
             );
-            z-index: -10000 !important;
+            z-index: -10000;
         }
     }
 
