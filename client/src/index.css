@@ -1180,7 +1180,6 @@ nav {
     display: grid;
     place-items: center;
     z-index: 1;
-    border-bottom: 4px solid var(--color-bg);
     backdrop-filter: blur(20px);
 }
 
