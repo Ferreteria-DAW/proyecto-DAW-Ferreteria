@@ -185,7 +185,12 @@ const HomePage = () => {
           <h2>Conoce Nuestra Ferretería</h2>
           <Link to="/contact">Más Info</Link>
         </div>
-      
+          <div className="images-container">
+            <img src={meet1} alt="" />
+            <img src={meet2} alt="" />
+            <img src={meet1} alt="" />
+            <img src={meet2} alt="" />
+          </div>
       </section>
     </main>
   );
