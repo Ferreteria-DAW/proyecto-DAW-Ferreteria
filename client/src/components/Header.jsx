@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
 import { AiOutlineClose } from "react-icons/ai";
-import Avatar from '@mui/material/Avatar';
+import Avatar from "@mui/material/Avatar";
 import logo from "../images/toolstore/logoFerreteria.png";
 
 import { FaRegSun } from "react-icons/fa";
@@ -13,12 +13,11 @@ import axios from "axios";
 import { UserContext } from "../context/userContext";
 
 const Header = () => {
- 
   const [isNavShowing, setIsNavShowing] = useState(window.innerWidth > 768);
-  const [isBurgerActive, setIsBurgerActive] = useState(false)
+  const [isBurgerActive, setIsBurgerActive] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
 
-  console.log(isNavShowing)
+  console.log(isNavShowing);
   const { user } = useContext(UserContext);
   const rol = user ? user.rol : "";
 
@@ -28,7 +27,7 @@ const Header = () => {
     const handleResize = () => {
       setIsNavShowing(window.innerWidth > 768);
     };
-    console.log(isNavShowing)
+    console.log(isNavShowing);
 
     window.addEventListener("resize", handleResize);
 
@@ -42,7 +41,10 @@ const Header = () => {
       try {
         const response = await axios.get(
           `${process.env.REACT_APP_BASE_URL}/users/${user.id}`,
-          { withCredentials: true, headers: { Authorization: `Bearer ${user.token}` } }
+          {
+            withCredentials: true,
+            headers: { Authorization: `Bearer ${user.token}` },
+          }
         );
         setAvatar(response.data.avatar);
       } catch (error) {
@@ -57,35 +59,45 @@ const Header = () => {
 
   const navHandler = () => {
     setIsNavShowing(!isNavShowing);
-    if(document.querySelector('.nav__menu'))document.querySelector('.nav__menu').classList.toggle('active');
+    if (document.querySelector(".nav__menu"))
+      document.querySelector(".nav__menu").classList.toggle("active");
   };
 
   const toggleDarkMode = () => {
-    const body = document.querySelector('body');
-    body.classList.toggle('dark');
-    setIsDarkMode(prevMode => !prevMode);
+    const body = document.querySelector("body");
+    body.classList.toggle("dark");
+    setIsDarkMode((prevMode) => !prevMode);
   };
 
   return (
     <nav>
       <div className="container nav__container">
         <Link to="/">
-          <img src={logo} alt="Logo"  className="logo"/>
+          <img src={logo} alt="Logo" className="logo" />
         </Link>
-      
+
         {isNavShowing && ( // Mostrar el menú solo si isNavShowing es true
-         <ul className={`nav__menu ${isNavShowing ? 'active' : ''}`}>
+          <ul className={`nav__menu`}>
             {user ? ( // Usuario autenticado
               <>
-                <Avatar className="mui-avatar" alt={user.username} src={`${process.env.REACT_APP_ASSETS_URL}/uploads/${avatar}`} />
+                <Avatar
+                  className="mui-avatar"
+                  alt={user.username}
+                  src={`${process.env.REACT_APP_ASSETS_URL}/uploads/${avatar}`}
+                />
                 <li>
-                  <Link to={`/profile/${user.id}`}  onClick={isBurgerActive && navHandler}>
+                  <Link
+                    to={`/profile/${user.id}`}
+                    onClick={isBurgerActive && navHandler}
+                  >
                     {user.rol === "admin" ? "admin" : user?.username}
                   </Link>
                 </li>
                 {rol === "admin" && (
                   <li>
-                    <Link to="/create" onClick={isBurgerActive && navHandler}>Crear Producto</Link>
+                    <Link to="/create" onClick={isBurgerActive && navHandler}>
+                      Crear Producto
+                    </Link>
                   </li>
                 )}
                 <li>
@@ -99,34 +111,46 @@ const Header = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/about" onClick={isBurgerActive && navHandler}>Sobre nosotros</Link>
+                  <Link to="/about" onClick={isBurgerActive && navHandler}>
+                    Sobre nosotros
+                  </Link>
                 </li>
                 <li>
-                  <Link to="/contact" onClick={isBurgerActive && navHandler}>Contacto</Link>
+                  <Link to="/contact" onClick={isBurgerActive && navHandler}>
+                    Contacto
+                  </Link>
                 </li>
                 <li>
                   <Link to="/logout">Logout</Link>
                 </li>
-                
               </>
-            ) : ( // Usuario no autenticado
-              <>  
+            ) : (
+              // Usuario no autenticado
+              <>
                 <li>
-                  <Link to="/login" onClick={isBurgerActive && navHandler}>Iniciar sesión</Link>
+                  <Link to="/login" onClick={isBurgerActive && navHandler}>
+                    Iniciar sesión
+                  </Link>
                 </li>
                 <li>
-                  <Link to="/register" onClick={isBurgerActive && navHandler}>Registro</Link>
+                  <Link to="/register" onClick={isBurgerActive && navHandler}>
+                    Registro
+                  </Link>
                 </li>
               </>
             )}
-            {!isDarkMode ? <FaRegSun className="switch-btn" onClick={toggleDarkMode} /> : <FaRegMoon className="switch-btn moon" onClick={toggleDarkMode}/>}
+            {!isDarkMode ? (
+              <FaRegSun className="switch-btn" onClick={toggleDarkMode} />
+            ) : (
+              <FaRegMoon className="switch-btn moon" onClick={toggleDarkMode} />
+            )}
           </ul>
         )}
 
         <button
           className="nav__toggle-btn"
           onClick={() => {
-            navHandler(); 
+            navHandler();
             setIsBurgerActive(!isBurgerActive);
           }} // Toggle de isNavShowing en lugar de cambiarlo directamente
         >

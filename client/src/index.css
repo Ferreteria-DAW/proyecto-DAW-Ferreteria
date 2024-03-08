@@ -1793,6 +1793,7 @@ input.control::placeholder {
     transition: all 1s ease;
 }
 
+
 @media screen and (max-width: 800px) {
     h1 {
         font-size: 2rem;
@@ -1840,13 +1841,13 @@ input.control::placeholder {
             top: 0;
             right: 0;
             width: 100vw;
-            height: 100vh;
+            height: 111vh;
             background: linear-gradient(
                 to bottom,
-                rgba(0, 0, 0, .5),
-                rgba(0, 0, 0, .7)
+                rgba(0, 0, 0, .05),
+                rgba(0, 0, 0, .4)
             );
-            z-index: -10000 !important;
+            z-index: -10000;
         }
     }
 
@@ -2327,11 +2328,7 @@ body.dark {
         color: #000;
     }
 
-    & .nav__menu a {
-        &:hover {
-            color: var(--color-secondary-dark);
-        }
-    }
+    
 
 
 
