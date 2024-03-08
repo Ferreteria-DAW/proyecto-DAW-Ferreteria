@@ -13,28 +13,13 @@ import axios from "axios";
 import { UserContext } from "../context/userContext";
 
 const Header = () => {
-  const [isNavShowing, setIsNavShowing] = useState(window.innerWidth > 768);
   const [isBurgerActive, setIsBurgerActive] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
 
-  console.log(isNavShowing);
   const { user } = useContext(UserContext);
   const rol = user ? user.rol : "";
 
-  const [avatar, setAvatar] = useState(""); // Nuevo estado para el avatar
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsNavShowing(window.innerWidth > 768);
-    };
-    console.log(isNavShowing);
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+  const [avatar, setAvatar] = useState("");
 
   useEffect(() => {
     const fetchAvatar = async () => {
@@ -55,18 +40,24 @@ const Header = () => {
     if (user) {
       fetchAvatar();
     }
-  }, [user]); // Llamar a fetchAvatar cuando cambie el usuario
-
-  const navHandler = (isActive) => {
-    setIsNavShowing(!isNavShowing);
-    setIsBurgerActive(isActive); // Cambiar el estado de isBurgerActive aquí
-  };
+  }, [user]);
 
   const toggleDarkMode = () => {
     const body = document.querySelector("body");
     body.classList.toggle("dark");
     setIsDarkMode((prevMode) => !prevMode);
   };
+
+  const handleResize = () => {
+    if (window.innerWidth > 768) {
+      setIsBurgerActive(false); // Cerrar el menú en el modo de escritorio
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <nav>
@@ -75,9 +66,9 @@ const Header = () => {
           <img src={logo} alt="Logo" className="logo" />
         </Link>
 
-        {isNavShowing && ( // Mostrar el menú solo si isNavShowing es true
+        {(isBurgerActive || window.innerWidth > 768) && (
           <ul className={`nav__menu`}>
-            {user ? ( // Usuario autenticado
+            {user ? (
               <>
                 <Avatar
                   className="mui-avatar"
@@ -87,52 +78,51 @@ const Header = () => {
                 <li>
                   <Link
                     to={`/profile/${user.id}`}
-                    onClick={() => navHandler(false)}
+                    onClick={() => setIsBurgerActive(false)}
                   >
                     {user.rol === "admin" ? "admin" : user?.username}
                   </Link>
                 </li>
                 {rol === "admin" && (
                   <li>
-                    <Link to="/create" onClick={() => navHandler(false)}>
+                    <Link to="/create" onClick={() => setIsBurgerActive(false)}>
                       Crear Producto
                     </Link>
                   </li>
                 )}
                 <li>
-                  <Link to="/" onClick={() => navHandler(false)}>
+                  <Link to="/" onClick={() => setIsBurgerActive(false)}>
                     Inicio
                   </Link>
                 </li>
                 <li>
-                  <Link to="/products" onClick={() => navHandler(false)}>
+                  <Link to="/products" onClick={() => setIsBurgerActive(false)}>
                     Productos
                   </Link>
                 </li>
                 <li>
-                  <Link to="/about" onClick={() => navHandler(false)}>
+                  <Link to="/about" onClick={() => setIsBurgerActive(false)}>
                     Sobre nosotros
                   </Link>
                 </li>
                 <li>
-                  <Link to="/contact" onClick={() => navHandler(false)}>
+                  <Link to="/contact" onClick={() => setIsBurgerActive(false)}>
                     Contacto
                   </Link>
                 </li>
                 <li>
-                  <Link to="/logout" onClick={() => navHandler(false)}>Logout</Link>
+                  <Link to="/logout" onClick={() => setIsBurgerActive(false)}>Logout</Link>
                 </li>
               </>
             ) : (
-              // Usuario no autenticado
               <>
                 <li>
-                  <Link to="/login" onClick={() => navHandler(false)}>
+                  <Link to="/login" onClick={() => setIsBurgerActive(false)}>
                     Iniciar sesión
                   </Link>
                 </li>
                 <li>
-                  <Link to="/register" onClick={() => navHandler(false)}>
+                  <Link to="/register" onClick={() => setIsBurgerActive(false)}>
                     Registro
                   </Link>
                 </li>
@@ -148,12 +138,9 @@ const Header = () => {
 
         <button
           className="nav__toggle-btn"
-          onClick={() => {
-            navHandler(!isBurgerActive);
-            // setIsBurgerActive(!isBurgerActive);
-          }} // Toggle de isNavShowing en lugar de cambiarlo directamente
+          onClick={() => setIsBurgerActive(!isBurgerActive)}
         >
-          {isNavShowing ? <AiOutlineClose /> : <FaBars />}
+          {isBurgerActive ? <AiOutlineClose /> : <FaBars />}
         </button>
       </div>
     </nav>
