@@ -513,18 +513,20 @@ footer>div p {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 
-    gap: 3rem;
+    gap: 9rem;
     padding: 15rem;
     font-size: 2.5rem;
-    gap: 5rem;
+   
 
     & img {
-        width: 70rem;
+        width: 55rem;
         height: auto;
 
         grid-row: 1 / 2;
         grid-column: 2 / 3;
         align-self: center;
+        border-radius: 5px;
+        margin-top: 10rem;
     }
 
     & .col-about-1 h1 {
@@ -568,6 +570,52 @@ footer>div p {
         }
     }
 }
+
+@media screen and (max-width:768px){
+    .about-us{
+        display: flex;
+        flex-direction: column;
+        gap: 5rem;
+        padding: 5rem;
+    }
+
+    .h3-about{
+        text-align: center;
+    }
+
+    .h1-about{
+        text-align: center;
+    }
+
+    .about-us img{
+        width: 100%;
+        margin-top: 0;
+    }
+}
+
+@media screen and (width=820px){
+    .about-us{
+        display: flex;
+        flex-direction: column;
+        gap: 5rem;
+        padding: 5rem;
+    }
+
+    .h3-about{
+        text-align: center;
+    }
+
+    .h1-about{
+        text-align: center;
+    }
+
+    .about-us img{
+        width: 100%;
+        margin-top: 0;
+    }
+
+}
+
 
 
 /* CARDS */
@@ -894,6 +942,7 @@ header img {
 .form-section {
     display: flex;
     padding: 10rem;
+    gap: 4rem;
 }
 
 .form-contact {
@@ -907,28 +956,6 @@ header img {
 }
 
 
-
-@media screen and (max-width:492px) {
-    .map {
-        width: 100%;
-    }
-
-    .map-image {
-        width: 120%;
-    }
-
-    .form-contact {
-        width: 100%;
-    }
-
-    .form-container form {
-        width: 200%;
-    }
-
-    .form-section>div {
-        width: 100%;
-    }
-}
 
 
 
@@ -2100,7 +2127,7 @@ input.control::placeholder {
 }
 
 .img-ferreteria-about {
-    width: 400px;
+    width: 350px;
     height: 300px;
 }
 
@@ -2314,14 +2341,16 @@ body.dark {
 
 }
 
-
-/* CONTACT */
-
+ 
+ 
+/*Contacto*/
+ 
 .map-image{
     width:600px;
     margin-top: 22rem;
     border-radius: 5px;
     border: 2px solid black;
+    
 }
  
 @media screen and (max-width: 768px) {
@@ -2348,14 +2377,17 @@ body.dark {
     .map-image {
         width: 50%;
         height: 170px;
-        margin-right: 300px;  
+        margin-right: 300px; 
+        margin-bottom: 5rem;
+         
     }
  
     .form-section{
         display: grid;
         place-items: center;
         grid-template-columns: repeat(1, 1fr);
-           
+        
+        
     }
  
     .form-container{
@@ -2399,94 +2431,10 @@ body.dark {
         margin-right:30rem;
     }
 }
- 
- 
- 
- 
- 
- 
- 
- 
-.map-image{
-    width:600px;
-    margin-top: 22rem;
-    border-radius: 5px;
-    border: 2px solid black;
-}
- 
-@media screen and (max-width: 768px) {
-    .map-image {
-        margin-right: 25rem;
-        margin-top: -10rem;
-    }
- 
-    .form-section{
-        display: grid;
-        place-items: center;
-        grid-template-columns: repeat(1, 1fr);
-       
-    }
- 
-    .form-container{
-        width: 70%;
-        margin-right:30rem;
-    }
- 
-}
- 
-@media screen and (max-width: 480px) {
-    .map-image {
-        width: 50%;
-        height: 170px;
-        margin-right: 300px;  
-    }
- 
-    .form-section{
-        display: grid;
-        place-items: center;
-        grid-template-columns: repeat(1, 1fr);
-           
-    }
- 
-    .form-container{
-        width: 50%;
-        margin-right:30rem;
-        margin-top: -3rem;
-    }
- 
-    .form-container legend{
-        text-align: center;
-    }
- 
-    .header-contact h1{
-        font-size: 3.3rem;
-       
-    }
- 
-    .header-contact button{
-        width: 10rem;
-        height: 5rem;
-        margin-right: 2rem;
-    }
- 
-}
- 
-@media screen and (width=820px){
-    .map-image {
-        margin-right: 25rem;
-        margin-top: -10rem;
-    }
- 
-    .form-section{
-        display: grid;
-        place-items: center;
-        grid-template-columns: repeat(1, 1fr);
-        padding-left: 12rem;
-    }
- 
-    .form-container{
-        width: 70%;
-        margin-right:30rem;
+
+@media screen and (width=1024px) {
+    .map-image{
+        width: 450px;
     }
 }
 
