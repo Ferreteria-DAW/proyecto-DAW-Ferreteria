@@ -2171,6 +2171,8 @@ input.control::placeholder {
   left: 40px;
 }
 
+
+/*------------------Dark Mode------------ */
 body.active {
   background-color: #000;
   color: #fff;
