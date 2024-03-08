@@ -2148,6 +2148,8 @@ input.control::placeholder {
     left: 40px;
 }
 
+
+/*------------------Dark Mode------------ */
 body.active {
     background-color: #000;
     color: #fff;
@@ -2268,8 +2270,12 @@ body.dark {
     }
 
     & .btn--white:hover {
-        background-color: #424242;
+        background-color: var(--blue);
         color: #fff;
+    }
+
+    .meet-us a {
+        background-color: var(--orange);
     }
 
     & .quality-section {
