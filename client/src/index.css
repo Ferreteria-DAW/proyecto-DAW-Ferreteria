@@ -1646,6 +1646,19 @@ input.control::placeholder {
     min-height: 72vh;
 }
 
+@media screen and (width<769px) {
+    .products__container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (width<480px) {
+    .products__container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+
 /* ------------------------- PRODUCT DETAIL ------------------------- */
 
 .product-detail {
