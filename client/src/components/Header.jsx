@@ -21,6 +21,8 @@ const Header = () => {
 
   const [avatar, setAvatar] = useState("");
 
+  const [showMenu, setShowMenu] = useState(false);
+
   useEffect(() => {
     const fetchAvatar = async () => {
       try {
@@ -48,6 +50,10 @@ const Header = () => {
     setIsDarkMode((prevMode) => !prevMode);
   };
 
+  const toggleMenu = () => {
+    setShowMenu(!showMenu);
+  };
+
   const handleResize = () => {
     if (window.innerWidth > 768) {
       setIsBurgerActive(false); // Cerrar el menú en el modo de escritorio
@@ -67,7 +73,7 @@ const Header = () => {
         </Link>
 
         {(isBurgerActive || window.innerWidth > 768) && (
-          <ul className={`nav__menu`}>
+          <ul className={`nav__menu ${showMenu && 'active'}`}>
             {user ? (
               <>
                 <Avatar
@@ -111,7 +117,9 @@ const Header = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/logout" onClick={() => setIsBurgerActive(false)}>Logout</Link>
+                  <Link to="/logout" onClick={() => setIsBurgerActive(false)}>
+                    Logout
+                  </Link>
                 </li>
               </>
             ) : (
@@ -138,7 +146,10 @@ const Header = () => {
 
         <button
           className="nav__toggle-btn"
-          onClick={() => setIsBurgerActive(!isBurgerActive)}
+          onClick={() => {
+            setIsBurgerActive(!isBurgerActive);
+            toggleMenu();
+          }}
         >
           {isBurgerActive ? <AiOutlineClose /> : <FaBars />}
         </button>
